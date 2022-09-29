@@ -78,7 +78,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_33 {
+.libMain {
 	width: 240px;
 	height: 78px;
 	background: rgba(0, 0, 0, 1);
@@ -93,7 +93,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_34 {
+.libBot {
 	width: 239px;
 	height: 39px;
 	background: rgba(0, 0, 0, 1);
@@ -184,7 +184,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_42 {
+.artColMain {
 	width: 240px;
 	height: 78px;
 	background: rgba(244, 206, 9, 1);
@@ -199,7 +199,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_43 {
+.artColBot {
 	width: 239px;
 	height: 39px;
 	background: rgba(244, 206, 9, 1);
@@ -372,7 +372,7 @@ body {
 .v57_185 {
 	width: 253px;
 	height: 240px;
-	background: rgba(48, 69, 255, 1);
+	background: rgb(255, 255, 255);
 	opacity: 1;
 	position: absolute;
 	top: 2px;
@@ -383,7 +383,7 @@ body {
 .v57_186 {
 	width: 253px;
 	height: 240px;
-	background: rgba(48, 69, 255, 1);
+	background: rgb(255, 255, 255);
 	opacity: 1;
 	position: absolute;
 	top: 0px;
@@ -394,7 +394,7 @@ body {
 .v57_187 {
 	width: 253px;
 	height: 240px;
-	background: rgba(48, 69, 255, 1);
+	background: rgb(255, 255, 255);
 	opacity: 1;
 	position: absolute;
 	top: 0px;
@@ -405,7 +405,7 @@ body {
 .v57_188 {
 	width: 253px;
 	height: 240px;
-	background: rgba(48, 69, 255, 1);
+	background: rgb(255, 255, 255);
 	opacity: 1;
 	position: absolute;
 	top: 0px;
@@ -416,7 +416,7 @@ body {
 .v57_189 {
 	width: 253px;
 	height: 240px;
-	background: rgba(48, 69, 255, 1);
+	background: rgb(255, 255, 255);
 	opacity: 1;
 	position: absolute;
 	top: 0px;
