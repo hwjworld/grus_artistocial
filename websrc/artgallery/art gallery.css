@@ -18,6 +18,12 @@
     width: 285px
 }
 
+.return {
+
+    background-color: rgba(240, 248, 255, 0.196);
+
+}
+
 /*instructions page*/
 .instructions-backg {
     background: url("painter.PNG");
