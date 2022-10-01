@@ -1047,3 +1047,61 @@ footer {
 	left: 107px;
 	border-radius: 50%;
 }
+
+/* animation */
+.cartoon img{
+
+	height: 30%;
+	width: 15%;
+	position: absolute;
+	z-index:99999;
+
+}
+
+#cartoonRight img {
+	top: 0%;
+	left: -250px;
+	animation-name:cartoonRight ;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	z-index:99999;
+}
+#cartoonLeft img {
+	top: 50%;
+	left: 100%;
+	animation-name:cartoonLeft ;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	z-index:99999;
+}
+@keyframes cartoonRight {
+	0%{
+		top: 10%;
+		left: -250px;
+
+	}
+	100%{
+
+		left:100%;
+		top: 30%;
+
+	}
+
+
+}
+@keyframes cartoonLeft {
+	0%{
+		top: 25%;
+		left: 100%;
+
+	}
+	100%{
+		top: 10%;
+		left:-250px;
+
+	}
+
+
+}
