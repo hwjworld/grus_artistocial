@@ -5,13 +5,15 @@
 body {
 	font-size: 14px;
 }
+
 .mainLogo {
 
 	top: 200px;
 	left: 510px;
 	position: absolute;
 }
-.v56_28 {
+
+.main_screen {
 	width: 100%;
 	height: 2278px;
 	background: rgba(255, 255, 255, 1);
@@ -22,7 +24,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_29 {
+.lib_event {
 	width: 100%;
 	height: 899px;
 	background: url("../images/v56_29.png");
@@ -36,7 +38,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_30 {
+.lib_switch {
 	width: 240px;
 	height: 78px;
 	background: url("../images/v56_30.png");
@@ -47,34 +49,6 @@ body {
 	position: absolute;
 	top: 0px;
 	left: 329px;
-	overflow: hidden;
-}
-
-.v56_31 {
-	width: 240px;
-	height: 78px;
-	background: url("../images/v56_31.png");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	opacity: 1;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	overflow: hidden;
-}
-
-.v56_32 {
-	width: 240px;
-	height: 78px;
-	background: url("../images/v56_32.png");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	opacity: 1;
-	position: absolute;
-	top: 0px;
-	left: 0px;
 	overflow: hidden;
 }
 
@@ -104,7 +78,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_35 {
+.lib_text {
 	width: 97px;
 	color: rgba(244, 206, 9, 1);
 	position: absolute;
@@ -117,7 +91,7 @@ body {
 	text-align: center;
 }
 
-.v56_36 {
+.art_event {
 	width: 100%;
 	height: 899px;
 	background: url("../images/v56_36.png");
@@ -131,10 +105,10 @@ body {
 	overflow: hidden;
 }
 
-.v56_37 {
+.art_part {
 	width: 100%;
 	height: 820px;
-	background: url("../images/v56_37.png");
+
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -145,7 +119,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_38 {
+.art_inside {
 	width: 100%;
 	height: 820px;
 	background: rgba(244, 206, 9, 1);
@@ -156,7 +130,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_40 {
+.art_switch {
 	width: 240px;
 	height: 78px;
 	background: url("../images/v56_40.png");
@@ -167,20 +141,6 @@ body {
 	position: absolute;
 	top: 0px;
 	left: 44px;
-	overflow: hidden;
-}
-
-.v56_41 {
-	width: 240px;
-	height: 78px;
-	background: url("../images/v56_41.png");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	opacity: 1;
-	position: absolute;
-	top: 0px;
-	left: 0px;
 	overflow: hidden;
 }
 
@@ -210,7 +170,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_44 {
+.art_text {
 	width: 179px;
 	color: rgba(0, 0, 0, 1);
 	position: absolute;
@@ -223,10 +183,9 @@ body {
 	text-align: center;
 }
 
-.v56_45 {
+.hot_event {
 	width: 100%;
 	height: 540px;
-	background: url("../images/v56_45.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -237,7 +196,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_46 {
+.hotEvent_div {
 	width: 100%;
 	height: 540px;
 	background: rgba(244, 206, 9, 1);
@@ -248,79 +207,77 @@ body {
 	overflow: hidden;
 }
 
-.v56_47 {
+.event_button {
 	width: 149px;
 	height: 22px;
-	background: url("../images/v56_47.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
 	opacity: 1;
 	position: absolute;
-	top: 1703px;
+	top: 480px;
 	left: 668px;
 	overflow: hidden;
 }
 
-.v56_48 {
+.event_button_1 {
 	width: 10px;
 	height: 22px;
-	background: url("../images/v56_48.png");
+
 	opacity: 1;
 	position: absolute;
 	top: 0px;
 	left: 35px;
-	border: 5px solid rgba(0, 0, 0, 1);
+	border: 4px solid rgba(0, 0, 0, 1);
 }
 
-.v56_49 {
+.event_button_2 {
 	width: 10px;
 	height: 22px;
-	background: url("../images/v56_49.png");
+
 	opacity: 1;
 	position: absolute;
 	top: 0px;
 	left: 70px;
-	border: 5px solid rgba(0, 0, 0, 1);
+	border: 4px solid rgba(0, 0, 0, 1);
 }
 
-.v56_50 {
+.event_button_3 {
 	width: 10px;
 	height: 22px;
-	background: url("../images/v56_50.png");
+
 	opacity: 1;
 	position: absolute;
 	top: 0px;
 	left: 104px;
-	border: 5px solid rgba(0, 0, 0, 1);
+	border: 4px solid rgba(0, 0, 0, 1);
 }
 
-.v56_51 {
+.event_button_4 {
 	width: 10px;
 	height: 22px;
-	background: url("../images/v56_51.png");
+
 	opacity: 1;
 	position: absolute;
 	top: 0px;
 	left: 139px;
-	border: 5px solid rgba(0, 0, 0, 1);
+	border: 4px solid rgba(0, 0, 0, 1);
 }
 
-.v56_52 {
+.event_button_5 {
 	width: 10px;
 	height: 22px;
-	background: url("../images/v56_52.png");
+
 	opacity: 1;
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	border: 5px solid rgba(0, 0, 0, 1);
+	border: 4px solid rgba(0, 0, 0, 1);
 }
 
-.v56_53 {
+.event_gallary {
 	width: 100%;
 	height: 344px;
-	background: url("../images/v56_53.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -331,7 +288,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_54 {
+.event_gallary_prop {
 	width: 100%;
 	height: 344px;
 	background: rgba(25, 25, 25, 1);
@@ -342,7 +299,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_61 {
+.hot_text {
 	width: 307px;
 	color: rgba(0, 0, 0, 1);
 	position: absolute;
@@ -355,7 +312,7 @@ body {
 	text-align: center;
 }
 
-.v57_184 {
+.event_images {
 	width: 100%;
 	height: 242px;
 	background: url("../images/v57_184.png");
@@ -369,7 +326,7 @@ body {
 	overflow: hidden;
 }
 
-.v57_185 {
+.event_images_1 {
 	width: 253px;
 	height: 240px;
 	background: rgb(255, 255, 255);
@@ -380,7 +337,7 @@ body {
 	overflow: hidden;
 }
 
-.v57_186 {
+.event_images_2 {
 	width: 253px;
 	height: 240px;
 	background: rgb(255, 255, 255);
@@ -391,7 +348,7 @@ body {
 	overflow: hidden;
 }
 
-.v57_187 {
+.event_images_3 {
 	width: 253px;
 	height: 240px;
 	background: rgb(255, 255, 255);
@@ -402,7 +359,7 @@ body {
 	overflow: hidden;
 }
 
-.v57_188 {
+.event_images_4 {
 	width: 253px;
 	height: 240px;
 	background: rgb(255, 255, 255);
@@ -413,7 +370,7 @@ body {
 	overflow: hidden;
 }
 
-.v57_189 {
+.event_images_5 {
 	width: 253px;
 	height: 240px;
 	background: rgb(255, 255, 255);
@@ -424,10 +381,10 @@ body {
 	overflow: hidden;
 }
 
-.v56_62 {
+.game_entrance {
 	width: 800px;
 	height: 136px;
-	background: url("../images/v56_62.png");
+
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -438,10 +395,10 @@ body {
 	overflow: hidden;
 }
 
-.v56_63 {
+.cartoon_entrance {
 	width: 200px;
 	height: 136px;
-	background: url("../images/v56_63.png");
+
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -452,7 +409,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_64 {
+.cartoon_body {
 	width: 67px;
 	height: 136px;
 	background: url("../images/v56_64.png");
@@ -466,7 +423,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_65 {
+.cartoon_legs {
 	width: 42px;
 	height: 42px;
 	background: rgba(244, 206, 9, 1);
@@ -477,7 +434,7 @@ body {
 	border-radius: 50%;
 }
 
-.v56_66 {
+.cartoon_mid {
 	width: 42px;
 	height: 72px;
 	background: rgba(244, 206, 9, 1);
@@ -488,7 +445,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_67 {
+.cartoon_head {
 	width: 42px;
 	height: 42px;
 	background: rgba(244, 206, 9, 1);
@@ -499,7 +456,7 @@ body {
 	border-radius: 50%;
 }
 
-.v56_68 {
+.cartoon_face {
 	width: 15px;
 	height: 14px;
 	background: rgba(0, 0, 0, 1);
@@ -510,10 +467,9 @@ body {
 	border-radius: 50%;
 }
 
-.v56_69 {
+.cartoon_mouse {
 	width: 16px;
 	height: 7px;
-	background: url("../images/v56_69.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -691,10 +647,10 @@ body {
 
 }
 
-.v56_158 {
+.menu {
 	width: 100%;
 	height: 108px;
-	background: url("../images/v56_158.png");
+
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -705,7 +661,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_159 {
+.menu_back {
 	width: 100%;
 	height: 104px;
 	background: rgba(244, 206, 9, 1);
@@ -716,10 +672,10 @@ body {
 	overflow: hidden;
 }
 
-.v56_160 {
+.menu_switch {
 	width: 644px;
 	height: 66px;
-	background: url("../images/v56_160.png");
+
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -730,10 +686,9 @@ body {
 	overflow: hidden;
 }
 
-.v56_161 {
+.home_switch {
 	width: 152px;
 	height: 65px;
-	background: url("../images/v56_161.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -744,21 +699,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_162 {
-	width: 152px;
-	height: 62px;
-	background: url("../images/v56_162.png");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	opacity: 1;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	overflow: hidden;
-}
-
-.v56_163 {
+.homw_switch_head {
 	width: 152px;
 	height: 62px;
 	background: rgba(255, 255, 255, 1);
@@ -773,18 +714,18 @@ body {
 	overflow: hidden;
 }
 
-.v56_164 {
+.homw_switch_bot {
 	width: 152px;
 	height: 31px;
 	background: rgba(255, 255, 255, 1);
 	opacity: 1;
 	position: absolute;
-	top: 31px;
+	top: 32px;
 	left: 1px;
 	overflow: hidden;
 }
 
-.v56_165 {
+.homw_switch_text {
 	width: 77px;
 	color: rgba(0, 0, 0, 1);
 	position: absolute;
@@ -797,7 +738,7 @@ body {
 	text-align: center;
 }
 
-.v56_166 {
+.profile_switch {
 	width: 152px;
 	height: 65px;
 	background: url("../images/v56_166.png");
@@ -811,21 +752,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_167 {
-	width: 152px;
-	height: 62px;
-	background: url("../images/v56_167.png");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	opacity: 1;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	overflow: hidden;
-}
-
-.v56_168 {
+.profile_switch_head {
 	width: 152px;
 	height: 62px;
 	background: rgba(48, 69, 255, 1);
@@ -840,7 +767,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_169 {
+.profile_switch_bot {
 	width: 152px;
 	height: 31px;
 	background: rgba(48, 69, 255, 1);
@@ -851,7 +778,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_170 {
+.profile_switch_text {
 	width: 97px;
 	color: rgba(255, 255, 255, 1);
 	position: absolute;
@@ -864,10 +791,10 @@ body {
 	text-align: center;
 }
 
-.v56_171 {
+.library_switch {
 	width: 152px;
 	height: 65px;
-	background: url("../images/v56_171.png");
+
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -878,21 +805,9 @@ body {
 	overflow: hidden;
 }
 
-.v56_172 {
-	width: 152px;
-	height: 62px;
-	background: url("../images/v56_172.png");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	opacity: 1;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	overflow: hidden;
-}
 
-.v56_173 {
+
+.library_switch_head {
 	width: 152px;
 	height: 62px;
 	background: rgba(18, 158, 6, 1);
@@ -907,7 +822,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_174 {
+.library_switch_bot {
 	width: 152px;
 	height: 31px;
 	background: rgba(18, 158, 6, 1);
@@ -918,7 +833,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_175 {
+.library_switch_text {
 	width: 104px;
 	color: rgba(255, 255, 255, 1);
 	position: absolute;
@@ -931,7 +846,7 @@ body {
 	text-align: center;
 }
 
-.v56_176 {
+.events_switch {
 	width: 152px;
 	height: 65px;
 	background: url("../images/v56_176.png");
@@ -945,21 +860,8 @@ body {
 	overflow: hidden;
 }
 
-.v56_177 {
-	width: 152px;
-	height: 62px;
-	background: url("../images/v56_177.png");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	opacity: 1;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	overflow: hidden;
-}
 
-.v56_178 {
+.events_switch_head {
 	width: 152px;
 	height: 62px;
 	background: rgba(255, 48, 48, 1);
@@ -974,7 +876,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_179 {
+.events_switch_bot {
 	width: 152px;
 	height: 31px;
 	background: rgba(255, 48, 48, 1);
@@ -985,7 +887,7 @@ body {
 	overflow: hidden;
 }
 
-.v56_180 {
+.events_switch_text {
 	width: 93px;
 	color: rgba(255, 255, 255, 1);
 	position: absolute;
@@ -1001,7 +903,6 @@ body {
 .loginDiv {
 	width: 186px;
 	height: 69px;
-	background: url("../images/v56_181.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -1010,11 +911,11 @@ body {
 	opacity: 1;
 	position: absolute;
 	top: 20px;
-	left: 1227px;
-	border-top-left-radius: 12px;
+	left: 1270px;
+	/* border-top-left-radius: 12px;
 	border-top-right-radius: 12px;
 	border-bottom-left-radius: 12px;
-	border-bottom-right-radius: 12px;
+	border-bottom-right-radius: 12px; */
 	overflow: hidden;
 }
 
@@ -1029,8 +930,120 @@ body {
 	font-size: 24px;
 	opacity: 1;
 	text-align: center;
+
 }
 
-.name {
-	color: #fff;
+/* footer */
+
+footer {
+	font-size: 14px;
+}
+
+.footer_content {
+	width: 100%;
+	height: 196px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	opacity: 1;
+	position: absolute;
+	top: 2200px;
+	left: 0px;
+	overflow: hidden;
+}
+
+.footer_background {
+	width: 100%;
+	height: 196px;
+	background: rgba(244, 206, 9, 1);
+	opacity: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+}
+
+.Contact {
+	width: 579px;
+	color: rgba(0, 0, 0, 1);
+	position: absolute;
+	top: 32px;
+	left: 45px;
+	font-family: JejuGothic;
+	font-weight: Regular;
+	font-size: 24px;
+	opacity: 1;
+	text-align: left;
+}
+
+.footer_face {
+	width: 154px;
+	height: 119px;
+	background: url("../images/v152_5.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	opacity: 1;
+	position: absolute;
+	top: 43px;
+	left: 1324px;
+	overflow: hidden;
+}
+
+.footer_mouse {
+	width: 108px;
+	height: 99px;
+	background: rgba(0, 0, 0, 1);
+	opacity: 1;
+	position: absolute;
+	top: 20px;
+	left: 23px;
+	border-radius: 50%;
+}
+
+.footer_noth {
+	width: 113px;
+	height: 53px;
+	background: url("../images/v152_7.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	opacity: 1;
+	position: absolute;
+	top: 19px;
+	left: 20px;
+	overflow: hidden;
+}
+
+.footer_botface {
+	width: 113px;
+	height: 53px;
+	background: rgba(244, 206, 9, 1);
+	opacity: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+}
+
+.left_eye_footer {
+	width: 47px;
+	height: 46px;
+	background: rgba(0, 0, 0, 1);
+	opacity: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border-radius: 50%;
+}
+
+.right_eye_footer {
+	width: 47px;
+	height: 46px;
+	background: rgba(0, 0, 0, 1);
+	opacity: 1;
+	position: absolute;
+	top: 0px;
+	left: 107px;
+	border-radius: 50%;
 }
