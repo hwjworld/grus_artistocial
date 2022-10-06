@@ -52,7 +52,7 @@ var id;
 function autoplay() {
     id = setInterval(function () {
         next_pic();
-    }, 2500)
+    }, 1500)
 }
 
 //spot change
