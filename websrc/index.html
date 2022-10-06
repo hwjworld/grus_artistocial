@@ -1,141 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8">
-	<title>DECO1800/7180 Artistocial Home</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=JejuGothic&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>DECO1800/7180 Artistocial Home</title>
+    <link rel="stylesheet" href="css/initialize.css">
+    <link rel="stylesheet" href="css/publicStyle.css">
+
 </head>
 
 <body>
-	<div class="animation">
-		<div id="cartoonRight" class="cartoon">
-			<img src="images/cartoonleft.png" alt="cartoon turn right">
-		</div>
-		<div id="cartoonLeft" class="cartoon">
-			<img src="images/cartoonright.png" alt="cartoon turn right">
-		</div>
-	</div>
+<div class="content-info">
 
-	<div class="main_screen">
-		<img class="mainLogo" src="images/artistocial.png" height="200" width="500"></img>
-		<div class="lib_event">
+    <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.html"></iframe>
 
-			<div class="lib_switch">
-				<div class="libMain"></div>
-				<div class="libBot"></div>
-				<span class="lib_text">Library</span>
-			</div>
+    <div class="index-top-d display-flex-center">
+        <div class="index-top-info">
+            <img class="main-logo" src="images/artistocial.png">
+            <div style="font-size: 16px;font-weight: 600;">Play, Explore, and Make Friends</div>
+            <div class="circle-button-d">
+                <a class="circle-button" href="../websrc/artgallery/fronpage.html">GAME ENTRANCE</a>
+                <div class="cartoon-body"><img class="w-100" src="images/index-img1.png"></div>
+            </div>
+            <div id="cartoon-right" class="cartoon">
+                <img class="w-100" src="images/cartoonleft.png">
+            </div>
+            <div id="cartoon-left" class="cartoon">
+                <img class="w-100" src="images/cartoonright.png">
+            </div>
+        </div>
+    </div>
 
-			<div class="art_event">
-				<div class="art_part">
-					<div class="art_inside"></div>
-				</div>
-				<div class="art_switch">
-					<div class="artColMain"></div>
-					<div class="artColBot"></div>
-					<span class="art_text">Art Collection</span>
-				</div>
-			</div>
+    <div class="carousel">
+        <div class="color-000000 display-flex-center font-weight-600 library-title background-color-f4Cf0a">HOT EVENTS</div>
+        <div class="carousel-info">
+            <div class="spacer-bar background-color-000000"></div>
+            <div class="wrapper">
+                <div class="contain">
+                    <!--last one-->
+                    <img onclick="location.href='events.html'" src="images/events-img2.png"/>
 
-		</div>
-		<div class="hot_event">
-			<div class="hotEvent_div"></div>
-			<div class="event_button">
-				<div class="event_button_1"></div>
-				<div class="event_button_2"></div>
-				<div class="event_button_3"></div>
-				<div class="event_button_4"></div>
-				<div class="event_button_5"></div>
-			</div>
-			<div class="event_gallary">
-				<div class="event_gallary_prop"></div>
-			</div><span class="hot_text">HOT EVENTS</span>
 
-			<div class="event_images">
-				<div class="event_images_1"></div>
-				<div class="event_images_2"></div>
-				<div class="event_images_3"></div>
-				<div class="event_images_4"></div>
-				<div class="event_images_5"></div>
-			</div>
-		</div>
-		<div class="game_entrance">
-			<div class="cartoon_entrance">
-				<div class="cartoon_body">
-					<div class="cartoon_legs"></div>
-					<div class="cartoon_mid"></div>
-					<div class="cartoon_head"></div>
-					<div class="cartoon_face"></div>
-					<div class="cartoon_mouse">
-						<div class="face"></div>
-					</div>
-					<div class="stomach">
-						<div class="stoA">
-							<div class="stoB"></div>
-							<div class="stoC"></div>
-						</div>
-						<div class="stoD"></div>
-					</div>
-					<div class="leftEye"></div>
-					<div class="rightEye"></div>
+                    <img onclick="location.href='events.html'" src="images/library-img1.png"/>
+                    <img onclick="location.href='events.html'" src="images/library-img2.png"/>
+                    <img onclick="location.href='events.html'" src="images/index-img1.png"/>
+                    <img onclick="location.href='events.html'" src="images/events-img1.png"/>
+                    <img onclick="location.href='events.html'" src="images/events-img2.png"/>
 
-					<div class="leftHand"></div>
-					<div class="rightHand"></div>
-				</div>
-			</div>
+                    <!--first two-->
+                    <img onclick="location.href='events.html'" src="images/library-img1.png"/>
+                    <img onclick="location.href='events.html'" src="images/library-img2.png"/>
+                </div>
+                <a href="javascript:void(0);">❮</a>
+                <a href="javascript:void(0);">❯</a>
+            </div>
+            <div style="margin-bottom: 100px" class="display-flex-center font-weight-600 library-title background-color-000000">Name</div>
+            <div class="btn">
+                <span class="active"><img class="w-100 h-100" src="images/library-img1.png"/></span>
+                <span><img class="w-100 h-100" src="images/library-img2.png"/></span>
+                <span><img class="w-100 h-100" src="images/index-img1.png"/></span>
+                <span><img class="w-100 h-100" src="images/events-img1.png"/></span>
+                <span><img class="w-100 h-100" src="images/events-img2.png"/></span>
+            </div>
+            <div class="spacer-bar background-color-000000"></div>
+        </div>
+    </div>
 
-			<div class="entraBack"></div><a href="artgallery/fronpage.html" class="entraText">GAME ENTRANCE</a>
-		</div><span class="loDes">Play, Explore, and Make Friends</span>
-		<div class="menu">
-			<div class="menu_back"></div>
-			<div class="menu_switch">
-				<div class="home_switch">
+    <div class="index-last-d">
+        <button class="art-collection font-size-24 background-color-f4Cf0a">Art Collection</button>
+        <div class="index-last-map background-color-f4Cf0a">
+            <img class="w-100" src="images/index-img3.png"/>
+        </div>
+    </div>
 
-					<div class="homw_switch_head"></div>
-					<div class="homw_switch_bot"></div>
-					<span class="homw_switch_text">HOME</span>
-				</div>
-				<div class="profile_switch">
 
-					<div class="profile_switch_head"></div>
-					<div class="profile_switch_bot"></div>
-					<span class="profile_switch_text">PROFILE</span>
-				</div>
-				<div class="library_switch">
-
-					<div class="library_switch_head"></div>
-					<div class="library_switch_bot"></div>
-					<span class="library_switch_text">LIBRARY</span>
-				</div>
-				<div class="events_switch">
-
-					<div class="events_switch_head"></div>
-					<div class="events_switch_bot"></div>
-					<span class="events_switch_text">EVENTS</span>
-				</div>
-			</div>
-		</div>
-		<div class="loginDiv"><a href="login.html" class="loginBut">SIGN IN/ UP</a></div>
-		<div class="name"></div>
-	</div>
-
+    <iframe frameborder="no" scrolling="no" class="w-100-iframe footer-iframe" src="layout/footer.html?color=F4CF0A"></iframe>
+</div>
 </body>
-<footer>
-	<div class="footer_content">
-		<div class="footer_background"></div><span class="Contact">Contact us:
-			Email: Artistocial@uqconnect.edu.au
-			Address: Artanywhere, St. Lucia QLD 4072 </span>
-		<div class="footer_face">
-			<div class="footer_mouse"></div>
-			<div class="footer_noth">
-				<div class="footer_botface"></div>
-			</div>
-			<div class="left_eye_footer"></div>
-			<div class="right_eye_footer"></div>
-		</div>
-	</div>
-</footer>
-
+<script type="text/javascript" src="js/carousel.js"></script>
 </html>
+
