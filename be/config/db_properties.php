@@ -1,10 +1,14 @@
 <?php
 
 
-$name = '';
-$clientId = '';
-$secret = '';
-$token_url = 'https://api.artsy.net/api/tokens/xapp_token';
+$name = 'artistocial';
+$clientId = '53c415177b4dc31e4285';
+$secret = '3c713b90bdf573aee7be27c86f0abe96';
+
+
+// $name = '';
+// $clientId = '';
+// $secret = '';
 
 
 ?>

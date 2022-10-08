@@ -1,0 +1,16 @@
+#initialize genes
+#7 displine genes are 
+#Architecture 4f99da92d8f65a0001000732
+#Music 552e8803776f725754290c00
+#fashion-design-and-wearable-art 52d9a3c41a1e868f320000f5
+#design 4ddbbd3c4027ac0001001962
+#jewelry 507c4d4ab5f0450002001b6b
+#written-word 552e880c776f7257542b0c00
+#graphic-design 52d9a44ba6ca6d9f450000b0
+
+/grus_artistocial/be/init/init_art_gene.php
+
+
+#initialize 5000 artworks
+/grus_artistocial/be/init/init_artwork.php
+

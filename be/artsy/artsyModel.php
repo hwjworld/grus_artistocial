@@ -1,13 +1,26 @@
 <?php
 
-require_once("../tools/curl.php");
-require_once("../tools/database.php");
-require_once("../config/db_properties.php");
+require_once(__DIR__."/../tools/curl.php");
+require_once(__DIR__."/../tools/database.php");
+require_once(__DIR__."/../dbmodel/db_artsy.php");
+require_once(__DIR__."/../model/artsyGeneModel.php");
+require_once(__DIR__."/../model/artstyArtist.php");
+require_once(__DIR__."/../model/artsyArtwork.php");
+require_once(__DIR__."/../tools/constants.php");
+include __DIR__.'/../config/db_properties.php';
 
 class Artsy{
 
+    private $db;
+
+    function __construct()
+    {
+        $this->db = new Db();
+    }
+
     public function generateTokenGetUrl(){
-        return $this->token_url . '?client_id=' . $this->clientId . '&client_secret=' . $this->secret;
+        global $clientId, $secret, $artsy_token_api_url;
+        return $artsy_token_api_url . '?client_id=' . $clientId . '&client_secret=' . $secret;
     }
 
     public function getToken(){
@@ -16,15 +29,15 @@ class Artsy{
             $artsy = new Artsy();
             $content = cPostWithoutParam($artsy->generateTokenGetUrl());
             $token = json_decode($content, true)['token'];
-            var_dump($token);
+            // var_dump($token);
             $this->saveTokenToDB($token);
         }
         return $token;
     }
 
     private function getTokenFromDB(){
-        $db = new Db();
-        $token = $db->query("SELECT token FROM artsytoken where expiredate>now() limit 1;");
+        // $this->db = new Db();
+        $token = $this->db->query(getQueryArtsyTokenSql());
         if(count($token)>0){
             echo "get token from db";
             return $token[0];
@@ -33,8 +46,8 @@ class Artsy{
     }
 
     private function saveTokenToDB($data){
-        $db = new Db();
-        $result = $db->insert("insert into artsytoken(token, expiredate) value ('".$data['token']."','".$data['expiredate']."');");
+        // $this->db = new Db();
+        $result = $this->db->insert(getInsertArtsyTokenSql($data['token'], $data['expiredate']));
         if($result){
             echo "insert token from db successful";
         }else{
@@ -44,13 +57,136 @@ class Artsy{
     }
 
     /**
-     * retrive gene from artsy and update to db
+     * insert gene into to db
      */
-    public function retriveAndUpdateGene($geneId){
-        if(is_null($geneId)){
+    public function insertGene(...$geneData){
+        return $this->preparedStatment(getInsertGeneSql(), str_repeat('s',8), $geneData);
+    }
+
+    public function insertArtwork(...$artworkData){
+        return $this->preparedStatment(getInsertArtworkSql(), str_repeat('s',17), $artworkData);
+    }
+
+    public function insertArtist(...$artistData){
+        return $this->preparedStatment(getInsertArtistSql(), str_repeat('s',17), $artistData);
+    }
+
+    private function preparedStatment($sql, $type, ...$modelData){
+        if(is_null($modelData)){
+            error_log("artsy model insert model NULL data");
             return null;
         }
+        $this->db->insertPrepared($sql, $type, ...$modelData);
+    }
 
+    public function getCGetRequestHeader(){
+
+        $header = ["X-XAPP-Token"=>$this->getToken()["token"]];
+        return $header;
+    }
+
+    /**
+     * get all genes
+     */
+    public function getAllGenes(){
+        $genes = array();
+        $genes_result = $this->db->query(getAllGenesSql());
+        // var_dump($genes_result);
+        foreach($genes_result as $k=>$v){
+            array_push($genes, dataToModelGene($v));
+        }
+        return $genes;
+    }
+
+    public function getGeneByName($name){
+        $v = $this->db->query(getGeneByNameSql($name));
+        if(count($v)>0){
+            return dataToModelGene($v[0]);
+        }
+        return null;
+    }
+
+    public function getLastArtwork(){
+        $artwork_result = $this->db->query(getLastArtworkSql());
+        if(count($artwork_result)>0){
+            return dataToModelArtwork($artwork_result[0]);
+        }
+        return null;
+
+    }
+
+    /**
+     * get artwork by artwork_id
+     */
+    public function getArtwork($artworkId){
+        $artwork_result = $this->db->query(getArtworkSql($artworkId));
+        if(count($artwork_result)>0){
+            $artwork = dataToModelArtwork($artwork_result[0]);
+            if(trim($artwork->artist_id)==''){
+                $this->fillArtistForArtowrk($artwork->resourceId);
+                echo $artwork->resourceId . "empty artist filled";
+                $artwork = $this->getArtwork($artworkId); // reretrive artwork, because updated artist_id
+            }
+            return $artwork;
+        }
+        return null;
+    }
+
+    /**
+     * retrive artist infor for artwork. do following 2 steps:
+     * 1. set artist_id
+     * 2. save artist to artist table
+     */
+    public function fillArtistForArtowrk($artworkId){
+        global $artsy_artist_api_url;
+        $url = $artsy_artist_api_url . "?artwork_id=" . $artworkId;
+        echo $url;
+
+        $artist_content = json_decode(cGetWithHeader($url, $this->getCGetRequestHeader()));
+        var_dump($artist_content);
+        $artist_result = $artist_content->_embedded->artists[0];
+        
+        $resourceId = $artist_result->id;
+        $name = $artist_result->name;
+        $at = $this->getArtist($resourceId);
+        // var_dump($at);
+        if (!is_null($at)) {
+            echo "<br/>" . $name . " artist already exist <br/>";
+        }else{
+            $slug = $artist_result->slug;
+            $created_at = $artist_result->created_at;
+            $updated_at = $artist_result->updated_at;
+            $sortable_name = $artist_result->sortable_name;
+            $gender = $artist_result->gender;
+            $biography = $artist_result->biography;
+            $birthday = $artist_result->birthday;
+            $deathday = $artist_result->deathday;
+            $hometown = $artist_result->hometown;
+            $location = $artist_result->location;
+            $nationality = $artist_result->nationality;
+            $image_versions = $artist_result->image_versions;
+            $thumbnail = $artist_result->_links->thumbnail->href;
+            $image = $artist_result->_links->image->href;
+            $permalink = $artist_result->_links->permalink->href;
+            $this->insertArtist($resourceId, $slug, $created_at, $updated_at, $name, $sortable_name, $gender, $biography, $birthday, $deathday, $hometown, $location, $nationality, $image_versions, $thumbnail, $image, $permalink);
+        }
+        // update artist_id in artwork
+        $this->updateArtistInArtwork($artworkId, $resourceId);
+    }
+
+    /**
+     * get artist by artist_id
+     */
+    public function getArtist($artistId){
+        $artist_result = $this->db->query(getArtistSql($artistId));
+        if(count($artist_result)>0){
+            return dataToModelArtist($artist_result[0]);
+        }
+        return null;
+    }
+
+    public function updateArtistInArtwork($artworkId, $artistId){
+        return $this->preparedStatment(getUpdateArtistInArtworkSql(), 'ss', array($artistId, $artworkId));
     }
 
 }

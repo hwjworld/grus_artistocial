@@ -47,7 +47,43 @@ class Db{
         }
         self::closeConn($conn);
         return $result;
-    }   
+    }
+
+    /**
+     * i: int
+     * d: float
+     * s: string
+     * b: blob
+     */
+    public function insertPrepared($sql, $types, $data){
+
+        var_dump($sql);
+        var_dump($types);
+        var_dump($data);
+
+        foreach($data as $k=>$v){
+            // echo "<br/>";
+            // echo $k;
+            // echo  '=>';
+            // var_dump($v);
+            // echo "<br/>";
+            if(is_array($v)){ // 可能是对象是数组, 不支持二级数组
+                $data[$k] = trim(implode(",", $v));
+            }else{
+
+                $data[$k] = trim($v); // 可能有值是NULL
+            }
+        }
+        $conn = self::getConn();
+        $result = true;
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param($types, ...$data);
+        $stmt->execute();
+        $stmt->close();
+        self::closeConn($conn);
+        echo "New records created successfully";
+        return $result;
+    }
 }
 
 // $db = new Db();

@@ -6,5 +6,5 @@ function getArtsyToken(){
     return $artsy->getToken();
 }
 
-var_dump(getArtsyToken());
+// var_dump(getArtsyToken());
 ?>
