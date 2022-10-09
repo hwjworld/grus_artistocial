@@ -14,3 +14,8 @@
 #initialize 5000 artworks
 /grus_artistocial/be/init/init_artwork.php
 
+#initialize art collections
+/grus_artistocial/be/init/init_art_collection.php
+
+#initialize event location
+/grus_artistocial/be/init/init_event_location.php

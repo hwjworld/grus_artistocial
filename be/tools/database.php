@@ -49,6 +49,16 @@ class Db{
         return $result;
     }
 
+
+    public function preparedStatment($sql, $type, ...$modelData){
+        // var_dump($modelData);
+        if(is_null($modelData)){
+            error_log("model insert model NULL data");
+            return null;
+        }
+        return $this->insertPrepared($sql, $type, ...$modelData);
+    }
+
     /**
      * i: int
      * d: float
@@ -56,17 +66,8 @@ class Db{
      * b: blob
      */
     public function insertPrepared($sql, $types, $data){
-
-        var_dump($sql);
-        var_dump($types);
-        var_dump($data);
-
+        
         foreach($data as $k=>$v){
-            // echo "<br/>";
-            // echo $k;
-            // echo  '=>';
-            // var_dump($v);
-            // echo "<br/>";
             if(is_array($v)){ // 可能是对象是数组, 不支持二级数组
                 $data[$k] = trim(implode(",", $v));
             }else{
@@ -77,8 +78,10 @@ class Db{
         $conn = self::getConn();
         $result = true;
         $stmt = $conn->prepare($sql);
+        echo "---";
+        var_dump($data);
         $stmt->bind_param($types, ...$data);
-        $stmt->execute();
+        $result = $stmt->execute();
         $stmt->close();
         self::closeConn($conn);
         echo "New records created successfully";

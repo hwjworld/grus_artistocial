@@ -60,23 +60,15 @@ class Artsy{
      * insert gene into to db
      */
     public function insertGene(...$geneData){
-        return $this->preparedStatment(getInsertGeneSql(), str_repeat('s',8), $geneData);
+        return $this->db->preparedStatment(getInsertGeneSql(), str_repeat('s',8), $geneData);
     }
 
     public function insertArtwork(...$artworkData){
-        return $this->preparedStatment(getInsertArtworkSql(), str_repeat('s',17), $artworkData);
+        return $this->db->preparedStatment(getInsertArtworkSql(), str_repeat('s',17), $artworkData);
     }
 
     public function insertArtist(...$artistData){
-        return $this->preparedStatment(getInsertArtistSql(), str_repeat('s',17), $artistData);
-    }
-
-    private function preparedStatment($sql, $type, ...$modelData){
-        if(is_null($modelData)){
-            error_log("artsy model insert model NULL data");
-            return null;
-        }
-        $this->db->insertPrepared($sql, $type, ...$modelData);
+        return $this->db->preparedStatment(getInsertArtistSql(), str_repeat('s',17), $artistData);
     }
 
     public function getCGetRequestHeader(){
@@ -186,7 +178,7 @@ class Artsy{
     }
 
     public function updateArtistInArtwork($artworkId, $artistId){
-        return $this->preparedStatment(getUpdateArtistInArtworkSql(), 'ss', array($artistId, $artworkId));
+        return $this->db->preparedStatment(getUpdateArtistInArtworkSql(), 'ss', array($artistId, $artworkId));
     }
 
 }

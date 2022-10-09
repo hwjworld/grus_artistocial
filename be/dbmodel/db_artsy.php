@@ -8,7 +8,6 @@ function getInsertArtsyTokenSql($token, $expiredate){
     return "insert into artsytoken(token, expiredate) value ('".$token."','".$expiredate."')";
 }
 
-
 function getInsertGeneSql(){
     return "insert into arttype(resourceId, name, display_name, description, image_versions, thumbnail, image, permalink) value (?,?,?,?,?,?,?,?)";
 }
