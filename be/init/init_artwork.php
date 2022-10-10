@@ -24,7 +24,12 @@ if (is_null($gene)) {
 // retrive 100 artwork
 global $artsy_artwork_api_url;
 $lastArtwork = $artsy->getLastArtwork();
-$url = $artsy_artwork_api_url . "?size=3000&cursor=".$lastArtwork->resourceId."%3A".$lastArtwork->resourceId;
+if(is_null($lastArtwork)){
+    $lastResourceId = "";
+}else{
+    $lastResourceId = "&cursor=".$lastArtwork->resourceId."%3A".$lastArtwork->resourceId;
+}
+$url = $artsy_artwork_api_url . "?size=3000".$lastResourceId;
 $artworks_content = json_decode(cGetWithHeader($url, $artsy->getCGetRequestHeader()));
 // var_dump($artworks_content);
 foreach ($artworks_content->_embedded->artworks as $k => $artwork) {
