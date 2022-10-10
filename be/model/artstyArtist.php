@@ -14,7 +14,7 @@ class ArtsyArtist{
     public $hometown;
     public $location;
     public $nationality;
-    public array $image_versions;
+    public $image_versions;
     public $thumbnail;
     public $image;
     public $permalink;

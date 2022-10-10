@@ -12,7 +12,7 @@ class ArtsyArtwork{
     public $collecting_institution;
     public $image_rights;
     public $sale_message;
-    public array $image_versions;
+    public $image_versions;
     public $thumbnail;
     public $image;
     public $permalink;
