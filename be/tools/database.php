@@ -1,8 +1,11 @@
 <?php
+require_once(__DIR__."/../config/db_properties.php");
+global $db_username, $db_password;
+
 class Db{
     public $servername = "localhost";
-    public $username = "root";
-    public $password = "root";
+    public $username = $db_username;
+    public $password = $db_password;
     public $dbname = "artistocial";
 
     public function getConn(){
@@ -77,8 +80,6 @@ class Db{
         $conn = self::getConn();
         $result = true;
         $stmt = $conn->prepare($sql);
-        echo "---";
-        var_dump($data);
         $stmt->bind_param($types, ...$data);
         $result = $stmt->execute();
         $stmt->close();
