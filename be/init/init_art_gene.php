@@ -23,7 +23,7 @@ $genecontentarray = json_decode($genecontent);
 // var_dump($genecontentarray);
 
 $genes = array();
-if(count($resourceId) > 0){
+if(trim($resourceId) == ""){
     array_push($genes, $genecontentarray);
 }else{
     $genes = $genecontentarray->_embedded->genes;
