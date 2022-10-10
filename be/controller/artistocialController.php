@@ -51,6 +51,15 @@ class Artistocial
         return null;
     }
 
+    public function getHotEvent(){
+        $result = $this->db->query(getHotEventSql());
+        $events = array();
+        foreach($result as $k=>$v){
+            array_push($events, dataToModelEvent($v));
+        }
+        return $events;
+    }
+
     public function saveArtCollection(ArtistocialArtCollection $artCollection)
     {
         $result = $this->db->preparedStatment(getInsertArtCollectionSql(), str_repeat('s', 10), [

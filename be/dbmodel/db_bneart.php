@@ -1,4 +1,8 @@
 <?php
+require_once(__DIR__."/../model/artistocialEvent.php");
+require_once(__DIR__."/../model/artistocialEventLocation.php");
+require_once(__DIR__."/../model/artistocialArtCollection.php");
+require_once(__DIR__."/../model/artistocialLibrary.php");
 
 function getInsertArtCollectionSql()
 {
@@ -38,6 +42,11 @@ function getLibrarySql($id)
 function getEventSql($id)
 {
     return "select * from event where resourceid=" . $id;
+}
+
+function getHotEventSql()
+{
+    return "select * from event order by startDatetime desc limit 10";
 }
 
 function dataToModelArtCollection($result)
