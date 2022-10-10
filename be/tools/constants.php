@@ -38,4 +38,5 @@ $profilepicurls = [
     "/grus_artistocial/websrc/statics/profilepics/07.jpg"
 ];
 
+$website_base_home_url = "/grus_artistocial/websrc/";
 ?>

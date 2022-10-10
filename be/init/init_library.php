@@ -4,7 +4,7 @@
 
 require_once(__DIR__ . "/../tools/curl.php");
 require_once(__DIR__ . "/../tools/constants.php");
-require_once(__DIR__ . "/../bneart/artistocialModel.php");
+require_once(__DIR__ . "/../controller/artistocialController.php");
 require_once(__DIR__ . "/../model/artistocialLibrary.php");
 
 global $qld_api_url_library;

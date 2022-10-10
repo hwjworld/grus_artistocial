@@ -44,7 +44,6 @@ function getUpdateArtistInArtworkSql(){
     return "update artwork set artist_id=? where resourceId=?";
 }
 
-
 function dataToModelGene($v){
     $gene = new ArtsyGene();
     $gene->id = $v['id'];

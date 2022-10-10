@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__."/../artsy/artsyModel.php");
+require_once(__DIR__."/../controller/artsyController.php");
 require_once(__DIR__."/../tools/curl.php");
 require_once(__DIR__."/../tools/constants.php");
 

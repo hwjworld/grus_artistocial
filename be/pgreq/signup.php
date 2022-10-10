@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__."/../user/userModel.php");
+require_once(__DIR__."/../controller/userController.php");
 require_once(__DIR__."/../model/busUser.php");
 require_once(__DIR__."/../tools/constants.php");
 

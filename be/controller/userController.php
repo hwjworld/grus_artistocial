@@ -2,6 +2,7 @@
 
 require_once(__DIR__."/../tools/database.php");
 require_once(__DIR__."/../dbmodel/db_user.php");
+require_once(__DIR__."/../model/busUser.php");
 
 class User{
 
@@ -13,8 +14,15 @@ class User{
     }
 
     public function getUserByEmail($email){
-
         $v = $this->db->query(getUserByEmailSql($email));
+        if(count($v)>0){
+            return dataToModelUser($v[0]);
+        }
+        return null;
+    }
+
+    public function getUserByValidEmailAndPwd($email, $password){
+        $v = $this->db->query(getUserByEmailAndPasswordSql($email, $password));
         if(count($v)>0){
             return dataToModelUser($v[0]);
         }

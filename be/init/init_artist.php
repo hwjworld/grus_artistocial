@@ -5,7 +5,7 @@
 
 //以下代码仅为测试获取artist 接口用
 
-require_once(__DIR__ . "/../artsy/artsyModel.php");
+require_once(__DIR__ . "/../controller/artsyController.php");
 require_once(__DIR__ . "/../tools/constants.php");
 require_once(__DIR__ . "/../tools/curl.php");
 // $artsy = new Artsy();
