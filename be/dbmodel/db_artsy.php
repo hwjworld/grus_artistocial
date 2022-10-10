@@ -4,8 +4,8 @@ function getQueryArtsyTokenSql(){
     return "SELECT token FROM artsytoken where expiredate>now() limit 1";
 }
 
-function getInsertArtsyTokenSql($token, $expiredate){
-    return "insert into artsytoken(token, expiredate) value ('".$token."','".$expiredate."')";
+function getInsertArtsyTokenSql(){
+    return "insert into artsytoken(token, expiredate) value (?,CAST(? AS DATE))";
 }
 
 function getInsertGeneSql(){

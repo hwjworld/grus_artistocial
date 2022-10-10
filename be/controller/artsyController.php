@@ -27,16 +27,15 @@ class Artsy{
         $token = $this->getTokenFromDB();
         if(is_null($token)){
             $artsy = new Artsy();
-            $content = cPostWithoutParam($artsy->generateTokenGetUrl());
-            $token = json_decode($content, true)['token'];
-            // var_dump($token);
-            $this->saveTokenToDB($token);
+            $content = json_decode(cPostWithoutParam($artsy->generateTokenGetUrl()),true);
+            $token = $content['token'];
+            $expire = date("Y-m-d H:i:s",strtotime($content['expires_at']));
+            $this->saveTokenToDB([$token, $expire]);
         }
         return $token;
     }
 
     private function getTokenFromDB(){
-        // $this->db = new Db();
         $token = $this->db->query(getQueryArtsyTokenSql());
         if(count($token)>0){
             echo "get token from db";
@@ -46,14 +45,17 @@ class Artsy{
     }
 
     private function saveTokenToDB($data){
-        // $this->db = new Db();
-        $result = $this->db->insert(getInsertArtsyTokenSql($data['token'], $data['expiredate']));
-        if($result){
-            echo "insert token from db successful";
-        }else{
-            echo "insert token from db fail";
-        }
-        return $result;
+        var_dump($data);
+        return $this->db->preparedStatment(getInsertArtsyTokenSql(), 'ss', $data);
+
+        // // $this->db = new Db();
+        // $result = $this->db->insert(getInsertArtsyTokenSql($data['token'], new DateTime($data['expiredate'])));
+        // if($result){
+        //     echo "insert token from db successful";
+        // }else{
+        //     echo "insert token from db fail";
+        // }
+        // return $result;
     }
 
     /**

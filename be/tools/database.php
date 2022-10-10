@@ -70,8 +70,7 @@ class Db{
         foreach($data as $k=>$v){
             if(is_array($v)){ // 可能是对象是数组, 不支持二级数组
                 $data[$k] = trim(implode(",", $v));
-            }else{
-
+            }elseif(is_null($v) or is_string($v)){
                 $data[$k] = trim($v); // 可能有值是NULL
             }
         }
