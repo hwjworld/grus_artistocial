@@ -1,14 +1,14 @@
 <?php
 
 class ArtsyGene{
-    public int $id;
-    public string $resourceId;
-    public string $name;
-    public string $description;
+    public $id;
+    public $resourceId;
+    public $name;
+    public $description;
     public array $image_versions;
-    public string $thumbnail;
-    public string $image_url; // 这是url模板，请不要直接使用，需要用getAllImageUrl来用
-    public string $permalink;    
+    public $thumbnail;
+    public $image_url; // 这是url模板，请不要直接使用，需要用getAllImageUrl来用
+    public $permalink;    
 
     private string $version_placeholder = "{image_version}";
 

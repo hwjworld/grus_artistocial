@@ -1,14 +1,14 @@
 <?php
 
 class BusUser{
-    public int $id;
-    public string $email;
-    public string $password;
-    public string $name = "anonymous user";
-    public string $occupation = "hidden occupation";
-    public string $bio = "i'm good";
-    public string $arttype;
-    public string $picurl;
+    public $id;
+    public $email;
+    public $password;
+    public $name = "anonymous user";
+    public $occupation = "hidden occupation";
+    public $bio = "i'm good";
+    public $arttype;
+    public $picurl;
     public DateTime $createtime;
 }
 ?>

@@ -1,12 +1,12 @@
 <?php
 class ArtistocialEventLocation{
-    public int $id;
-    public string $resourceId;
-    public string $name;
-    public string $type;
-    public string $latitude;
-    public string $longitude;
-    public string $address;
+    public $id;
+    public $resourceId;
+    public $name;
+    public $type;
+    public $latitude;
+    public $longitude;
+    public $address;
 
 }
 ?>

@@ -1,9 +1,9 @@
 <?php
 class Db{
-    public string $servername = "localhost";
-    public string $username = "root";
-    public string $password = "root";
-    public string $dbname = "artistocial";
+    public $servername = "localhost";
+    public $username = "root";
+    public $password = "root";
+    public $dbname = "artistocial";
 
     public function getConn(){
 
