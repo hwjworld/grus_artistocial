@@ -1,17 +1,15 @@
 <?php
 require_once(__DIR__."/../config/db_properties.php");
-global $db_username, $db_password;
+
 
 class Db{
     public $servername = "localhost";
-    public $username = $db_username;
-    public $password = $db_password;
     public $dbname = "artistocial";
 
     public function getConn(){
-
+        global $db_username, $db_password;
         // Create connection
-        $conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+        $conn = new mysqli($this->servername, $db_username, $db_password, $this->dbname);
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
