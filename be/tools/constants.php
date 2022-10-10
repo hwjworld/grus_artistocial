@@ -22,5 +22,8 @@ $bne_data_base_url = 'https://www.data.brisbane.qld.gov.au/data/api/3/action/dat
 $bne_api_url_art_collection = $bne_data_base_url . '?resource_id=3c972b8e-9340-4b6d-8c7b-2ed988aa3343&limit=200';
 $bne_api_url_event_location = $bne_data_base_url . '?resource_id=08107e61-5960-4b3c-a9c9-468d6d295020&limit=2000';
 
+$qld_data_base_url = 'https://www.data.qld.gov.au/api/3/action/datastore_search';
+$qld_api_url_library = $qld_data_base_url . '?resource_id=b6cddba1-5084-4b40-a222-de885d59d617&limit=1000';
 
+$bne_api_url_event = 'https://www.trumba.com/calendars/brisbane-city-council.json';
 ?>
