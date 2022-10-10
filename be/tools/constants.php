@@ -26,4 +26,16 @@ $qld_data_base_url = 'https://www.data.qld.gov.au/api/3/action/datastore_search'
 $qld_api_url_library = $qld_data_base_url . '?resource_id=b6cddba1-5084-4b40-a222-de885d59d617&limit=1000';
 
 $bne_api_url_event = 'https://www.trumba.com/calendars/brisbane-city-council.json';
+
+// built-in user picture
+$profilepicurls = [
+    "/grus_artistocial/websrc/statics/profilepics/01.jpg",
+    "/grus_artistocial/websrc/statics/profilepics/02.jpg",
+    "/grus_artistocial/websrc/statics/profilepics/03.jpg",
+    "/grus_artistocial/websrc/statics/profilepics/04.jpg",
+    "/grus_artistocial/websrc/statics/profilepics/05.jpg",
+    "/grus_artistocial/websrc/statics/profilepics/06.jpg",
+    "/grus_artistocial/websrc/statics/profilepics/07.jpg"
+];
+
 ?>

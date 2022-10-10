@@ -53,7 +53,6 @@ class Artistocial
 
     public function saveArtCollection(ArtistocialArtCollection $artCollection)
     {
-
         $result = $this->db->preparedStatment(getInsertArtCollectionSql(), str_repeat('s', 10), [
             $artCollection->resourceId,
             $artCollection->title,
