@@ -10,7 +10,7 @@ class ArtsyGene{
     public $image_url; // 这是url模板，请不要直接使用，需要用getAllImageUrl来用
     public $permalink;    
 
-    private string $version_placeholder = "{image_version}";
+    private $version_placeholder = "{image_version}";
 
     /**
      * 返回模板的img url
