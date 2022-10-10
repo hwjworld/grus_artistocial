@@ -19,3 +19,9 @@
 
 #initialize event location
 /grus_artistocial/be/init/init_event_location.php
+
+#initialize event
+/grus_artistocial/be/init/init_continous_event.php
+
+#initialize library
+/grus_artistocial/be/init/init_library.php
