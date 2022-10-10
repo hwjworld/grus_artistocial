@@ -23,13 +23,13 @@ $genecontentarray = json_decode($genecontent);
 // var_dump($genecontentarray);
 
 $genes = array();
-if(trim($resourceId) == ""){
+if(trim($resourceId) != ""){
     array_push($genes, $genecontentarray);
 }else{
     $genes = $genecontentarray->_embedded->genes;
 }
 
-// var_dump($genes);
+var_dump($genes);
 
 $allExistGenes = $artsy->getAllGenes();
 $convertedGenes = array();

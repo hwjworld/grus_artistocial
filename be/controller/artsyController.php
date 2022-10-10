@@ -38,7 +38,7 @@ class Artsy{
     private function getTokenFromDB(){
         $token = $this->db->query(getQueryArtsyTokenSql());
         if(count($token)>0){
-            echo "get token from db";
+            echo "<br/>get token from db</br>";
             return $token[0];
         }
         return null;
