@@ -619,11 +619,11 @@
     text-align: center;
 }
 .events-info {
-    margin: auto;
+    margin: 0 100px 0 100px;
 }
 .events-left-info {
     width: 970px;
-    height: 1770px;
+    height: 1000px;
     overflow-y: auto;
 }
 .events-right-info {
@@ -650,6 +650,7 @@
 .events-item {
     width: 950px;
     padding: 20px;
+    border-radius: 15px;
     margin-bottom: 20px;
 }
 .events-map {
