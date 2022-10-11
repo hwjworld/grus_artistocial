@@ -639,9 +639,10 @@
 }
 
 .events-search-d {
-    width: 100%;
+    width: 950px;
     height: 66px;
     position: relative;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
