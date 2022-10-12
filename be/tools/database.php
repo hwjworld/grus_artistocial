@@ -1,14 +1,15 @@
 <?php
+require_once(__DIR__."/../config/db_properties.php");
+
+
 class Db{
-    public string $servername = "localhost";
-    public string $username = "root";
-    public string $password = "root";
-    public string $dbname = "artistocial";
+    public $servername = "localhost";
+    public $dbname = "artistocial";
 
     public function getConn(){
-
+        global $db_username, $db_password;
         // Create connection
-        $conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+        $conn = new mysqli($this->servername, $db_username, $db_password, $this->dbname);
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -47,7 +48,43 @@ class Db{
         }
         self::closeConn($conn);
         return $result;
-    }   
+    }
+
+
+    public function preparedStatment($sql, $type, ...$modelData){
+        // var_dump($modelData);
+        if(is_null($modelData)){
+            error_log("model insert model NULL data");
+            return null;
+        }
+        return $this->insertPrepared($sql, $type, ...$modelData);
+    }
+
+    /**
+     * i: int
+     * d: float
+     * s: string
+     * b: blob
+     */
+    public function insertPrepared($sql, $types, $data){
+        
+        foreach($data as $k=>$v){
+            if(is_array($v)){ // 可能是对象是数组, 不支持二级数组
+                $data[$k] = trim(implode(",", $v));
+            }elseif(is_null($v) or is_string($v)){
+                $data[$k] = trim($v); // 可能有值是NULL
+            }
+        }
+        $conn = self::getConn();
+        $result = true;
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param($types, ...$data);
+        $result = $stmt->execute();
+        $stmt->close();
+        self::closeConn($conn);
+        echo "New records created successfully";
+        return $result;
+    }
 }
 
 // $db = new Db();

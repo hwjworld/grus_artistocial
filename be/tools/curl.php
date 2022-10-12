@@ -10,6 +10,21 @@ function cGet($url){
     return $content;
 }
 
+function cGetWithHeader($url, $header){
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_URL, $url);
+    $header_array = [];
+    foreach ($header as $k=>$v){
+        array_push($header_array, $k.":".$v);
+    }
+    // var_dump($header_array);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header_array);
+    $content = curl_exec($ch);
+    curl_close($ch);
+    return $content;
+}
+
 function cPostWithoutParam($url){
     return cPost($url, null);
 }
@@ -32,7 +47,7 @@ function cPost($url, $data){
     
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
-    print $result;
+    echo $url;
     if ($result === FALSE) { 
         echo 'post wrong';
      }
