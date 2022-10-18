@@ -73,7 +73,7 @@ $hotevents = $artistocial->getHotEvent();
                 <span><img class="w-100 h-100" src="images/events-img1.png"/></span>
                 <span><img class="w-100 h-100" src="images/events-img2.png"/></span>
             </div> -->
-            <!-- <div class="spacer-bar background-color-000000"></div> -->
+            <div class="spacer-bar background-color-000000"></div>
         </div>
     </div>
 
