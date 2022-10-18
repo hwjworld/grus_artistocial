@@ -65,14 +65,14 @@ $hotevents = $artistocial->getHotEvent();
                 <a href="javascript:void(0);">❯</a>
             </div>
             
-            <div style="margin-bottom: 100px" class="display-flex-center font-weight-600 library-title background-color-000000">Name</div>
+            <!-- <div style="margin-bottom: 100px" class="display-flex-center font-weight-600 library-title background-color-000000">Name</div>
             <div class="btn">
                 <span class="active"><img class="w-100 h-100" src="images/library-img1.png"/></span>
                 <span><img class="w-100 h-100" src="images/library-img2.png"/></span>
                 <span><img class="w-100 h-100" src="images/index-img1.png"/></span>
                 <span><img class="w-100 h-100" src="images/events-img1.png"/></span>
                 <span><img class="w-100 h-100" src="images/events-img2.png"/></span>
-            </div>
+            </div> -->
             <div class="spacer-bar background-color-000000"></div>
         </div>
     </div>
