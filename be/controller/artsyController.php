@@ -100,6 +100,14 @@ class Artsy{
         return null;
     }
 
+    public function getGeneByid($id){
+        $v = $this->db->query(getGeneByIdSql($id));
+        if(count($v)>0){
+            return dataToModelGene($v[0]);
+        }
+        return null;
+    }
+
     public function getLastArtwork(){
         $artwork_result = $this->db->query(getLastArtworkSql());
         if(count($artwork_result)>0){
@@ -107,6 +115,24 @@ class Artsy{
         }
         return null;
 
+    }
+
+    public function getAllCategories(){
+        $categories = array();
+        $categories_result = $this->db->query(getAllCategoriesSql());
+        foreach($categories_result as $k=>$v){
+            array_push($categories, $v);
+        }
+        return $categories;
+    }
+
+    public function getGalleryArtworks(){
+        $galleryArtworks = array();
+        $artwork_result = $this->db->query(getGalleryArtworksSql());
+        foreach($artwork_result as $k=>$v){
+            array_push($galleryArtworks, dataToModelArtwork($v));
+        }
+        return $galleryArtworks;
     }
 
     /**

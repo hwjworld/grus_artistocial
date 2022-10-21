@@ -20,12 +20,36 @@ function getGeneByNameSql($name){
     return "select * from arttype where name='".$name."' or display_name='".$name."' limit 1";
 }
 
+function getGeneByIdSql($id){
+    return "select * from arttype where resourceId='".$id."' limit 1";
+}
+
 function getArtworkSql($artworkId){
     return "select * from artwork where resourceId='".$artworkId."'";
 }
 
 function getLastArtworkSql(){
     return "select * from artwork order by id desc limit 1";
+}
+
+function getAllCategoriesSql(){
+    return "select category from artwork where category<>'' group by category";
+}
+
+function getGalleryArtworksSql(){
+    return "
+    SELECT o.*
+    FROM artwork o
+    INNER JOIN (
+          -- Replace MAX with MIN if orders with minimum order needs to be selected
+          SELECT category, MAX(resourceId) resourceId
+          FROM artwork     
+          where category<>''
+          GROUP BY category
+    ) sub
+    ON o.resourceId = sub.resourceId
+              AND o.category = sub.category;
+    ";
 }
 
 function getArtistSql($artistId){
