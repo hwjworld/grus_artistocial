@@ -14,6 +14,17 @@ function getInsertUserSql()
     return "insert user(email,password,name,occupation,bio,arttype,picurl) value(?,?,?,?,?,?,?)";
 }
 
+function getDeletePortofolioPictures($userid){
+    return "delete from userportfolio where userid=".$userid;
+}
+
+function getInsertUserPortofolioPictures(){
+    return "insert into userportfolio (userid,artworkid ) SELECT ?,id as uid FROM artwork WHERE category=(select category from user where id=?) order by rand() limit 12";
+}
+
+function getUserPortofolioSql($userid){
+    return "select * from artwork where id in (SELECT artworkId FROM userportfolio WHERE userid=" . $userid . ")";
+}
 
 function dataToModelUser($v){
     $user = new BusUser();

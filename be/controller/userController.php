@@ -47,5 +47,31 @@ class User{
         }
         return $result;
     }
+
+    private function setPortofolioToUser($userid){
+        //delete portofolio right now
+        $this->db->query(getDeletePortofolioPictures($userid));
+        //set new portfolio to user ,12 pictures
+        $result = $this->db->preparedStatment(getInsertUserPortofolioPictures(), 'ii', [
+            $userid, $userid
+        ]);
+        if ($result) {
+            echo "insert user portofolio to db successful";
+        } else {
+            echo "insert user portofolio fail";
+        }
+        return $result;
+    }
+
+    public function getUserPortofolio($userid){
+        $portofolio = array();
+        $portofolio_result = $this->db->query(getUserPortofolioSql($userid));
+        // var_dump($genes_result);
+        foreach($portofolio_result as $k=>$v){
+            array_push($portofolio, dataToModelArtwork($v));
+        }
+        return $portofolio;
+        
+    }
 }
 ?>
