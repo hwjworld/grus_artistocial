@@ -13,7 +13,9 @@ require_once(__DIR__."/controller/artsyController.php");
 
 $artsy = new Artsy();
 
-$artsy->getToken();
+// $artsy->getToken();
+
+var_dump($artsy->getGalleryArtworks());
 
 
 ?>
