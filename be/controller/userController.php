@@ -21,6 +21,14 @@ class User{
         return null;
     }
 
+    public function getUserById($userid){
+        $v = $this->db->query(getUserByIdSql($userid));
+        if(count($v)>0){
+            return dataToModelUser($v[0]);
+        }
+        return null;
+    }
+
     public function getUserByValidEmailAndPwd($email, $password){
         $v = $this->db->query(getUserByEmailAndPasswordSql($email, $password));
         if(count($v)>0){
@@ -72,6 +80,39 @@ class User{
         }
         return $portofolio;
         
+    }
+
+    public function checkUserEventAttend($userId, $eventId){
+        $v = $this->db->query(getCheckUserEventSql($userId, $eventId));
+        if(count($v)>0){
+            return true;
+        }
+        return false;
+    }
+
+    public function userAttendEvent($userid, $eventid){
+        $result = $this->db->preparedStatment(getInsertUserEventSql(), 'ii', [
+            $userid, $eventid
+        ]);
+        if ($result) {
+            echo "insert user event to db successful";
+        } else {
+            echo "insert user event to db fail";
+        }
+        return $result;
+    }
+
+    public function userCancelEvent($userid,$eventid){
+        $this->db->query(getDeleteUserEventSql($userid,$eventid));
+    }
+
+    public function getUserEventAttended($userId){
+        $eventAttended = array();
+        $event_result = $this->db->query(getUserEventsSql($userId));
+        foreach($event_result as $k=>$v){
+            array_push($eventAttended, dataToModelEvent($v));
+        }
+        return $eventAttended;
     }
 }
 ?>

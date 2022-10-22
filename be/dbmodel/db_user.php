@@ -4,6 +4,10 @@ function getUserByEmailSql($email){
     return "select * from user where email='".$email."'";
 }
 
+function getUserByIdSql($id){
+    return "select * from user where id=".$id;
+}
+
 function getUserByEmailAndPasswordSql($email, $password){
     //这里留一个SQL注入漏洞
     return "select * from user where email='".$email."' and password='".$password."'";
@@ -24,6 +28,22 @@ function getInsertUserPortofolioPictures(){
 
 function getUserPortofolioSql($userid){
     return "select * from artwork where id in (SELECT artworkId FROM userportfolio WHERE userid=" . $userid . ")";
+}
+
+function getCheckUserEventSql($userid,$eventid){
+    return "select * from userevent where userid=".$userid." and eventid=".$eventid;
+}
+
+function getUserEventsSql($userid){
+    return "select * from userevent where userid=".$userid;
+}
+
+function getInsertUserEventSql(){
+    return "insert into userevent(userid, eventid) value(?,?)";
+}
+
+function getDeleteUserEventSql($userid, $eventid){
+    return "delete from userevent where userid=".$userid." and eventid=".$eventid;
 }
 
 function dataToModelUser($v){
