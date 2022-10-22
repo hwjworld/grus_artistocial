@@ -1,15 +1,21 @@
 <?php
-require_once("../be/controller/userController.php");
+// require_once("../be/controller/userController.php");
 session_start();
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    echo "logined";
-    $email = $_SESSION['email'];
-    $user = new User();
-    $u = $user->getUserByEmail($email);
-}else{
-    header("location: login.html");
-    exit;
-}
+// if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+//     echo "logined";
+//     $email = $_SESSION['email'];
+//     $user = new User();
+//     $u = $user->getUserByEmail($email);
+// }else{
+//     header("location: login.html");
+//     exit;
+// }
+require_once("../be/controller/artistocialController.php");
+
+
+$artistocial = new Artistocial();
+$hotevents = $artistocial->getHotEvent();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,10 +40,10 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
         <div class="right-d-info">
             <div class="introduction-board background-color-ffffff">
-                Name: <?php echo $u->name;?><br/>
-                Occupation: <?php echo $u->name;?><br/>
-                Email: <?php echo $u->email;?><br/>
-                About me: <?php echo $u->bio;?>
+                Name: <?php // echo $u->name;?><br/>
+                Occupation: <?php // echo $u->name;?><br/>
+                Email: <?php // echo $u->email;?><br/>
+                About me: <?php // echo $u->bio;?>
             </div>
 
             <div class="right-img-d">
@@ -192,13 +198,39 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
             </div>
         </div>
     </div>
+    <!--events-attended-->
 
     <div id="events-attended" class="this-tab-item" style="display: none">
         <div class="spacer-bar background-color-FF3131"></div>
         <div class="description-bar background-color-f4Cf0a">Attended Events</div>
         <div class="background-color-FF3131">
+        <?php foreach($hotevents as $k=>$v){ ?>
             <div class="w-1240 events-attended-info">
+            
                 <div class="events-attended-item flex-space-between background-color-ffffff">
+               
+                    <div class="events-attended-item-text-description">
+                    
+                        <div class="events-attended-item-title"><?php echo $v->title;?></div>
+                        <div class="time-info"><?php echo $v->startDateTime;?></div>
+                        <div class="events-attended-item-details">
+                            <?php echo $v->location;?><br/>
+                            Cost $<?php echo $v->cost;?><br/>
+                            
+                        </div>
+                    </div>
+                    <div class="publicity-map">
+                        <img class="h-100" src="<?php echo $v->eventImage;?>">
+                        
+                    </div>
+                    
+                    <div class="wavy-line">
+                        <img class="h-100" src="images/wavy-line.jpg">
+                    </div>
+                    <div class="ticket">TICKET</div>
+                </div>
+                
+                <!-- <div class="events-attended-item flex-space-between background-color-ffffff">
                     <div class="events-attended-item-text-description">
                         <div class="events-attended-item-title">Saturday Night Comedy</div>
                         <div class="time-info">Sat, Sep 24, 7:00 PM + more events</div>
@@ -236,28 +268,9 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                         <img class="h-100" src="images/wavy-line.jpg">
                     </div>
                     <div class="ticket">TICKET</div>
-                </div>
-
-                <div class="events-attended-item flex-space-between background-color-ffffff">
-                    <div class="events-attended-item-text-description">
-                        <div class="events-attended-item-title">Saturday Night Comedy</div>
-                        <div class="time-info">Sat, Sep 24, 7:00 PM + more events</div>
-                        <div class="events-attended-item-details">
-                            Big Fork Theatre Fortitude Valley, QLD<br/>
-                            Starts at A$20.00<br/>
-                            Big Fork Theatre<br/>
-                            195 Followers
-                        </div>
-                    </div>
-                    <div class="publicity-map">
-                        <img class="h-100" src="images/1664892662815.jpg">
-                    </div>
-                    <div class="wavy-line">
-                        <img class="h-100" src="images/wavy-line.jpg">
-                    </div>
-                    <div class="ticket">TICKET</div>
-                </div>
+                </div> -->
             </div>
+            <?php } ?>
         </div>
     </div>
 

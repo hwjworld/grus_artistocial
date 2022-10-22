@@ -193,7 +193,7 @@
 .footer-left-info-about {
     position: absolute;
     left: 20px;
-    top: 1140px;
+    top: 2380px;
     color: #ffffff;
 }
 
@@ -206,7 +206,7 @@
 .footer-right-info-about {
     position: absolute;
     right: 20px;
-    top: 1130px;
+    top: 2380px;
 
 }
 
@@ -510,7 +510,7 @@
 
 .events-attended-info {
     margin: auto;
-    padding: 20px 0 100px 0;
+    padding: 20px 0 20px 0;
 }
 
 .events-attended-item {
@@ -738,8 +738,21 @@
 }
 
 .index-last-map {
-    padding: 40px 20px;
+    padding: 0px 20px;
     width: 100%;
+}
+.index-map {
+    padding: 0px 20px;
+    width: 100%;
+}
+
+.index-map img{
+    height: 1000px;
+    width: 1500px;
+}
+.index-last-map img{
+    height: 450px;
+    width: 1500px;
 }
 
 .sort-text {
@@ -839,16 +852,16 @@
 /*autoplay*/
 
 .carousel .wrapper {
-    width: 1400px;
-    height: 300px;
+    width: 1500px;
+    height: 450px;
     overflow: hidden;
     margin: 0 auto;
     position: relative;
 }
 
 .carousel .contain img {
-    width: 380px;
-    height: 300px;
+    width: 1500px;
+    height: 450px;
     margin: 0 20px;
 }
 
@@ -893,3 +906,4 @@
 .carousel .active {
     opacity: 1 !important;
 }
+
