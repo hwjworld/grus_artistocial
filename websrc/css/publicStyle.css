@@ -137,6 +137,10 @@
     background: rgba(255, 48, 48, 1);
 }
 
+.about {
+    background: rgb(0, 0, 0);
+}
+
 .top-left-info {
     display: flex;
     position: absolute;
@@ -170,17 +174,30 @@
     font-size: 24px;
 }
 
+.about-content {
+    width: 100%;
+    min-width: 1240px;
+    height: 196px;
+    font-size: 24px;
+}
+
 .footer-left-info {
     position: absolute;
     left: 20px;
     top: calc(50% - 47px);
-    color: #000000;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
 }
+
 
 .footer-right-info {
     position: absolute;
     right: 20px;
-    top: calc(50% - 61px);
+    top: 1130px;
+    
 }
 
 .footer-face {
@@ -188,10 +205,15 @@
     height: 119px;
 }
 
+.about-footer-face {
+    width: 154px;
+    height: 119px;
+    
+}
 .left-eye-footer {
     width: 47px;
     height: 46px;
-    background: black;
+    background: rgb(255, 255, 255);
     position: absolute;
     top: 0;
     left: 0;
@@ -202,7 +224,7 @@
 .right-eye-footer {
     width: 47px;
     height: 46px;
-    background: black;
+    background: rgb(255, 255, 255);
     position: absolute;
     top: 0;
     right: 0;
@@ -229,10 +251,20 @@
     z-index: 1;
 }
 
+.footer-botface-about {
+    width: 113px;
+    height: 53px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
 .footer-mouse {
     width: 108px;
     height: 99px;
-    background: black;
+    background: rgb(255, 255, 255);
     position: absolute;
     top: 20px;
     left: 23px;
@@ -469,6 +501,7 @@
 .library-title {
     line-height: 70px;
     color: #ffffff;
+    text-align: center;
 }
 
 .library-last-right-item {
@@ -755,7 +788,7 @@
 
 .carousel .wrapper {
     width: 1400px;
-    height: 350px;
+    height: 300px;
     overflow: hidden;
     margin: 0 auto;
     position: relative;
@@ -763,7 +796,7 @@
 
 .carousel .contain img {
     width: 380px;
-    height: 350px;
+    height: 300px;
     margin: 0 20px;
 }
 
@@ -773,16 +806,6 @@
     position: absolute;
     left: 0;
     top: 0;
-}
-
-.carousel .btn {
-    width: 1200px;
-    height: 100px;
-    display: flex;
-    justify-content: space-around;
-    position: absolute;
-    left: calc(50% - 600px);
-    bottom: 32px;
 }
 
 .carousel .btn span {
