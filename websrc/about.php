@@ -164,19 +164,19 @@
 </body>
 
 <div id="about-content" class="about-content">
-    <div class="footer-left-info">
+    <div class="footer-left-info-about">
         Contact us:<br/>
         Email: Artistocial@uqconnect.edu.au<br/>
         Address: Artanywhere, St. Lucia QLD 4072
     </div>
-    <div class="footer-right-info">
-        <div class="about-footer-face">
-            <div class="left-eye-footer"></div>
-            <div class="right-eye-footer"></div>
-            <div class="footer-noth">
-                <div id="footer-botface-about" class="footer-botface"></div>
+    <div class="footer-right-info-about">
+        <div class="footer-face-about">
+            <div class="left-eye-footer-about"></div>
+            <div class="right-eye-footer-about"></div>
+            <div class="footer-noth-about">
+                <div id="footer-botface-about" class="footer-botface-about"></div>
             </div>
-            <div class="footer-mouse"></div>
+            <div class="footer-mouse-about"></div>
         </div>
     </div>
 </div>
