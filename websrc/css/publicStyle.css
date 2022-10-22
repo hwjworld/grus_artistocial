@@ -193,7 +193,7 @@
 .footer-left-info-about {
     position: absolute;
     left: 20px;
-    top: 2380px;
+    top: 2480px;
     color: #ffffff;
 }
 
@@ -206,7 +206,7 @@
 .footer-right-info-about {
     position: absolute;
     right: 20px;
-    top: 2380px;
+    top: 2480px;
 
 }
 
@@ -738,7 +738,7 @@
 }
 
 .index-last-map {
-    padding: 0px 20px;
+    padding: 20px 20px;
     width: 100%;
 }
 .index-map {
@@ -853,15 +853,15 @@
 
 .carousel .wrapper {
     width: 1500px;
-    height: 450px;
+    height: 250px;
     overflow: hidden;
     margin: 0 auto;
     position: relative;
 }
 
 .carousel .contain img {
-    width: 1500px;
-    height: 450px;
+    width: 500px;
+    height: 250px;
     margin: 0 20px;
 }
 
