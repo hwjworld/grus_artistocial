@@ -92,7 +92,7 @@ body {
     position: absolute;
     top: 483px;
     left: 213px;
-    font-family: 'IBM Plex Sans', sans-serif;;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-weight: Regular;
     font-size: 30px;
     opacity: 1;
@@ -675,7 +675,7 @@ body {
     width: 687px;
     height: 140px;
     background: rgba(255, 48, 48, 1);
-    padding: 30px 30px;
+    padding: 20px 20px;
     margin: 10px;
     opacity: 1;
     position: absolute;
@@ -692,8 +692,7 @@ body {
     top: 30px;
     left: 30px;
     font-family: 'IBM Plex Sans', sans-serif;;
-    font-weight: Regular;
-    font-size: 36px;
+    font-size: 30px;
     opacity: 1;
     text-align: center;
 }

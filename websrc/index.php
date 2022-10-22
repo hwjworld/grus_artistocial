@@ -19,7 +19,11 @@ $artcollections = [$artistocial->getArtCollection(1),
     <title>DECO1800/7180 Artistocial Home</title>
     <link rel="stylesheet" href="css/initialize.css">
     <link rel="stylesheet" href="css/publicStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
 
 
 </head>

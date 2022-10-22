@@ -6,6 +6,9 @@
     <title>DECO1800/7180 Artistocial Home</title>
     <link rel="stylesheet" href="css/initialize.css">
     <link rel="stylesheet" href="css/publicStyle.css?v=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     <script type="text/javascript" src="js/selectTab.js"></script>
 </head>
 
@@ -14,7 +17,7 @@
 
         <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.html"></iframe>
 
-        <div style="padding-left: 4em" class="library-title background-color-000000 ">Something About Artistocial...</div>
+        <div style="padding-left: 4em" class="library-title background-color-000000 ">SOMETHING ABOUT ARTISTOCIAL...</div>
 
 
             <div class="index-top-info">
