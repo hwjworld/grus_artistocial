@@ -7,6 +7,8 @@ session_start();
 $artsy = new Artsy();
 $l = $artsy->getLastArtwork();
 
+$artsy->getGalleryArtworks();
+
 $galleryArtworks = array();
 array_push($galleryArtworks, $l);
 array_push($galleryArtworks, $l);
@@ -25,8 +27,6 @@ if($current_index>count($galleryArtworks)){
 $previewIndex = $current_index-1<0?0:$current_index-1;
 $nextIndex = $current_index+1<count($galleryArtworks)?$current_index+1:count($galleryArtworks)-1;
 $lastArtwork = $galleryArtworks[$current_index];
-
-$artsy->getGalleryArtworks();
 
 ?>
 

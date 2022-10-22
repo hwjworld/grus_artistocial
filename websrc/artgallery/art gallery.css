@@ -25,7 +25,7 @@
     margin-top: 17%;
     margin-right: auto;
     width: auto;
-    height: 67%;
+    height: 70%;
     position: absolute;
     opacity: 1;
 }
@@ -91,7 +91,7 @@ header .monalisawrap {
 header .monalisawrap:after {
     margin-top: 80%;
     font-size: 2em;
-    content: 'Mona Lisa';
+    content: '';
     white-space: nowrap;
     overflow: hidden;
     flex-grow:0;
