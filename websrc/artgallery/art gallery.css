@@ -10,10 +10,19 @@
 /*front page*/
 .frontpage-backg {
     min-height: 100%;
-    background: url("frontdoor.PNG");
+    background: url("frontdoors.PNG");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+.exit-btn {
+    margin-top: 1%;
+    margin-left: 2%;
+    width: 10%;
+    height: 15%;
+}
+.exit-btn:hover {
+    animation: shake 0.6s infinite;
 }
 .doordiv {
     display: flex;
@@ -25,12 +34,12 @@
     margin-top: 17%;
     margin-right: auto;
     width: auto;
-    height: 70%;
+    height: 68%;
     position: absolute;
     opacity: 1;
 }
 .door:hover {
-    animation: shake 0.5s infinite;
+    animation: shake 0.6s infinite;
 }
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -49,7 +58,7 @@
 /*instructions page*/
 .instructions-backg {
     min-height: 100%;
-    background: url("painter.PNG");
+    background: url("painters.PNG");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -57,7 +66,7 @@
 
 .instructions-text {
     margin-left: 35%;
-    margin-top: 11%;
+    margin-top: 9%;
     font-family: 'Charmonman', cursive;
     font-size: 1.75vw;
 }

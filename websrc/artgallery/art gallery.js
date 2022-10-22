@@ -6,7 +6,11 @@
     var money = 10000;
     var buyA = 10000;
 
-    function BuyA() {
+    function BuyA(isUserlogin) {
+        if(!isUserlogin){
+            alert("Want to purchase this piece? \nRegister, login and have fun!");
+            return;
+        }
         if (money >= buyA) {
             // deduct the money
             // money - buyA;

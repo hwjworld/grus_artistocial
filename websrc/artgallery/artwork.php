@@ -4,15 +4,13 @@ require_once(__DIR__."/../../be/controller/artsyController.php");
 
 session_start();
 
+$_SESSION["loggedin"] = true;
+$_SESSION["id"] = 1;    
+
 $artsy = new Artsy();
 $l = $artsy->getLastArtwork();
 
-$artsy->getGalleryArtworks();
-
-$galleryArtworks = array();
-array_push($galleryArtworks, $l);
-array_push($galleryArtworks, $l);
-array_push($galleryArtworks, $l);
+$galleryArtworks = $artsy->getGalleryArtworks();
 
 $current_index = 0;
 if(isset($_GET["index"])){
@@ -27,6 +25,11 @@ if($current_index>count($galleryArtworks)){
 $previewIndex = $current_index-1<0?0:$current_index-1;
 $nextIndex = $current_index+1<count($galleryArtworks)?$current_index+1:count($galleryArtworks)-1;
 $lastArtwork = $galleryArtworks[$current_index];
+
+$isUserLogin = false;
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    $isUserLogin = true;
+}
 
 ?>
 
@@ -49,7 +52,7 @@ $lastArtwork = $galleryArtworks[$current_index];
     <div class="monalisawrap">
       <div href="monalisainfo.html" class="monalisaimg" target="_blank">
         <?php?>
-        <img onclick="location.href = 'artdescription.php';" src="<?php echo $lastArtwork->thumbnail?>" alt="Art Piece">
+        <img onclick="location.href = 'artdescription.php?index=<?php echo $current_index;?>';" src="<?php echo $lastArtwork->thumbnail?>" alt="Art Piece">
         <?php ?>
       </div>
     </div>
@@ -73,12 +76,11 @@ $lastArtwork = $galleryArtworks[$current_index];
 <div class = "purchase">
     <p id="money"></p>
     <p id="cost"></p>
+    <input class = "purchasebutton" id="Purchase" type="button" value="Purchase" onclick="BuyA(<?php echo $isUserLogin?>);"/>
+
     <script>
     // update the values
     document.getElementById("money").innerHTML = "MONEY: $" + money;
     document.getElementById("cost").innerHTML = "COST: $" + buyA;
-
-    //localStorage.setItem("money", "MONEY: $")
     </script>
-    <input class = "purchasebutton" id="Purchase" type="button" value="Purchase" onclick="BuyA();"/>
 </div>

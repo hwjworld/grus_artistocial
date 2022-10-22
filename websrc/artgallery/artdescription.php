@@ -5,10 +5,21 @@ require_once(__DIR__."/../../be/controller/artsyController.php");
 session_start();
 
 $artsy = new Artsy();
-$lastArtwork = $artsy->getLastArtwork();
-$category = $lastArtwork->title;
-$category = $lastArtwork->category;
-$category = $lastArtwork->medium;
+$galleryArtworks = $artsy->getGalleryArtworks();
+
+//$category = $lastArtwork->title;
+//$category = $lastArtwork->category;
+//$category = $lastArtwork->medium;
+
+$current_index = 0;
+if(isset($_GET["index"])){
+    $current_index = $_GET["index"];
+}
+if($current_index<0 || $current_index>count($galleryArtworks)){
+    echo "<p> error index </p>";
+    die;
+}
+$current_artwork = $galleryArtworks[$current_index];
 ?>
 
 <!DOCTYPE html>
@@ -27,13 +38,13 @@ $category = $lastArtwork->medium;
 <!--navbar-->
 <div class="infopagehead">
     <?php?>
-    <h1><?php echo $lastArtwork->title; ?></h1>
+    <h1><?php echo $current_artwork->title; ?></h1>
     <?php ?>
     <nav class="navbar">
         <a href="fronpage.html" target="">
             <img class="homeiconinfo" src="homeicon.png"/>
         </a>
-        <a href="artwork.php" target="">
+        <a href="artwork.php?index=<?php echo $current_index;?>" target="_self" target="">
             <img class="arrowbinfo" src="arrow.png"/>
         </a>
     </nav>
@@ -41,19 +52,19 @@ $category = $lastArtwork->medium;
 
 <!--image-->
 <div class="monalisainfoimg">
-    <img src="<?php echo $lastArtwork->thumbnail?>" alt="Art Piece">
+    <img src="<?php echo $current_artwork->thumbnail?>" alt="Art Piece">
 </div>
 
 <!--description text-->
 <div class="mldescription">
     <h3>CATEGORY</h3>
-    <p><?php echo $lastArtwork->category; ?></p><br>
+    <p><?php echo $current_artwork->category; ?></p><br>
     <h3>MEDIUM</h3>
-    <p><?php echo $lastArtwork->medium; ?></p><br>
+    <p><?php echo $current_artwork->medium; ?></p><br>
     <h3>COLLECTING INSTITUTION</h3>
-    <p><?php echo $lastArtwork->collecting_institution; ?></p>
+    <p><?php echo $current_artwork->collecting_institution; ?></p>
 </div>
 
 <div> 
-    <img src="backimg.jpg" class="backimg">
+    <img src="backimg.jpg" class="backimg"> 
 </div>
