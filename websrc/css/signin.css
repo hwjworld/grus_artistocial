@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+.yellow-background {
+    width: 100%;
+    height: 666px;
+    background: rgba(244, 206, 9, 1);
+    opacity: 1;
+    position: absolute;
+    top: 217px;
+    left: 0px;
+
+}
+
+.blank-a {
+    width: 430px;
+    height: 59px;
+    background: rgba(255, 255, 255, 1);
+    opacity: 1;
+    position: absolute;
+    top: 264px;
+    left: 522px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.blank-b {
+    width: 430px;
+    height: 59px;
+    background: rgba(255, 255, 255, 1);
+    opacity: 1;
+    position: absolute;
+    top: 342px;
+    left: 522px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.top-signin {
+    width: 403px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 140px;
+    left: 522px;
+    font-family: 'IBM Plex Sans', sans-serif;;
+    font-weight: Regular;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+}
+
+.email-style {
+    width: 337px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 274px;
+    left: 234px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: Regular;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+}
+
+.password-style {
+    width: 160px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 352px;
+    left: 323px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: Regular;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+}
+
+.button-style {
+    width: 149px;
+    height: 59px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 437px;
+    left: 660px;
+    overflow: hidden;
+}
+
+.continue-button {
+    width: 146px;
+    height: 59px;
+    background: rgba(48, 69, 255, 1);
+    opacity: 1;
+    position: absolute;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.continue-style {
+    width: 146px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 14px;
+    left: 1px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: center;
+}
+
+.google-style {
+    width: 292px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 755px;
+    left: 584px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: center;
+}
+
+.Facebook-button {
+    width: 416px;
+    height: 59px;
+    background: rgba(48, 69, 255, 1);
+    opacity: 1;
+    position: absolute;
+    top: 675px;
+    left: 529px;
+    border-radius: 60px;
+    overflow: hidden;
+}
+
+.new-button {
+    width: 416px;
+    height: 59px;
+    background: rgba(255, 48, 48, 1);
+    opacity: 1;
+    position: absolute;
+    top: 532px;
+    left: 531px;
+    border-radius: 60px;
+    overflow: hidden;
+}
+
+.Facebook-style {
+    width: 292px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 687px;
+    left: 593px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: center;
+}
+
+.new-style {
+    width: 292px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 544px;
+    left: 593px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: center;
+}
+
+.or-style {
+    width: 505px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 600px;
+    left: 486px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: Regular;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+}
+
+.google-button {
+    width: 416px;
+    height: 59px;
+    background: rgba(18, 158, 6, 1);
+    opacity: 1;
+    position: absolute;
+    top: 743px;
+    left: 531px;
+    border-radius: 60px;
+    overflow: hidden;
+}
+
+.logo-image{
+    position:absolute;
+    left: 1200px;
+}

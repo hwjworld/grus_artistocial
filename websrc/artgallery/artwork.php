@@ -52,7 +52,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <div class="monalisawrap">
       <div href="monalisainfo.html" class="monalisaimg" target="_blank">
         <?php?>
-        <img onclick="location.href = 'artdescription.php?index=<?php echo $current_index;?>';" src="<?php echo $lastArtwork->thumbnail?>" alt="Art Piece">
+        <img onclick="location.href = 'artdescription.php';" src="<?php echo $lastArtwork->thumbnail?>" alt="Art Piece">
         <?php ?>
       </div>
     </div>
