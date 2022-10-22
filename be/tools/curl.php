@@ -1,11 +1,16 @@
 <?php
 
 function cGet($url){
-
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_URL, $url);
     $content = curl_exec($ch);
+    if (curl_errno($ch)) { 
+        print curl_error($ch); 
+    } 
+    print($content);
     curl_close($ch);
     return $content;
 }
