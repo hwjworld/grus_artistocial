@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
 * {
         box-sizing: border-box;
 }
@@ -78,7 +80,7 @@ body {
     position: absolute;
     top: 561px;
     left: 362px;
-    font-family: JejuGothic;
+    font-family: 'IBM Plex Sans', sans-serif;;
     font-weight: Regular;
     font-size: 30px;
     text-align: center;
@@ -90,7 +92,7 @@ body {
     position: absolute;
     top: 483px;
     left: 213px;
-    font-family: JejuGothic;
+    font-family: 'IBM Plex Sans', sans-serif;;
     font-weight: Regular;
     font-size: 30px;
     opacity: 1;
@@ -133,7 +135,7 @@ body {
     position: absolute;
     top: 400px;
     left: 300px;
-    font-family: JejuGothic;
+    font-family: 'IBM Plex Sans', sans-serif;;
     font-weight: Regular;
     font-size: 30px;
     opacity: 1;
@@ -146,7 +148,7 @@ body {
     position: absolute;
     top: 321px;
     left: 300px;
-    font-family: JejuGothic;
+    font-family: 'IBM Plex Sans', sans-serif;;
     font-weight: Regular;
     font-size: 30px;
     opacity: 1;
@@ -174,7 +176,7 @@ body {
     position: absolute;
     top: 241px;
     left: 175px;
-    font-family: JejuGothic;
+    font-family: 'IBM Plex Sans', sans-serif;;
     font-weight: Regular;
     font-size: 30px;
     opacity: 1;
@@ -195,7 +197,7 @@ body {
     position: absolute;
     top: 57px;
     left: 522px;
-    font-family: JejuGothic;
+    font-family: 'IBM Plex Sans', sans-serif;;
     font-weight: Regular;
     font-size: 45px;
     opacity: 1;
@@ -208,7 +210,7 @@ body {
     position: absolute;
     top: 643px;
     left: 806px;
-    font-family: JejuGothic;
+    font-family: 'IBM Plex Sans', sans-serif;;
     font-weight: Regular;
     font-size: 24px;
     opacity: 1;
@@ -420,7 +422,7 @@ body {
     position: absolute;
     top: 23px;
     left: 10px;
-    font-family: JejuGothic;
+    font-family: 'IBM Plex Sans', sans-serif;;
     font-weight: Regular;
     font-size: 24px;
     opacity: 1;
@@ -451,7 +453,7 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    font-family: JejuGothic;
+    font-family: 'IBM Plex Sans', sans-serif;;
     font-weight: Regular;
     font-size: 36px;
     opacity: 1;
@@ -480,7 +482,7 @@ body {
     position: absolute;
     top: 25px;
     left: 1180px;
-    font-family: JejuGothic;
+    font-family: 'IBM Plex Sans', sans-serif;;
     font-weight: Regular;
     font-size: 36px;
     opacity: 1;
@@ -689,7 +691,7 @@ body {
     position: absolute;
     top: 30px;
     left: 30px;
-    font-family: JejuGothic;
+    font-family: 'IBM Plex Sans', sans-serif;;
     font-weight: Regular;
     font-size: 36px;
     opacity: 1;
