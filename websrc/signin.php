@@ -11,7 +11,6 @@ $hotevents = $artistocial->getHotEvent();
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=JejuGothic&display=swap" rel="stylesheet" />
     <title>DECO1800/7180 Artistocial SignIn</title>
     <link rel="stylesheet" href="css/initialize.css">
     <link rel="stylesheet" href="css/publicStyle.css">
