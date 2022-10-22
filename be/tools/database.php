@@ -57,7 +57,7 @@ class Db{
             error_log("model insert model NULL data");
             return null;
         }
-        return $this->insertPrepared($sql, $type, ...$modelData);
+        return $this->executePrepared($sql, $type, ...$modelData);
     }
 
     /**
@@ -66,7 +66,7 @@ class Db{
      * s: string
      * b: blob
      */
-    public function insertPrepared($sql, $types, $data){
+    public function executePrepared($sql, $types, $data){
         
         foreach($data as $k=>$v){
             if(is_array($v)){ // 可能是对象是数组, 不支持二级数组
@@ -82,7 +82,7 @@ class Db{
         $result = $stmt->execute();
         $stmt->close();
         self::closeConn($conn);
-        echo "New records created successfully";
+        // echo "New records created successfully";
         return $result;
     }
 }

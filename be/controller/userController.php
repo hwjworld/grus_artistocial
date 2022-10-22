@@ -49,9 +49,9 @@ class User{
             $user->picurl
         ]);
         if ($result) {
-            echo "insert user from db successful";
+            echo "insert user to db successful";
         } else {
-            echo "insert user from db fail";
+            echo "insert user to db fail";
         }
         return $result;
     }
@@ -113,6 +113,21 @@ class User{
             array_push($eventAttended, dataToModelEvent($v));
         }
         return $eventAttended;
+    }
+
+    /**
+     * afet user click purchase, set user preference
+     */
+    public function setArttypePreference($userid, $artwokrId){
+        $result = $this->db->preparedStatment(getSetUserArttypeSql(), 'ii', [
+            $artwokrId, $userid
+        ]);
+        if ($result) {
+            echo "set user artype successful";
+        } else {
+            echo "set user artype fail";
+        }
+        return $result;
     }
 }
 ?>

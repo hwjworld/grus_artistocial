@@ -46,6 +46,10 @@ function getDeleteUserEventSql($userid, $eventid){
     return "delete from userevent where userid=".$userid." and eventid=".$eventid;
 }
 
+function getSetUserArttypeSql(){
+    return "update user set arttype=(select category from artwork where id=?) where id=?";
+}
+
 function dataToModelUser($v){
     $user = new BusUser();
     $user->id = $v['id'];
@@ -59,5 +63,6 @@ function dataToModelUser($v){
     $user->createtime = new DateTime($v['createtime']);
     return $user;
 }
+
 
 ?>
