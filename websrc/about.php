@@ -17,7 +17,7 @@
 
         <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.html"></iframe>
 
-        <div style="padding-left: 4em" class="library-title background-color-000000 ">Something About Artistocial...</div>
+        <div style="padding-left: 4em" class="library-title background-color-000000 ">SOMETHING ABOUT ARTISTOCIAL...</div>
 
 
             <div class="index-top-info">
