@@ -48,7 +48,7 @@ $artsy->getGalleryArtworks();
 <header>
     <div class="monalisawrap">
       <div href="monalisainfo.html" class="monalisaimg" target="_blank">
-        <?php?>
+        <?php ?>
         <img onclick="location.href = 'artdescription.php';" src="<?php echo $lastArtwork->thumbnail?>" alt="Art Piece">
         <?php ?>
       </div>
