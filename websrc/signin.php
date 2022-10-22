@@ -15,6 +15,9 @@ $hotevents = $artistocial->getHotEvent();
     <link rel="stylesheet" href="css/initialize.css">
     <link rel="stylesheet" href="css/publicStyle.css">
     <link rel="stylesheet" href="css/signin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
