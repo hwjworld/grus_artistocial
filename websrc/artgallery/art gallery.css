@@ -8,90 +8,58 @@
 }
 
 /*front page*/
-.frontdoor-backg {
+.frontpage-backg {
+    min-height: 100%;
     background: url("frontdoor.PNG");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.doordiv {
+    display: flex;
 }
 .door {
-    position: absolute; top: 45%; left: 38%;
-    height: 395px;
-    width: 285px
+    justify-content: center;
+    display: block;
+    margin-left: 37%;
+    margin-top: 17%;
+    margin-right: auto;
+    width: auto;
+    height: 67%;
+    position: absolute;
+    opacity: 1;
 }
+.door:hover {
+    animation: shake 0.5s infinite;
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
 
 /*instructions page*/
 .instructions-backg {
+    min-height: 100%;
     background: url("painter.PNG");
-    background-size: cover; padding: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
-
-/*@-webkit-keyframes typing { from { width: 0; } }
-@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
-
-.instruction-text1 { 
-    position: absolute; top: 18%; left: 37%;
-    font-family: 'Charmonman', cursive;
-    font-size: 1.4em;
-	border-right: .1em solid black; 
-	width: 500px;
-	margin: 2em 1em;
-	white-space: nowrap;
-	overflow: hidden;
-	-webkit-animation: typing 3s steps(21, end),
-	           blink-caret .5s step-end infinite alternate;
-}
-.instruction-text2 { 
-    position: absolute; top: 18%; left: 37%;
-    font-family: 'Charmonman', cursive;
-    font-size: 1.4em;
-	border-right: .1em solid black; 
-	width: 500px;
-	margin: 2em 1em;
-	white-space: nowrap;
-	overflow: hidden;
-	-webkit-animation: typing 3s steps(21, end),
-	           blink-caret .5s step-end infinite alternate;
-}
-.instruction-text3 { 
-    position: absolute; top: 18%; left: 37%;
-    font-family: 'Charmonman', cursive;
-    font-size: 1.4em;
-	border-right: .1em solid black; 
-	width: 500px;
-	margin: 2em 1em;
-	white-space: nowrap;
-	overflow: hidden;
-	-webkit-animation: typing 3s steps(21, end),
-	           blink-caret .5s step-end infinite alternate;
-}
-.instruction-text4 { 
-    position: absolute; top: 18%; left: 37%;
-    font-family: 'Charmonman', cursive;
-    font-size: 1.4em;
-	border-right: .1em solid black; 
-	width: 500px;
-	margin: 2em 1em;
-	white-space: nowrap;
-	overflow: hidden;
-	-webkit-animation: typing 3s steps(21, end),
-	           blink-caret .5s step-end infinite alternate;
-}
-.instruction-text5 { 
-    position: absolute; top: 18%; left: 37%;
-    font-family: 'Charmonman', cursive;
-    font-size: 1.4em;
-	border-right: .1em solid black; 
-	width: 500px;
-	margin: 2em 1em;
-	white-space: nowrap;
-	overflow: hidden;
-	-webkit-animation: typing 3s steps(21, end),
-	           blink-caret .5s step-end infinite alternate;
-}*/
 .instructions-text {
-    position: absolute; top: 18%; left: 37%;
+    margin-left: 35%;
+    margin-top: 11%;
     font-family: 'Charmonman', cursive;
-    font-size: 1.4em;
+    font-size: 1.75vw;
 }
 
 .arrowfins {
@@ -124,8 +92,8 @@ header .monalisawrap:after {
     margin-top: 80%;
     font-size: 2em;
     content: 'Mona Lisa';
-    white-space:nowrap;
-    overflow:hidden;
+    white-space: nowrap;
+    overflow: hidden;
     flex-grow:0;
     max-width:0px;
     transition: 1s cubic-bezier(.4,0,.2,1);

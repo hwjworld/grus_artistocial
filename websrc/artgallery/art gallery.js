@@ -1,3 +1,7 @@
+// set an index for each artwork page and go to a different indexed artwork each time
+
+
+
 //Buy button that lets user buy a piece of artwork
     var money = 10000;
     var buyA = 10000;
