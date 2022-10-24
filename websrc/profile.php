@@ -1,5 +1,7 @@
 <?php
-// require_once("../be/controller/userController.php");
+require_once("../be/controller/userController.php");
+require_once("../be/controller/artistocialController.php");
+require_once("../be/controller/artsyController.php");
 session_start();
 // if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 //     echo "logined";
@@ -10,11 +12,12 @@ session_start();
 //     header("location: login.html");
 //     exit;
 // }
-require_once("../be/controller/artistocialController.php");
 
 
 $artistocial = new Artistocial();
 $hotevents = $artistocial->getHotEvent();
+$user = new User();
+$userportofolios = $user->getUserPortofolio(1);
 
 ?>
 <!DOCTYPE html>
@@ -68,30 +71,14 @@ $hotevents = $artistocial->getHotEvent();
     <div id="portfolio-info" class="this-tab-item">
         <div class="spacer-bar background-color-f4Cf0a"></div>
         <div class="w-1240 portfolio-dox">
+            <?php foreach($userportofolios as $k=>$v){ ?>
             <a class="item-portfolio">
                 <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="images/profile-img2.png"/>
+                    <img class="w-h-100" src="<?php echo $v->thumbnail; ?>"/>
                 </div>
-                <span>Christmas Gift from Mary (12/30/2021)</span>
+                <span><?php echo $v->title.'('.$v->date.')'; ?></span>
             </a>
-            <a class="item-portfolio">
-                <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="images/profile-img2.png"/>
-                </div>
-                <span>Christmas Gift from Mary (12/30/2021)</span>
-            </a>
-            <a class="item-portfolio">
-                <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="images/profile-img2.png"/>
-                </div>
-                <span>Christmas Gift from Mary (12/30/2021)</span>
-            </a>
-            <a class="item-portfolio">
-                <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="images/profile-img2.png"/>
-                </div>
-                <span>Christmas Gift from Mary (12/30/2021)</span>
-            </a>
+            <?php }?>
         </div>
         <div class="w-1240 portfolio-dox">
             <a class="item-portfolio">

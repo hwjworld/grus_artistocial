@@ -56,9 +56,9 @@ class User{
         return $result;
     }
 
-    private function setPortofolioToUser($userid){
+    public function setPortofolioToUser($userid){
         //delete portofolio right now
-        $this->db->query(getDeletePortofolioPictures($userid));
+        // $this->db->query(getDeletePortofolioPictures($userid));
         //set new portfolio to user ,12 pictures
         $result = $this->db->preparedStatment(getInsertUserPortofolioPictures(), 'ii', [
             $userid, $userid

@@ -17,6 +17,7 @@ require_once(__DIR__."/controller/userController.php");
 // var_dump($artsy->getGalleryArtworks());
 
 $user = new User();
-$eventAttended = $user->getUserEventAttended(1);
-var_dump($eventAttended);
+$user->setPortofolioToUser(1);
+// $eventAttended = $user->getUserEventAttended(1);
+// var_dump($eventAttended);
 ?>
