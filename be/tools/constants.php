@@ -54,4 +54,13 @@ $arttypes = [
 ];
 
 $website_base_home_url = "/grus_artistocial/websrc/";
+
+$arttype_artcollectionarttype_match = [
+    'Architecture'=>["bronze"]
+];
+
+$arttype_eventarttype_match = [
+    'Architecture'=>["Art, Creative, Culture, Exhibitions, Free"]
+];
+
 ?>

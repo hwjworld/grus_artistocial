@@ -1,7 +1,9 @@
 <?php
 
 require_once(__DIR__ . "/../tools/database.php");
+require_once(__DIR__ . "/../tools/constants.php");
 require_once(__DIR__ . "/../dbmodel/db_bneart.php");
+require_once(__DIR__."/userController.php");
 
 class Artistocial
 {
@@ -192,10 +194,15 @@ class Artistocial
     }
 
     public function getRecommendEvent($userid){
+        global $arttype_eventarttype_match;
+        $user = new User();
+        $u = $user->getUserById($userid);
+        $u->arttype;
         
     }
 
     public function getRecommendArtCollection($userid){
+        global $arttype_eventarttype_match;
 
     }
 }

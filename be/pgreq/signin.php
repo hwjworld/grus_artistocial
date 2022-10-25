@@ -41,7 +41,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $user = new User();
         // $u = $user->getUserByValidEmailAndPwd($username, $password);
         $u = $user->getUserByEmail($username);
-        if(is_null($u) || password_verify($password, $u->password)){
+        if(is_null($u)){
+            echo "user doesn't exist";
+            return;
+        }
+        if(password_verify($password, $u->password)){
             echo "login successful";
             // Store data in session variables
             $_SESSION["loggedin"] = true;
