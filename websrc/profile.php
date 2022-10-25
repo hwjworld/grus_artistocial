@@ -91,7 +91,7 @@ $userportofolios = $user->getUserPortofolio($uid);
             <?php }}?>
         </div>
         <div class="w-1240 portfolio-dox">
-            <?php foreach($userportofolios as $k=>$v){ if($k>=8 && $k<13){ ?>
+            <?php foreach($userportofolios as $k=>$v){ if($k>=8 && $k<12){ ?>
             <a class="item-portfolio">
                 <div class="item-portfolio-img-d">
                     <img class="w-h-100" src="<?php echo $v->thumbnail; ?>"/>
