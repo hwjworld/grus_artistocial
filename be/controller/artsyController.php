@@ -142,11 +142,32 @@ class Artsy{
         $artwork_result = $this->db->query(getArtworkSql($artworkId));
         if(count($artwork_result)>0){
             $artwork = dataToModelArtwork($artwork_result[0]);
+            /*
             if(trim($artwork->artist_id)==''){
                 $this->fillArtistForArtowrk($artwork->resourceId);
                 echo $artwork->resourceId . "empty artist filled";
                 $artwork = $this->getArtwork($artworkId); // reretrive artwork, because updated artist_id
             }
+            */
+            return $artwork;
+        }
+        return null;
+    }
+
+    /**
+     * get artwork by artwork_id
+     */
+    public function getArtworkById($id){
+        $artwork_result = $this->db->query(getArtworkByIdSql($id));
+        if(count($artwork_result)>0){
+            $artwork = dataToModelArtwork($artwork_result[0]);
+            /*
+            if(trim($artwork->artist_id)==''){
+                $this->fillArtistForArtowrk($artwork->resourceId);
+                echo $artwork->resourceId . "empty artist filled";
+                $artwork = $this->getArtworkById($id); // reretrive artwork, because updated artist_id
+            }
+            */
             return $artwork;
         }
         return null;

@@ -6,10 +6,23 @@
 //    var money = 10000;
 //    var buyA = 10000;
 
-    function BuyA(isUserlogin) {
-        if(!isUserlogin){
-            alert("Want to purchase this piece? \nRegister, login and have fun!");
+    function BuyA(isUserlogin,artworkId, arttype) {
+        if(isUserlogin=='0'){
+            alert("Want to make as your preference? \nRegister, login and have fun!");
             return;
+        }else{
+            $.ajax({
+                type: "GET",
+                url: '../../be/pgreq/user_event_action.php?purchaseArtwork=true&artworkId='+artworkId,
+                success: function(data)
+                {
+                    if(data.indexOf("successful")>=0){
+                        alert("Thanks for selecting a preference! \n\n [" + arttype + "] is your new preference now. \n\n ENJOY your recommended Art Collection and Events \n\n Don't forget ENJOY your new PORTOFOLIO! \n\n^_^");
+                    }else{
+                        alert(data); // show response from the php script. 
+                    }
+                }
+            });
         }
         //if (money >= buyA) {
             // deduct the money
@@ -24,7 +37,7 @@
             //document.getElementById("money").innerHTML = "MONEY: $" + money;
             //document.getElementById("cost").innerHTML = "COST: $" + buyA;
 
-            window.alert("Thanks for selecting a preference!")
+            // window.alert("Thanks for selecting a preference!")
         }
     //    else {
     //       window.alert("Not Enough Money")

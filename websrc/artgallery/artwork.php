@@ -1,15 +1,17 @@
 
 <?php
 require_once(__DIR__."/../../be/controller/artsyController.php");
-
+require_once(__DIR__."/../../be/controller/userController.php");
 session_start();
 
-$_SESSION["loggedin"] = true;
-$_SESSION["id"] = 1;    
-
+$isLogin = (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)?true:false;
+$uid = 0;
+if(!$isLogin){
+    $uid = $_SESSION['id'];
+    $user = new User();
+    $u = $user->getUserById($uid);
+}
 $artsy = new Artsy();
-$l = $artsy->getLastArtwork();
-
 $galleryArtworks = $artsy->getGalleryArtworks();
 
 $current_index = 0;
@@ -24,11 +26,12 @@ if($current_index>count($galleryArtworks)){
 }
 $previewIndex = $current_index-1<0?0:$current_index-1;
 $nextIndex = $current_index+1<count($galleryArtworks)?$current_index+1:count($galleryArtworks)-1;
-$lastArtwork = $galleryArtworks[$current_index];
+$currentArtwork = $galleryArtworks[$current_index];
+// var_dump($currentArtwork);
 
-$isUserLogin = false;
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    $isUserLogin = true;
+$isUserLogin = 0;
+if($isLogin){
+    $isUserLogin = 1;
 }
 
 ?>
@@ -44,6 +47,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 </head>
 
 
@@ -51,9 +55,9 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 <section>
     <div class="artworkwrap">
       <div href="artworkinfo.html" class="artworkimg" target="_blank">
-        <?php?>
-        <img onclick="location.href = 'artdescription.php';" src="<?php echo $lastArtwork->thumbnail?>" alt="Art Piece">
-        <?php ?>
+
+        <img onclick="location.href='artdescription.php?artworkid=<?php echo $currentArtwork->id;?>&index=<?php echo $current_index;?>';" src="<?php echo $currentArtwork->thumbnail?>" alt="Art Piece">
+
       </div>
     </div>
 </section>
@@ -73,9 +77,12 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 <!--buy button-->
 <div class = "preference">
-    <p id="money"></p>
-    <p id="cost"></p>
-    <input class = "preferencebutton" id="Purchase" type="button" value="Make Preference!" onclick="BuyA(<?php echo $isUserLogin?>);"/>
+    <p id="cost">Title: <?php echo $currentArtwork->title; ?> </p>
+    <p id="cost">Date: <?php echo $currentArtwork->date; ?> </p>
+    <p id="cost">Collection Instituion: <?php echo $currentArtwork->collecting_institution; ?> </p>
+    <p id="money">ArtType: <?php echo $currentArtwork->category; ?></p>
+    <br/>
+    <input class = "preferencebutton" id="Purchase" type="button" value="Make Preference!" onclick="BuyA('<?php echo $isUserLogin;?>','<?php echo $currentArtwork->id;?>','<?php echo $currentArtwork->category; ?>');"/>
 
     <script>
     // update the values

@@ -28,6 +28,10 @@ function getArtworkSql($artworkId){
     return "select * from artwork where resourceId='".$artworkId."'";
 }
 
+function getArtworkByIdSql($id){
+    return "select * from artwork where id='".$id."'";
+}
+
 function getLastArtworkSql(){
     return "select * from artwork order by id desc limit 1";
 }

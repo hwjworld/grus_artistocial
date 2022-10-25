@@ -60,7 +60,7 @@ class User{
 
     public function setPortofolioToUser($userid){
         //delete portofolio right now
-        // $this->db->query(getDeletePortofolioPictures($userid));
+        $this->db->query(getDeletePortofolioPictures($userid));
         //set new portfolio to user ,12 pictures
         $result = $this->db->preparedStatment(getInsertUserPortofolioPictures(), 'ii', [
             $userid, $userid
@@ -130,6 +130,7 @@ class User{
         $result = $this->db->preparedStatment(getSetUserArttypeSql(), 'ii', [
             $artwokrId, $userid
         ]);
+        $this->setPortofolioToUser($userid);
         if ($result) {
             echo "set user artype successful";
         } else {

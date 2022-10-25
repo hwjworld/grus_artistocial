@@ -5,7 +5,7 @@ require_once(__DIR__."/../../be/controller/artsyController.php");
 session_start();
 
 $artsy = new Artsy();
-$galleryArtworks = $artsy->getGalleryArtworks();
+// $galleryArtworks = $artsy->getGalleryArtworks();
 
 //$category = $lastArtwork->title;
 //$category = $lastArtwork->category;
@@ -15,11 +15,14 @@ $current_index = 0;
 if(isset($_GET["index"])){
     $current_index = $_GET["index"];
 }
-if($current_index<0 || $current_index>count($galleryArtworks)){
-    echo "<p> error index </p>";
-    die;
+// if($current_index<0 || $current_index>count($galleryArtworks)){
+//     echo "<p> error index </p>";
+//     die;
+// }
+if(isset($_GET["artworkid"])){
+    $artworkid = $_GET["artworkid"];
 }
-$current_artwork = $galleryArtworks[$current_index];
+$current_artwork = $artsy->getArtworkById($artworkid);
 ?>
 
 <!DOCTYPE html>
