@@ -1,3 +1,30 @@
+<?php
+require_once("../be/controller/artistocialController.php");
+// require_once(__DIR__ . "/../tools/curl.php");
+// require_once(__DIR__ . "/../tools/constants.php");
+// require_once(__DIR__ . "/../controller/artistocialController.php");
+// require_once(__DIR__ . "/../model/artistocialLibrary.php");
+
+session_start();
+
+$artistocial = new Artistocial();   
+$hotevents = $artistocial->getHotEvent();
+// $library = $artistocial->getLibrary($model->resourceId);
+// $evetlocations = $artistocial->getEventLocation();
+$eventlocation = [$artistocial->getEventLocation(1),
+    $artistocial->getEventLocation(2),
+    $artistocial->getEventLocation(3),
+    $artistocial->getEventLocation(4),
+    $artistocial->getEventLocation(5)];
+
+
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +37,7 @@
 <body>
 <div class="content-info">
 
-    <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.html"></iframe>
+    <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.php"></iframe>
 
     <div style="padding-left: 4em" class="library-title background-color-139E06">LIBRARIES IN BRISBANE</div>
 

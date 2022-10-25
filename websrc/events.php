@@ -32,7 +32,7 @@ $eventlocation = [$artistocial->getEventLocation(1),
 <body>
 <div class="content-info">
 
-    <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.html"></iframe>
+    <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.php"></iframe>
     <div style="padding-left: 4em" class="library-title background-color-FF3131">ART EVENTS IN BRISBANE </div>
     <div class="events-content events-tab-info">
         <!-- <div class="sort-text">sort by popular</div> -->
@@ -233,7 +233,7 @@ $eventlocation = [$artistocial->getEventLocation(1),
 
 
  
-    <iframe frameborder="no" scrolling="no" class="w-100-iframe footer-iframe" src="layout/footer.html?color=FF3131"></iframe>
+    <iframe frameborder="no" scrolling="no" class="w-100-iframe footer-iframe" src="layout/footer.php?color=FF3131"></iframe>
 </div>
 </body>
 </html>

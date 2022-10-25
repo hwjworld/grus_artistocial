@@ -36,7 +36,7 @@ $userportofolios = $user->getUserPortofolio(1);
 <body>
 <div class="content-info">
 
-    <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.html"></iframe>
+    <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.php"></iframe>
 
 
     <div class="profile-top background-color-3145ff">
@@ -273,7 +273,7 @@ $userportofolios = $user->getUserPortofolio(1);
     </div>
 
     
-    <iframe frameborder="no" scrolling="no" class="w-100-iframe footer-iframe" src="layout/footer.html?color=F4CF0A"></iframe>
+    <iframe frameborder="no" scrolling="no" class="w-100-iframe footer-iframe" src="layout/footer.php?color=ff3030"></iframe>
 </div>
 </body>
 </html>
