@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!is_null($u)) {
         return "user already exist";
     }
-    global $profilepicurls;
+    global $profilepicurls, $arttypes;
 
     $name = $_POST["name"];
     $occupation = $_POST["occupation"];
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $u->name = trim($name);
     $u->occupation = trim($occupation);
     $u->bio = trim($bio);
-    $u->arttype = 'Painting';
+    $u->arttype = $arttypes[rand(0,13)];
     $u->picurl = $profilepicurls[rand(0, 7)];
     $result = $user->saveUser($u);
 

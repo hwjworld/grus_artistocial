@@ -38,5 +38,20 @@ $profilepicurls = [
     "/grus_artistocial/websrc/statics/profilepics/07.jpg"
 ];
 
+$arttypes = [
+    'Architecture',
+    'Books and Portfolios',
+    'Design/Decorative Art',
+    'Drawing, Collage or other Work on Paper',
+    'Mixed Media',
+    'Other',
+    'Painting',
+    'Photography',
+    'Posters',
+    'Print',
+    'Sculpture',
+    'Textile Arts'
+];
+
 $website_base_home_url = "/grus_artistocial/websrc/";
 ?>
