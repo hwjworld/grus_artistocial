@@ -144,11 +144,8 @@
     opacity: 1;
     position: absolute;
     top: 21px;
-    left: 1060px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+    left: 1150px;
+    border-radius: 12px;
     overflow: hidden;
 }
 
