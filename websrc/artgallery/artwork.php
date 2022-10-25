@@ -48,16 +48,15 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 
 <!--painting-->
-<header>
-    <div class="monalisawrap">
-      <div href="monalisainfo.html" class="monalisaimg" target="_blank">
+<section>
+    <div class="artworkwrap">
+      <div href="artworkinfo.html" class="artworkimg" target="_blank">
         <?php?>
         <img onclick="location.href = 'artdescription.php';" src="<?php echo $lastArtwork->thumbnail?>" alt="Art Piece">
         <?php ?>
       </div>
     </div>
-</header>
-
+</section>
 
 <!--previous and next button-->
 <a href="fronpage.html" target="_self">
@@ -73,14 +72,14 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 </a>
 
 <!--buy button-->
-<div class = "purchase">
+<div class = "preference">
     <p id="money"></p>
     <p id="cost"></p>
-    <input class = "purchasebutton" id="Purchase" type="button" value="Purchase" onclick="BuyA(<?php echo $isUserLogin?>);"/>
+    <input class = "preferencebutton" id="Purchase" type="button" value="Make Preference!" onclick="BuyA(<?php echo $isUserLogin?>);"/>
 
     <script>
     // update the values
-    document.getElementById("money").innerHTML = "MONEY: $" + money;
-    document.getElementById("cost").innerHTML = "COST: $" + buyA;
+    //document.getElementById("money").innerHTML = "MONEY: $" + money;
+    //document.getElementById("cost").innerHTML = "COST: $" + buyA;
     </script>
 </div>
