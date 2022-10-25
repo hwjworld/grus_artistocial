@@ -31,7 +31,7 @@ $artcollections = [$artistocial->getArtCollection(1),
 <body>
     <div class="content-info">
 
-        <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.html"></iframe>
+        <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.php"></iframe>
 
         <div class="index-top-d display-flex-center">
             <div class="index-top-info">
