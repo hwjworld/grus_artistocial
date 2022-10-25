@@ -1,10 +1,9 @@
 <?php
-require_once("../be/controller/artistocialController.php");
-
 session_start();
-
-$artistocial = new Artistocial();
-$hotevents = $artistocial->getHotEvent();
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: index.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,23 +26,24 @@ $hotevents = $artistocial->getHotEvent();
         <div class="logo-image">
             <img src="images/artistocial.png" width="230" height="100">
         </div>
+        <form action="../be/pgreq/signin.php">
         <div class="yellow-background"></div>
         <input class="blank-a" type="email" name="email" required=""/>
-        <input class="blank-b" type="email" name="email" required=""/>
-        <span class="top-signin">SIGN IN</span>
-        
+        <input class="blank-b" type="password" name="password" required=""/>
+        <span class="top-signin"><input type="submit" value="SIGN IN" /></span>
         <span class="email-style">Email Address:</span>
         <span class="password-style">Password:</span>
         <div class="button-style">
             <div class="continue-button"></div>
-            <span class="continue-style">Continue</span>
+            <span class="continue-style">Sign in</span>
         </div>
+        </form>
         <div class="google-button"></div>
         <span class="google-style">Continue with Google</span>
         <div class="Facebook-button"></div>
         <div class="new-button"></div>
         <span class="Facebook-style">Continue with Facebook</span>
-        <span class="new-style">New User? Sign Up!</span>
+        <span class="new-style"><a href="signup.php">New User? Sign Up!</a></span>
         <span class="or-style">------------------Or------------------</span>
     </div>
    

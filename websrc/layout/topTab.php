@@ -1,3 +1,8 @@
+<?php
+session_start();
+$isLogin = (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)?true:false;
+
+?>
 <link rel="stylesheet" href="../css/initialize.css">
 <link rel="stylesheet" href="../css/publicStyle.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -13,7 +18,11 @@
         <a class="about top-tab-item display-flex-center" onclick="top.location.href='../about.php'">ABOUT</a>
     </div>
     <div class="top-right-info display-flex-center">
-        <a onclick="top.location.href='../login.html'" class="loginBut">SIGN IN/ UP</a>
+        <?php if ($isLogin){?>
+            <a onclick="top.location.href='../be/pgreq/logout.php'" class="loginBut">Sign out</a>
+        <?php } else {?>
+            <a onclick="top.location.href='../signin.php'" class="loginBut">SIGN IN/UP</a>
+        <?php }?>
     </div>
 </div>
 
