@@ -12,7 +12,7 @@
         <a class="events top-tab-item display-flex-center" onclick="top.location.href='../events.php'">EVENTS</a>
         <a class="about top-tab-item display-flex-center" onclick="top.location.href='../about.php'">ABOUT</a>
     </div>
-    <div class="top-right-sigin"><span class="top-right-signin-a">THIS IS THE SIGN UP PAGE</span></div>
+
 </div>
 
 <script>

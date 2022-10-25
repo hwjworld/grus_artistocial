@@ -23,7 +23,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 <body>
     <div class="content-info">
         
-        <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/signinTop.php?color=000000"></iframe>
+        <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.php?color=000000"></iframe>
     
         <div class="logo-image">
             <img src="images/artistocial.png" width="230" height="100">
@@ -75,7 +75,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     </script>
 </body>
 
-
+<iframe frameborder="no" scrolling="no" class="w-100-iframe-signin footer-iframe" src="layout/footer.php?color=F4CF0A"></iframe>
 
 </html>
 

@@ -20,4 +20,19 @@ let getRequest = function () {
         }
     }
     return theRequest;
+
+}
+
+let getEvent = function () {
+
+    let url = Event.search;
+    let theRequest = [];
+    if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        let strs = str.split("&");
+        for (let i = 0; i < strs.length; i++) {
+            theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+        }
+    }
+    return theRequest;
 }

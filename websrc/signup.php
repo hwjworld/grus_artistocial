@@ -54,7 +54,7 @@
 
     <div class="content-info">
         
-        <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/signupTop.php?color=000000"></iframe>
+        <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.php?color=000000"></iframe>
     
         <div class="logo-image">
             <img src="images/artistocial.png" width="230" height="100">
@@ -113,7 +113,7 @@
                 {
                     if(data.indexOf("Signup successful")>=0){
                         alert("Signup successful");
-                        top.location.href="loginComplete.html";
+                        top.location.href="loginComplete.php";
                     }else{
                         alert(data); // show response from the php script. 
                     }
@@ -124,5 +124,5 @@
 
     </script>
 </body>
-
+<iframe frameborder="no" scrolling="no" class="w-100-iframe-signin footer-iframe" src="layout/footer.php?color=F4CF0A"></iframe>
 </html>
