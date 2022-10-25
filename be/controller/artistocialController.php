@@ -16,6 +16,20 @@ class Artistocial
         $this->db = new Db();
     }
 
+    public function getLocationFromEventId($id){
+        $event = $this->getEventById($id);
+        return $this->getEventLocationByName($event->location);
+    }
+
+
+    public function getEventLocationByName($locationName)
+    {
+        $eventLocation = $this->db->query(getEventLocationByNameSql($locationName));
+        if (count($eventLocation) > 0) {
+            return dataToModelEventLocation($eventLocation[0]);
+        }
+        return null;
+    }
 
     public function getEventLocation($eventLocationId)
     {
@@ -72,6 +86,16 @@ class Artistocial
         }
         return null;
     }
+
+    public function getEventById($id)
+    {
+        $event = $this->db->query(getEventByIdSql($id));
+        if (count($event) > 0) {
+            return dataToModelEvent($event[0]);
+        }
+        return null;
+    }
+
 
     public function getHotEvent(){
         $result = $this->db->query(getHotEventSql());

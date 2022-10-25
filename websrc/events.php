@@ -6,16 +6,14 @@ session_start();
 
 $artistocial = new Artistocial();
 $hotevents = $artistocial->getHotEvent();
-$eventlocation = array();
+
+$eventlocation = [];
 foreach($hotevents as $k=>$v){
-    
+    $location = $artistocial->getLocationFromEventId($v->id);
+    if(!is_null($location)){
+        array_push($eventlocation, $location);
+    }
 }
-// $evetlocations = $artistocial->getEventLocation();
-$eventlocation = [$artistocial->getEventLocation(1),
-    $artistocial->getEventLocation(2),
-    $artistocial->getEventLocation(3),
-    $artistocial->getEventLocation(4),
-    $artistocial->getEventLocation(5)];
 ?>
 
 <!DOCTYPE html>
@@ -44,10 +42,10 @@ $eventlocation = [$artistocial->getEventLocation(1),
         <!-- <div class="sort-text">sort by popular</div> -->
         <div class="w-1380 events-info flex-space-between">
             <div class="events-left-info">
-                <div class="events-search-d">
+                <!-- <div class="events-search-d">
                     <input placeholder="search" class="events-search" id="events-search"/>
                     <div class="search-icon"><svg t="1664933889901" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2543" width="40" height="40"><path d="M966.4 924.8l-230.4-227.2c60.8-67.2 96-156.8 96-256 0-217.6-176-390.4-390.4-390.4-217.6 0-390.4 176-390.4 390.4 0 217.6 176 390.4 390.4 390.4 99.2 0 188.8-35.2 256-96l230.4 227.2c9.6 9.6 28.8 9.6 38.4 0C979.2 950.4 979.2 934.4 966.4 924.8zM102.4 441.6c0-185.6 150.4-339.2 339.2-339.2s339.2 150.4 339.2 339.2c0 89.6-35.2 172.8-92.8 233.6-3.2 0-3.2 3.2-6.4 3.2-3.2 3.2-3.2 3.2-3.2 6.4-60.8 57.6-144 92.8-233.6 92.8C256 780.8 102.4 627.2 102.4 441.6z" p-id="2544" fill="#6C6C6C"></path></svg></div>
-                </div>
+                </div> -->
                 <?php foreach($hotevents as $k=>$v){ ?>
                 <div onclick="selectTab(1, 'events-tab-info')" class="events-item background-color-f4Cf0a flex-space-between-center">
                     <div class="events-item-text-description">
@@ -65,84 +63,6 @@ $eventlocation = [$artistocial->getEventLocation(1),
                     </div>
                 </div>
                 <?php } ?>
-
-                <!--
-                <div onclick="selectTab(1, 'events-tab-info')" class="events-item background-color-f4Cf0a flex-space-between-center">
-                    <div class="events-item-text-description">
-                        <div class="events-attended-item-title">Saturday Night Comedy</div>
-                        <div class="time-info">Sat, Sep 24, 7:00 PM + more events</div>
-                        <div class="events-attended-item-details">
-                            Big Fork Theatre Fortitude Valley, QLD<br/>
-                            Starts at A$20.00<br/>
-                            Big Fork Theatre<br/>
-                            195 Followers
-                        </div>
-                    </div>
-                    <div class="events-map">
-                        <img class="w-100 h-100" src="images/1664892662815.jpg">
-                    </div>
-                </div>
-                <div onclick="selectTab(1, 'events-tab-info')" class="events-item background-color-f4Cf0a flex-space-between-center">
-                    <div class="events-item-text-description">
-                        <div class="events-attended-item-title">Saturday Night Comedy</div>
-                        <div class="time-info">Sat, Sep 24, 7:00 PM + more events</div>
-                        <div class="events-attended-item-details">
-                            Big Fork Theatre Fortitude Valley, QLD<br/>
-                            Starts at A$20.00<br/>
-                            Big Fork Theatre<br/>
-                            195 Followers
-                        </div>
-                    </div>
-                    <div class="events-map">
-                        <img class="w-100 h-100" src="images/1664892662815.jpg">
-                    </div>
-                </div>
-                <div onclick="selectTab(1, 'events-tab-info')" class="events-item background-color-f4Cf0a flex-space-between-center">
-                    <div class="events-item-text-description">
-                        <div class="events-attended-item-title">Saturday Night Comedy</div>
-                        <div class="time-info">Sat, Sep 24, 7:00 PM + more events</div>
-                        <div class="events-attended-item-details">
-                            Big Fork Theatre Fortitude Valley, QLD<br/>
-                            Starts at A$20.00<br/>
-                            Big Fork Theatre<br/>
-                            195 Followers
-                        </div>
-                    </div>
-                    <div class="events-map">
-                        <img class="w-100 h-100" src="images/1664892662815.jpg">
-                    </div>
-                </div>
-                <div onclick="selectTab(1, 'events-tab-info')" class="events-item background-color-f4Cf0a flex-space-between-center">
-                    <div class="events-item-text-description">
-                        <div class="events-attended-item-title">Saturday Night Comedy</div>
-                        <div class="time-info">Sat, Sep 24, 7:00 PM + more events</div>
-                        <div class="events-attended-item-details">
-                            Big Fork Theatre Fortitude Valley, QLD<br/>
-                            Starts at A$20.00<br/>
-                            Big Fork Theatre<br/>
-                            195 Followers
-                        </div>
-                    </div>
-                    <div class="events-map">
-                        <img class="w-100 h-100" src="images/1664892662815.jpg">
-                    </div>
-                </div>
-                <div onclick="selectTab(1, 'events-tab-info')" class="events-item background-color-f4Cf0a flex-space-between-center">
-                    <div class="events-item-text-description">
-                        <div class="events-attended-item-title">Saturday Night Comedy</div>
-                        <div class="time-info">Sat, Sep 24, 7:00 PM + more events</div>
-                        <div class="events-attended-item-details">
-                            Big Fork Theatre Fortitude Valley, QLD<br/>
-                            Starts at A$20.00<br/>
-                            Big Fork Theatre<br/>
-                            195 Followers
-                        </div>
-                    </div>
-                    <div class="events-map">
-                        <img class="w-100 h-100" src="images/1664892662815.jpg">
-                    </div>
-                </div>
-                -->
             </div>
 
             <div class="events-right-info">
@@ -156,13 +76,13 @@ $eventlocation = [$artistocial->getEventLocation(1),
         function initMap() {
             const myLatLng = { lat: <?php echo $eventlocation[0]->latitude; ?>, lng: <?php echo $eventlocation[0]->longitude; ?> };
             const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 14,
+                zoom: 12,
                 center: myLatLng,
             });
 
             const tourStops = [
                 <?php foreach($eventlocation as $k=>$v){
-                    echo '[{ lat: '.$v->latitude.', lng: '.$v->longitude.' }, "'.$v->title.'"],';
+                    echo '[{ lat: '.$v->latitude.', lng: '.$v->longitude.' }, "ab"],';
             }?>
             ];
             const infoWindow = new google.maps.InfoWindow();

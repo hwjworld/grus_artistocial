@@ -34,6 +34,12 @@ function getAllArtCollectionSql()
     return "select * from artcollection";
 }
 
+function getEventLocationByNameSql($id)
+{
+    return "select * from eventlocation where name='" . $id."' limit 1";
+}
+
+
 function getEventLocationSql($id)
 {
     return "select * from eventlocation where resourceid=" . $id;
@@ -52,6 +58,11 @@ function getAllLibrarySql()
 function getEventSql($id)
 {
     return "select * from event where resourceid=" . $id;
+}
+
+function getEventByIdSql($id)
+{
+    return "select * from event where id=" . $id;
 }
 
 function getHotEventSql()
