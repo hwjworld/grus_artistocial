@@ -76,24 +76,13 @@ $location = $artistocial->getLocationFromEventId($event->id);
                         <option>Dislike</option>
                     </select> -->
                 </div>
-                <div style="width: 615px;height: 314px;"><img class="w-100 h-100" src="images/1664892662815.jpg"></div>
+                <div style="width: 615px;height: 314px;"><img class="w-100 h-100" src="<?php echo $event->eventImage;?>"></div>
             </div>
 
             <div class="w-1156 font-size-30">
                 <p>About this event</p>
                 <p>
-                    <span style="color: #FF3131">Saturday night comedy is back! Bigger and better than ever before at Big Fork Theatre.</span><br/>
-                    Improv, sketch, stand up and more – every Saturday features a rotating tap of some of the best comedy shows on offer from Brisbane and beyond. Check our Instagram and Facebook page each week for line up announcements!
-                </p>
-                <p>
-                    From fully improvised shows from the Brisbane Comedy Festival, the hottest sketch comedy written every month, to special guest stand-up comedians – it’s a smorgasbord of the hottest comedy shows going round.
-                </p>
-                <p>
-                    This comedy TOUR DE FORCE is not to be missed and is a great night out in the heart of Brisbane, right around the corner from the best bars and restaurants in Fortitude Valley. Grab you friends, your family, your co-workers and yourself and head to Big Fork Theatre this Saturday!
-                </p>
-                <p>
-                    COVID-19: Please read Big Fork Theatre’s COVID-19 policies here.<br/>
-                    REFUND POLICY: Cancellations made 24 hours prior to the show start time will receive a full refund. Cancellations within 24 hours of the commencement time can transfer tickets to a future show. No shows will not receive a refund. Please contact us with any questions.
+                    <?php echo $event->description;?>
                 </p>
                 <p>Location</p>
 
