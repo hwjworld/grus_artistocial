@@ -9,6 +9,6 @@ class BusUser{
     public $bio = "i'm good";
     public $arttype;
     public $picurl;
-    public DateTime $createtime;
+    public $createtime;
 }
 ?>
