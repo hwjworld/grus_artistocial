@@ -49,6 +49,8 @@ class User{
             $user->picurl
         ]);
         if ($result) {
+            $u = $this->getUserByEmail($user->email);
+            $this->setPortofolioToUser($u->id);
             echo "insert user to db successful";
         } else {
             echo "insert user to db fail";
