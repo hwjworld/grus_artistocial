@@ -135,7 +135,7 @@ $artcollections = [$artistocial->getArtCollection(1),
             // google.maps.event.addDomListener(window, 'load', initMap);
     </script>
 
-        <iframe frameborder="no" scrolling="no" class="w-100-iframe footer-iframe" src="layout/footer.html?color=F4CF0A"></iframe>
+        <iframe frameborder="no" scrolling="no" class="w-100-iframe footer-iframe" src="layout/footer.php?color=F4CF0A"></iframe>
     </div>
 </body>
 <script type="text/javascript" src="js/carousel.js"></script>
