@@ -42,6 +42,16 @@ class Artistocial
         return null;
     }
 
+    public function getAllLibrarys()
+    {
+        $library_result = $this->db->query(getAllLibrarySql());
+        $libraries = array();
+        foreach($library_result as $k=>$v){
+            array_push($libraries, dataToModelLibrary($v));
+        }
+        return $libraries;
+    }
+
     public function getEvent($eventId)
     {
         $event = $this->db->query(getEventSql($eventId));

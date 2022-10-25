@@ -39,6 +39,11 @@ function getLibrarySql($id)
     return "select * from library where resourceid=" . $id;
 }
 
+function getAllLibrarySql()
+{
+    return "select * from library";
+}
+
 function getEventSql($id)
 {
     return "select * from event where resourceid=" . $id;
