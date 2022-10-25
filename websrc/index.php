@@ -10,6 +10,8 @@ $artcollections = [$artistocial->getArtCollection(1),
     $artistocial->getArtCollection(3),
     $artistocial->getArtCollection(4),
     $artistocial->getArtCollection(5)];
+
+$hotlibrary = $artistocial->getAllLibrarys();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,13 +92,35 @@ $artcollections = [$artistocial->getArtCollection(1),
         </div>
 
         <div class="index-last-d">
+
             <!-- <button class="art-collection font-size-24 background-color-f4Cf0a">Art Collection</button> -->
+
+
+        </div>
+
+
+        <div class="color-000000 display-flex-center font-weight-600 library-title background-color-f4Cf0a">ART COLLECTION</div>
+        <div class="library-last-d flex-space-between-center">
+            <div class="library-last-left-info background-color-000000">
+                <?php foreach($hotlibrary as $k=>$v){ ?>
+                <div class="library-last-left-item background-color-ffffff" onclick="selectTab(<?php echo $k;?>, 'library-last-right-item')">
+                    <img src="images/note.jpg">
+                    <?php echo $v->name; ?>
+                </div>
+                <?php }?>
+            </div>
+            <div class="library-last-right-info background-color-f4Cf0a">
+
             <div class="index-last-map background-color-f4Cf0a">
                 <p class="map">
-                <div id="map" style="width:1467px; height: 500px;"></div>
+                <div id="map" style="width:1000px; height: 600px;"></div>
                 </p>
+                
+            </div>
+
             </div>
         </div>
+
 
         <script type="text/javascript" src="js/carousel.js"></script>
     <script language="javascript">

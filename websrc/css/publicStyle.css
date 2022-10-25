@@ -587,6 +587,7 @@
 }
 .library-last-d {
     min-width: 1240px;
+    margin-bottom: 30px;
 }
 .library-last-left-info {
     padding: 20px 15px;
@@ -610,9 +611,9 @@
 }
 .library-last-right-info {
     width: 66%;
-    height: 777px;
+    height: 700px;
     border-radius: 10px;
-    padding: 20px 0;
+    padding: 0px 0;
 }
 .index-top-d {
     width: 100%;
@@ -701,8 +702,9 @@
     margin: 60px 0;
 }
 .index-last-map {
-    padding: 40px 20px;
+    /* padding: 40px 20px; */
     width: 100%;
+
 }
 .index-map {
     padding: 0px 20px;
@@ -710,11 +712,11 @@
 }
 
 .index-map img{
-    height: 1000px;
+    height: 1500px;
     width: 1500px;
 }
 .index-last-map img{
-    height: 450px;
+    height: 1500px;
     width: 1500px;
 }
 .sort-text {
