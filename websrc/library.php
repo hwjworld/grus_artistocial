@@ -208,7 +208,7 @@ $eventlocation = [$artistocial->getEventLocation(1),
     </div>
 
   
-    <iframe frameborder="no" scrolling="no" class="w-100-iframe footer-iframe" src="layout/footer.html?color=139E06"></iframe>
+    <iframe frameborder="no" scrolling="no" class="w-100-iframe footer-iframe" src="layout/footer.php?color=139E06"></iframe>
 </div>
 </body>
 <script type="text/javascript" src="js/selectTab.js"></script>
