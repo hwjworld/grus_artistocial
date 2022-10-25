@@ -273,7 +273,7 @@ $userportofolios = $user->getUserPortofolio(1);
     </div>
 
     
-    <iframe frameborder="no" scrolling="no" class="w-100-iframe footer-iframe" src="layout/footer.php?color=ff3030"></iframe>
+    <iframe frameborder="no" scrolling="no" class="w-100-iframe footer-iframe" src="layout/footer.php?color=3045ff"></iframe>
 </div>
 </body>
 </html>
