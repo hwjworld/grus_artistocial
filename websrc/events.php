@@ -6,6 +6,13 @@ session_start();
 
 $artistocial = new Artistocial();
 $hotevents = $artistocial->getHotEvent();
+// $evetlocations = $artistocial->getEventLocation();
+$eventlocation = [$artistocial->getEventLocation(1),
+    $artistocial->getEventLocation(2),
+    $artistocial->getEventLocation(3),
+    $artistocial->getEventLocation(4),
+    $artistocial->getEventLocation(5)];
+?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +25,8 @@ $hotevents = $artistocial->getHotEvent();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     <script type="text/javascript" src="js/selectTab.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 </head>
 
 <body>
@@ -132,9 +141,51 @@ $hotevents = $artistocial->getHotEvent();
 
             <div class="events-right-info">
                 <div class="map-distribution">
-                    <p>
+                    <!-- <p>
                         <iframe src="https://www.google.com/maps/d/embed?mid=1NwF1n58Vpfmy0JpAR0JvgQGV8zFjMPU&ehbc=2E312F" width="300" height="1000"></iframe>
-                    </p>
+                    </p> -->
+                    <div id="map" style="width:1330px; height: 500px;"></div>
+                    <!-- <iframe src="https://www.google.com/maps/d/embed?mid=150bsImcNATOVASRK9Iwf9V0FiNMXgio&ehbc=2E312F" width="1000" height="600"></iframe> -->
+                </p>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/carousel.js"></script>
+    <script language="javascript">
+        function initMap() {
+            const myLatLng = { lat: <?php echo $eventlocation[0]->latitude; ?>, lng: <?php echo $eventlocation[0]->longitude; ?> };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14,
+                center: myLatLng,
+            });
+
+            const tourStops = [
+                <?php foreach($eventlocation as $k=>$v){
+                    echo '[{ lat: '.$v->latitude.', lng: '.$v->longitude.' }, "'.$v->title.'"],';
+            }?>
+            ];
+            const infoWindow = new google.maps.InfoWindow();
+
+            tourStops.forEach(([position, title], i) => {
+                const marker = new google.maps.Marker({
+                    position,
+                    map,
+                    title: `${i + 1}. ${title}`,
+                    label: `${i + 1}`,
+                    optimized: false,
+                });
+
+                // Add a click listener for each marker, and set up the info window.
+                marker.addListener("click", () => {
+                    infoWindow.close();
+                    infoWindow.setContent(marker.getTitle());
+                    infoWindow.open(marker.getMap(), marker);
+                });
+            });
+        }
+        window.onload = initMap;
+            // google.maps.event.addDomListener(window, 'load', initMap);
+            </script>
                 </div>
             </div>
         </div>

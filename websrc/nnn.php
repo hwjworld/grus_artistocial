@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>DECO1800/7180 Artistocial Home</title>
@@ -14,7 +13,7 @@
 <body>
     <div class="content-info">
         <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.html"></iframe>
-        <div style="padding-left: 4em" class="library-title background-color-000000 ">SOMETHING ABOUT ARTISTOCIAL...</div>
+        <div style="padding-left: 4em" class="library-title background-color-000000 ">Something About Artistocial...</div>
             <div class="index-top-info">
                 <!-- <div id="cartoon-right" class="cartoon">
                 <img class="w-100" src="images/cartoonleft.png">

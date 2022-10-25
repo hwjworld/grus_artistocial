@@ -46,9 +46,10 @@ $hotevents = $artistocial->getHotEvent();
         <span class="new-style">New User? Sign Up!</span>
         <span class="or-style">------------------Or------------------</span>
     </div>
+   
 </body>
 
-</html>
-</body>
+
 
 </html>
+
