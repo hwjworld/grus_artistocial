@@ -226,7 +226,7 @@ class Artistocial
         $artcollections_result = $this->db->query(getRecommendArtcollectionSql($artCollectionType));
         $artcollections = array();
         foreach($artcollections_result as $k=>$v){
-            array_push($artcollections, dataToModelEvent($v));
+            array_push($artcollections, dataToModelArtCollection($v));
         }
         return $artcollections;
 
