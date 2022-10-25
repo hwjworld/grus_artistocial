@@ -5,12 +5,7 @@ session_start();
 
 $artistocial = new Artistocial();
 $hotevents = $artistocial->getHotEvent();
-$artcollections = [$artistocial->getArtCollection(1),
-    $artistocial->getArtCollection(2),
-    $artistocial->getArtCollection(3),
-    $artistocial->getArtCollection(4),
-    $artistocial->getArtCollection(5)];
-
+$artcollections = $artistocial->getAllArtcollection();
 $hotlibrary = $artistocial->getAllLibrarys();
 ?>
 <!DOCTYPE html>
@@ -102,10 +97,10 @@ $hotlibrary = $artistocial->getAllLibrarys();
         <div class="color-000000 display-flex-center font-weight-600 library-title background-color-f4Cf0a">ART COLLECTION</div>
         <div class="library-last-d flex-space-between-center">
             <div class="library-last-left-info background-color-000000">
-                <?php foreach($hotlibrary as $k=>$v){ ?>
-                <div class="library-last-left-item background-color-ffffff" onclick="selectTab(<?php echo $k;?>, 'library-last-right-item')">
+                <?php foreach($artcollections as $k=>$v){ ?>
+                <div class="library-last-left-item background-color-ffffff" onclick="setNewMapPoint(<?php echo '\''.$v->latitude.'\',\''.$v->longitude.'\',\''.$v->description.'\'';?>);">
                     <img src="images/note.jpg">
-                    <?php echo $v->name; ?>
+                    <?php echo $v->title; ?>
                 </div>
                 <?php }?>
             </div>
@@ -130,30 +125,38 @@ $hotlibrary = $artistocial->getAllLibrarys();
                 zoom: 14,
                 center: myLatLng,
             });
+            const beachMarker = new google.maps.Marker({
+                position: myLatLng,
+                map,
 
-            const tourStops = [
-                <?php foreach($artcollections as $k=>$v){
-                    echo '[{ lat: '.$v->latitude.', lng: '.$v->longitude.' }, "'.$v->title.'"],';
-            }?>
-            ];
-            const infoWindow = new google.maps.InfoWindow();
 
-            tourStops.forEach(([position, title], i) => {
-                const marker = new google.maps.Marker({
-                    position,
-                    map,
-                    title: `${i + 1}. ${title}`,
-                    label: `${i + 1}`,
-                    optimized: false,
-                });
-
-                // Add a click listener for each marker, and set up the info window.
-                marker.addListener("click", () => {
-                    infoWindow.close();
-                    infoWindow.setContent(marker.getTitle());
-                    infoWindow.open(marker.getMap(), marker);
-                });
             });
+
+            
+
+        }
+
+        function setNewMapPoint(lat_v, lng_v, description_v){
+            var infoWindow = new google.maps.InfoWindow();
+            var myLatlng = new google.maps.LatLng(lat_v,lng_v);
+            var mapOptions = {
+                zoom: 15,
+                center: myLatlng
+            }
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                title:description_v
+            });
+            marker.setMap(map);
+            marker.addListener("click", () => {
+                infoWindow.close();
+                infoWindow.setContent(marker.getTitle());
+                infoWindow.open(marker.getMap(), marker);
+            });
+
+            // To add the marker to the map, call setMap();
         }
         window.onload = initMap;
             // google.maps.event.addDomListener(window, 'load', initMap);

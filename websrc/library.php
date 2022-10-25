@@ -52,12 +52,11 @@ $hotlibrary = $artistocial->getAllLibrarys();
                 center: myLatLng,
             });
 
-            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
             
             const beachMarker = new google.maps.Marker({
                 position: myLatLng,
                 map,
-                title: <?php echo $hotlibrary[0]->name; ?>
+
 
             });
 
@@ -65,12 +64,12 @@ $hotlibrary = $artistocial->getAllLibrarys();
             //     position: myLatlng,
             //     title:name_v
             // });
-            marker.setMap(map);
-            marker.addListener("click", () => {
-                infoWindow.close();
-                infoWindow.setContent(beachMarker.getTitle());
-                infoWindow.open(beachMarker.getMap(), beachMarker);
-            });
+            // marker.setMap(map);
+            // marker.addListener("click", () => {
+            //     infoWindow.close();
+            //     infoWindow.setContent(beachMarker.getTitle());
+            //     infoWindow.open(beachMarker.getMap(), beachMarker);
+            // });
 
         }
         function setNewMapPoint(lat_v, lng_v, name_v){
