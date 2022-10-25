@@ -3,22 +3,20 @@ require_once("../be/controller/userController.php");
 require_once("../be/controller/artistocialController.php");
 require_once("../be/controller/artsyController.php");
 session_start();
-// if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-//     echo "logined";
-//     $email = $_SESSION['email'];
-//     $user = new User();
-//     $u = $user->getUserByEmail($email);
-// }else{
-//     header("location: login.html");
-//     exit;
-// }
+$isLogin = (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)?true:false;
 
+if(!$isLogin){
+    echo "<script>alert('Please sign in first');top.location.href='signin.php'</script>";
+    die;
+}
+$uid = $_SESSION['id'];
+$user = new User();
+$u = $user->getUserById($uid);
 
 $artistocial = new Artistocial();
 $hotevents = $artistocial->getHotEvent();
 $user = new User();
-$userportofolios = $user->getUserPortofolio(1);
-
+$userportofolios = $user->getUserPortofolio($uid);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,15 +39,16 @@ $userportofolios = $user->getUserPortofolio(1);
 
     <div class="profile-top background-color-3145ff">
         <div class="left-img-d">
-            <img class="w-h-100" src="images/profile-img1.png">
+            <img class="w-h-100" src="<?php  echo $u->picurl;?>">
         </div>
 
         <div class="right-d-info">
             <div class="introduction-board background-color-ffffff">
-                Name: <?php // echo $u->name;?><br/>
-                Occupation: <?php // echo $u->name;?><br/>
-                Email: <?php // echo $u->email;?><br/>
-                About me: <?php // echo $u->bio;?>
+                Name: <?php  echo $u->name;?><br/>
+                Occupation: <?php echo $u->name;?><br/>
+                Email: <?php echo $u->email;?><br/>
+                About me: <?php echo $u->bio;?><br />
+                Preference: <?php echo $u->arttype;?>
             </div>
 
             <div class="right-img-d">
@@ -71,66 +70,34 @@ $userportofolios = $user->getUserPortofolio(1);
     <div id="portfolio-info" class="this-tab-item">
         <div class="spacer-bar background-color-f4Cf0a"></div>
         <div class="w-1240 portfolio-dox">
-            <?php foreach($userportofolios as $k=>$v){ ?>
+            <?php foreach($userportofolios as $k=>$v){ if($k>=0 && $k<4){ ?>
             <a class="item-portfolio">
                 <div class="item-portfolio-img-d">
                     <img class="w-h-100" src="<?php echo $v->thumbnail; ?>"/>
                 </div>
                 <span><?php echo $v->title.'('.$v->date.')'; ?></span>
             </a>
-            <?php }?>
+            <?php }}?>
         </div>
         <div class="w-1240 portfolio-dox">
+            <?php foreach($userportofolios as $k=>$v){ if($k>=4 && $k<8){ ?>
             <a class="item-portfolio">
                 <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="images/profile-img2.png"/>
+                    <img class="w-h-100" src="<?php echo $v->thumbnail; ?>"/>
                 </div>
-                <span>Christmas Gift from Mary (12/30/2021)</span>
+                <span><?php echo $v->title.'('.$v->date.')'; ?></span>
             </a>
-            <a class="item-portfolio">
-                <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="images/profile-img2.png"/>
-                </div>
-                <span>Christmas Gift from Mary (12/30/2021)</span>
-            </a>
-            <a class="item-portfolio">
-                <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="images/profile-img2.png"/>
-                </div>
-                <span>Christmas Gift from Mary (12/30/2021)</span>
-            </a>
-            <a class="item-portfolio">
-                <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="images/profile-img2.png"/>
-                </div>
-                <span>Christmas Gift from Mary (12/30/2021)</span>
-            </a>
+            <?php }}?>
         </div>
         <div class="w-1240 portfolio-dox">
+            <?php foreach($userportofolios as $k=>$v){ if($k>=8 && $k<13){ ?>
             <a class="item-portfolio">
                 <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="images/profile-img2.png"/>
+                    <img class="w-h-100" src="<?php echo $v->thumbnail; ?>"/>
                 </div>
-                <span>Christmas Gift from Mary (12/30/2021)</span>
+                <span><?php echo $v->title.'('.$v->date.')'; ?></span>
             </a>
-            <a class="item-portfolio">
-                <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="images/profile-img2.png"/>
-                </div>
-                <span>Christmas Gift from Mary (12/30/2021)</span>
-            </a>
-            <a class="item-portfolio">
-                <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="images/profile-img2.png"/>
-                </div>
-                <span>Christmas Gift from Mary (12/30/2021)</span>
-            </a>
-            <a class="item-portfolio">
-                <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="images/profile-img2.png"/>
-                </div>
-                <span>Christmas Gift from Mary (12/30/2021)</span>
-            </a>
+            <?php }}?>
         </div>
         <div class="profile-last-img-d">
             <img class="w-h-100" src="images/profile-img2.png">
