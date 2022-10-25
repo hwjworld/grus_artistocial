@@ -121,17 +121,24 @@ $hotlibrary = $artistocial->getAllLibrarys();
     <script language="javascript">
         function initMap() {
             const myLatLng = { lat: <?php echo $artcollections[0]->latitude; ?>, lng: <?php echo $artcollections[0]->longitude; ?> };
+
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 14,
                 center: myLatLng,
             });
-            const beachMarker = new google.maps.Marker({
+            var beachMarker = new google.maps.Marker({
                 position: myLatLng,
                 map,
-
-
+                title: `<?php echo $artcollections[0]->description; ?>`,
             });
+            const infoWindow = new google.maps.InfoWindow();
 
+            // marker.setMap(map);
+            beachMarker.addListener("click", () => {
+                infoWindow.close();
+                infoWindow.setContent(beachMarker.getTitle());
+                infoWindow.open(beachMarker.getMap(), beachMarker);
+            });
             
 
         }

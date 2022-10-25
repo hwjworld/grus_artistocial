@@ -34,10 +34,9 @@ $hotlibrary = $artistocial->getAllLibrarys();
             </p> -->
             <div class="index-last-d">
             <!-- <button class="art-collection font-size-24 background-color-f4Cf0a">Art Collection</button> -->
-            <div class="index-last-map background-color-f4Cf0a">
-            <div class="map-distribution">
-                    <div id="map" style="width:1440px; height: 500px;"></div>
-            </div>
+            
+                    <div id="map" style="width:1470px; height: 500px;"></div>
+
                 <!-- <div id="map" style="width:1330px; height: 500px;"></div> -->
 
             </div>
@@ -53,23 +52,18 @@ $hotlibrary = $artistocial->getAllLibrarys();
             });
 
             
-            const beachMarker = new google.maps.Marker({
+            var beachMarker = new google.maps.Marker({
                 position: myLatLng,
                 map,
-
-
+                title: `<?php echo $hotlibrary[0]->name; ?>`,
             });
+            const infoWindow = new google.maps.InfoWindow();
 
-            // var beachMarker = new google.maps.Marker({
-            //     position: myLatlng,
-            //     title:name_v
-            // });
-            // marker.setMap(map);
-            // marker.addListener("click", () => {
-            //     infoWindow.close();
-            //     infoWindow.setContent(beachMarker.getTitle());
-            //     infoWindow.open(beachMarker.getMap(), beachMarker);
-            // });
+            beachMarker.addListener("click", () => {
+                infoWindow.close();
+                infoWindow.setContent(beachMarker.getTitle());
+                infoWindow.open(beachMarker.getMap(), beachMarker);
+            });
 
         }
         function setNewMapPoint(lat_v, lng_v, name_v){
