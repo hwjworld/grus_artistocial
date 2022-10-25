@@ -17,12 +17,12 @@
         <div class="background_style"></div>
         <input type="email" class="email"></div>
         <input type="password" class="password"></div>
-        <div class="button_style"></div><span class="word_style">Password:</span>
-        <span class="email_style">Email Address(ID):</span>
+        <div class="button_style"></div><span class="word_style">Bio:</span>
+        <span class="email_style">Occupation:</span>
         <input type="text" class="lastname"></div>
-        <input type="text" class="occupation"></div><span class="occupation_style">Occupation:</span>
-        <span class="lastname_style">Last Name:</span>
-        <input type="text" class="firstName"></div><span class="firstname_style">First Name:</span>
+        <input type="text" class="occupation"></div><span class="occupation_style">Name:</span>
+        <span class="lastname_style">Password:</span>
+        <input type="text" class="firstName"></div><span class="firstname_style">Email Address(ID):</span>
         <span class="sign_up">SIGN UP</span><a href="loginComplete.html" class="continue">Continue</a>
         <div class="figure_one">
             <div class="figure_two"></div>
