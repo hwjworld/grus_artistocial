@@ -52,29 +52,48 @@ $hotlibrary = $artistocial->getAllLibrarys();
                 center: myLatLng,
             });
 
-            const tourStops = [
-                <?php foreach($hotlibrary as $k=>$v){
-                    echo '[{ lat: '.$v->latitude.', lng: '.$v->longitude.' }, "'.$v->title.'"],';
-            }?>
-            ];
-            const infoWindow = new google.maps.InfoWindow();
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+            
+            const beachMarker = new google.maps.Marker({
+                position: myLatLng,
+                map,
+                title: <?php echo $hotlibrary[0]->name; ?>
 
-            tourStops.forEach(([position, title], i) => {
-                const marker = new google.maps.Marker({
-                    position,
-                    map,
-                    title: `${i + 1}. ${title}`,
-                    label: `${i + 1}`,
-                    optimized: false,
-                });
-
-                // Add a click listener for each marker, and set up the info window.
-                marker.addListener("click", () => {
-                    infoWindow.close();
-                    infoWindow.setContent(marker.getTitle());
-                    infoWindow.open(marker.getMap(), marker);
-                });
             });
+
+            // var beachMarker = new google.maps.Marker({
+            //     position: myLatlng,
+            //     title:name_v
+            // });
+            marker.setMap(map);
+            marker.addListener("click", () => {
+                infoWindow.close();
+                infoWindow.setContent(beachMarker.getTitle());
+                infoWindow.open(beachMarker.getMap(), beachMarker);
+            });
+
+        }
+        function setNewMapPoint(lat_v, lng_v, name_v){
+            var infoWindow = new google.maps.InfoWindow();
+            var myLatlng = new google.maps.LatLng(lat_v,lng_v);
+            var mapOptions = {
+                zoom: 15,
+                center: myLatlng
+            }
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                title:name_v
+            });
+            marker.setMap(map);
+            marker.addListener("click", () => {
+                infoWindow.close();
+                infoWindow.setContent(marker.getTitle());
+                infoWindow.open(marker.getMap(), marker);
+            });
+
+            // To add the marker to the map, call setMap();
         }
         window.onload = initMap;
             // google.maps.event.addDomListener(window, 'load', initMap);
@@ -88,7 +107,7 @@ $hotlibrary = $artistocial->getAllLibrarys();
         <div class="library-last-d flex-space-between-center">
             <div class="library-last-left-info background-color-000000">
                 <?php foreach($hotlibrary as $k=>$v){ ?>
-                <div class="library-last-left-item background-color-ffffff" onclick="selectTab(<?php echo $k;?>, 'library-last-right-item')">
+                <div class="library-last-left-item background-color-ffffff" onclick="selectTab(<?php echo $k;?>, 'library-last-right-item');setNewMapPoint(<?php echo '\''.$v->latitude.'\',\''.$v->longitude.'\',\''.$v->name.'\'';?>);">
                     <img src="images/note.jpg">
                     <?php echo $v->name; ?>
                 </div>

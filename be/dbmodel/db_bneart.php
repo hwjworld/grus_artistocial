@@ -29,6 +29,11 @@ function getArtCollectionSql($id)
     return "select * from artcollection where resourceid=" . $id;
 }
 
+function getAllArtCollectionSql()
+{
+    return "select * from artcollection";
+}
+
 function getEventLocationSql($id)
 {
     return "select * from eventlocation where resourceid=" . $id;

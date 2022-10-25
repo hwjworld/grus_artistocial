@@ -6,6 +6,10 @@ session_start();
 
 $artistocial = new Artistocial();
 $hotevents = $artistocial->getHotEvent();
+$eventlocation = array();
+foreach($hotevents as $k=>$v){
+    
+}
 // $evetlocations = $artistocial->getEventLocation();
 $eventlocation = [$artistocial->getEventLocation(1),
     $artistocial->getEventLocation(2),

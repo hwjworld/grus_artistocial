@@ -35,6 +35,16 @@ class Artistocial
         return null;
     }
 
+    public function getAllArtcollection()
+    {
+        $artCollection_result = $this->db->query(getAllArtCollectionSql());
+        $artcollections = array();
+        foreach($artCollection_result as $k=>$v){
+            array_push($artcollections, dataToModelArtCollection($v));
+        }
+        return $artcollections;
+    }
+
     public function getLibrary($libraryId)
     {
         $library = $this->db->query(getLibrarySql($libraryId));
