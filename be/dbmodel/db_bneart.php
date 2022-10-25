@@ -59,6 +59,25 @@ function getHotEventSql()
     return "select * from event order by startDatetime desc limit 10";
 }
 
+function getRecommendEventSql($eventtypes)
+{
+    $where_clause = "'x'";
+    foreach($eventtypes as $k=>$v){
+        $where_clause = $where_clause.",'".$v."'";
+    }
+    return "select * from event where eventtype in (".$where_clause.")";
+}
+
+function getRecommendArtcollectionSql($eventtypes)
+{
+    $where_clause = "'x'";
+    foreach($eventtypes as $k=>$v){
+        $where_clause = $where_clause.",'".$v."'";
+    }
+    return "select * from artcollection where material in (".$where_clause.")";
+}
+
+
 function dataToModelArtCollection($result)
 {
     $model = new ArtistocialArtCollection();

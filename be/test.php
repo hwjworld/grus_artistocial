@@ -1,5 +1,6 @@
 <?php
 require_once(__DIR__."/controller/artsyController.php");
+require_once(__DIR__."/controller/artistocialController.php");
 require_once(__DIR__."/controller/userController.php");
 // $param = $_GET['param'];
 // if($param == '1'){
@@ -16,8 +17,12 @@ require_once(__DIR__."/controller/userController.php");
 // $artsy->getToken();
 // var_dump($artsy->getGalleryArtworks());
 
-$user = new User();
-$user->setPortofolioToUser(1);
+// $user = new User();
+// $user->setPortofolioToUser(1);
 // $eventAttended = $user->getUserEventAttended(1);
 // var_dump($eventAttended);
+
+$artitocial = new Artistocial();
+var_dump($artitocial->getRecommendArtCollection(3));
+
 ?>

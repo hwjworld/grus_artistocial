@@ -207,12 +207,28 @@ class Artistocial
         global $arttype_eventarttype_match;
         $user = new User();
         $u = $user->getUserById($userid);
-        $u->arttype;
+        $eventtype = $arttype_eventarttype_match[$u->arttype];
         
+        $result = $this->db->query(getRecommendEventSql($eventtype));
+        $events = array();
+        foreach($result as $k=>$v){
+            array_push($events, dataToModelEvent($v));
+        }
+        return $events;   
     }
 
     public function getRecommendArtCollection($userid){
-        global $arttype_eventarttype_match;
+        global $arttype_artcollectionarttype_match;
+        $user = new User();
+        $u = $user->getUserById($userid);
+        $artCollectionType = $arttype_artcollectionarttype_match[$u->arttype];
+        
+        $artcollections_result = $this->db->query(getRecommendArtcollectionSql($artCollectionType));
+        $artcollections = array();
+        foreach($artcollections_result as $k=>$v){
+            array_push($artcollections, dataToModelEvent($v));
+        }
+        return $artcollections;
 
     }
 }
