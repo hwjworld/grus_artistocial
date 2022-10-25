@@ -60,6 +60,10 @@
 .w-100 {
     width: 100%;
 }
+.w-100 img{
+    height: 400px;
+    width: 500px;
+}
 .w-50 {
     width: 50%;
 }
@@ -755,7 +759,7 @@
     margin-bottom: 20px;
 }
 .events-map {
-    width: 430px;
+    width: 400px;
     height: 285px;
     border-radius: 30px;
     overflow: hidden;
