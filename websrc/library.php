@@ -11,11 +11,13 @@ $artistocial = new Artistocial();
 $hotevents = $artistocial->getHotEvent();
 // $library = $artistocial->getLibrary($model->resourceId);
 // $evetlocations = $artistocial->getEventLocation();
-$eventlocation = [$artistocial->getEventLocation(1),
-    $artistocial->getEventLocation(2),
-    $artistocial->getEventLocation(3),
-    $artistocial->getEventLocation(4),
-    $artistocial->getEventLocation(5)];
+$hotlibrary = [$artistocial->getLibrary(1),
+    $artistocial->getLibrary(2),
+    $artistocial->getLibrary(3),
+    $artistocial->getLibrary(4),
+    $artistocial->getLibrary(5)];
+
+// $libraryLocation = $artistocial->getHotLibrary();
 
 
 
@@ -32,6 +34,8 @@ $eventlocation = [$artistocial->getEventLocation(1),
     <title>DECO1800/7180 Artistocial Home</title>
     <link rel="stylesheet" href="css/initialize.css">
     <link rel="stylesheet" href="css/publicStyle.css?v=1">
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn-3ZYPIeHEfnJfB9_soI5mArlM9oISag&callback=initMap"></script>
 </head>
 
 <body>
@@ -43,35 +47,59 @@ $eventlocation = [$artistocial->getEventLocation(1),
 
     <div class="library-info">
         <!-- <div>THE LIBRARY MAP</div> -->
-        <!-- <div class="map-info">
-            <p class="map">
+        <div class="map-info">
+            <!-- <p class="map">
                 <iframe src="https://www.google.com/maps/d/embed?mid=1NwF1n58Vpfmy0JpAR0JvgQGV8zFjMPU&ehbc=2E312F" width="1000" height="480"></iframe>
-            </p>
-        </div> -->
-        <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-        <script>
-        var myMap;
-        var myLatlng = new google.maps.LatLng(52.518903284520796,-1.450427753967233);
-        function initialize() {
-        var mapOptions = {
-            zoom: 13,
-            center: myLatlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP  ,
-            scrollwheel: false
-        }
-        myMap = new google.maps.Map(document.getElementById('map'), mapOptions);
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: myMap,
-            title: 'Name Of Business',
-            icon: 'http://www.google.com/intl/en_us/mapfiles/ms/micons/red-dot.png'
-        });
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-    <div id="map" style="width:500px; height: 500px;">
+            </p> -->
+            <div class="index-last-d">
+            <!-- <button class="art-collection font-size-24 background-color-f4Cf0a">Art Collection</button> -->
+            <div class="index-last-map background-color-f4Cf0a">
+            <div class="map-distribution">
+                    <div id="map" style="width:1440px; height: 500px;"></div>
+            </div>
+                <!-- <div id="map" style="width:1330px; height: 500px;"></div> -->
 
-</div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/carousel.js"></script>
+        <script language="javascript">
+        function initMap() {
+            const myLatLng = { lat: <?php echo $hotlibrary[0]->latitude; ?>, lng: <?php echo $hotlibrary[0]->longitude; ?> };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14,
+                center: myLatLng,
+            });
+
+            const tourStops = [
+                <?php foreach($hotlibrary as $k=>$v){
+                    echo '[{ lat: '.$v->latitude.', lng: '.$v->longitude.' }, "'.$v->title.'"],';
+            }?>
+            ];
+            const infoWindow = new google.maps.InfoWindow();
+
+            tourStops.forEach(([position, title], i) => {
+                const marker = new google.maps.Marker({
+                    position,
+                    map,
+                    title: `${i + 1}. ${title}`,
+                    label: `${i + 1}`,
+                    optimized: false,
+                });
+
+                // Add a click listener for each marker, and set up the info window.
+                marker.addListener("click", () => {
+                    infoWindow.close();
+                    infoWindow.setContent(marker.getTitle());
+                    infoWindow.open(marker.getMap(), marker);
+                });
+            });
+        }
+        window.onload = initMap;
+            // google.maps.event.addDomListener(window, 'load', initMap);
+    </script>
+        </div>
+    
         <div class="search-map-d">
             <input placeholder="search on map"/>
             <div class="search-icon"><svg t="1664933889901" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2543" width="40" height="40"><path d="M966.4 924.8l-230.4-227.2c60.8-67.2 96-156.8 96-256 0-217.6-176-390.4-390.4-390.4-217.6 0-390.4 176-390.4 390.4 0 217.6 176 390.4 390.4 390.4 99.2 0 188.8-35.2 256-96l230.4 227.2c9.6 9.6 28.8 9.6 38.4 0C979.2 950.4 979.2 934.4 966.4 924.8zM102.4 441.6c0-185.6 150.4-339.2 339.2-339.2s339.2 150.4 339.2 339.2c0 89.6-35.2 172.8-92.8 233.6-3.2 0-3.2 3.2-6.4 3.2-3.2 3.2-3.2 3.2-3.2 6.4-60.8 57.6-144 92.8-233.6 92.8C256 780.8 102.4 627.2 102.4 441.6z" p-id="2544" fill="#6C6C6C"></path></svg></div>

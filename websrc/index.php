@@ -93,8 +93,7 @@ $artcollections = [$artistocial->getArtCollection(1),
             <!-- <button class="art-collection font-size-24 background-color-f4Cf0a">Art Collection</button> -->
             <div class="index-last-map background-color-f4Cf0a">
                 <p class="map">
-                <div id="map" style="width:1330px; height: 500px;"></div>
-                    <!-- <iframe src="https://www.google.com/maps/d/embed?mid=150bsImcNATOVASRK9Iwf9V0FiNMXgio&ehbc=2E312F" width="1000" height="600"></iframe> -->
+                <div id="map" style="width:1467px; height: 500px;"></div>
                 </p>
             </div>
         </div>

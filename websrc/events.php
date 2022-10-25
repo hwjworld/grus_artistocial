@@ -142,17 +142,12 @@ $eventlocation = [$artistocial->getEventLocation(1),
 
             <div class="events-right-info">
                 <div class="map-distribution">
-                    <!-- <p>
-                        <iframe src="https://www.google.com/maps/d/embed?mid=1NwF1n58Vpfmy0JpAR0JvgQGV8zFjMPU&ehbc=2E312F" width="300" height="1000"></iframe>
-                    </p> -->
-                    <div id="map" style="width:1330px; height: 500px;"></div>
-                    <!-- <iframe src="https://www.google.com/maps/d/embed?mid=150bsImcNATOVASRK9Iwf9V0FiNMXgio&ehbc=2E312F" width="1000" height="600"></iframe> -->
-                </p>
+                    <div id="map" style="width: 412px;; height: 1000px;"></div>
+                </div>
             </div>
-        </div>
 
         <script type="text/javascript" src="js/carousel.js"></script>
-    <script language="javascript">
+        <script language="javascript">
         function initMap() {
             const myLatLng = { lat: <?php echo $eventlocation[0]->latitude; ?>, lng: <?php echo $eventlocation[0]->longitude; ?> };
             const map = new google.maps.Map(document.getElementById("map"), {
