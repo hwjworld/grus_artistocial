@@ -1,7 +1,13 @@
 <?php
+require_once("../../be/controller/userController.php");
 session_start();
 $isLogin = (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)?true:false;
 
+if($isLogin){
+    $uid = $_SESSION['id'];
+    $user = new User();
+    $u = $user->getUserById($uid);
+}
 ?>
 <link rel="stylesheet" href="../css/initialize.css">
 <link rel="stylesheet" href="../css/publicStyle.css">
@@ -17,6 +23,7 @@ $isLogin = (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)?true
         <a class="events top-tab-item display-flex-center" onclick="top.location.href='../events.php'">EVENTS</a>
         <a class="about top-tab-item display-flex-center" onclick="top.location.href='../about.php'">ABOUT</a>
     </div>
+    <?php if ($isLogin){?><div style="margin-left: 30px;">Welcome and enjoy your artistocial, <?php echo $u->name; ?> </div><?php } ?>
     <div class="top-right-info display-flex-center">
         <?php if ($isLogin){?>
             <a onclick="top.location.href='../../be/pgreq/logout.php'" class="loginBut">Sign out</a>

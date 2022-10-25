@@ -108,7 +108,7 @@ if($isLogin){
         <div class="library-last-d flex-space-between-center">
             <div class="library-last-left-info background-color-000000">
                 <?php foreach($artcollections as $k=>$v){ ?>
-                <div class="library-last-left-item background-color-ffffff" onclick="setNewMapPoint(<?php echo '\''.$v->latitude.'\',\''.$v->longitude.'\',\''.$v->description.'\'';?>);">
+                <div class="library-last-left-item background-color-ffffff" onclick="setNewMapPoint(<?php echo '\''.$v->latitude.'\',\''.$v->longitude.'\',\''.str_replace('\'','', htmlspecialchars($v->description)).'\'';?>);">
                     <img src="images/note.jpg">
                     <?php echo $v->title; ?>
                 </div>
