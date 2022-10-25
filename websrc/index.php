@@ -42,12 +42,12 @@ $artcollections = [$artistocial->getArtCollection(1),
                     <a class="circle-button " href="../websrc/artgallery/fronpage.html">GAME ENTRANCE</a>
                     <div class="cartoon-body"><img class="w-100" src="images/index-img1.png"></div>
                 </div>
-                <!-- <div id="cartoon-right" class="cartoon">
+                <div id="cartoon-right" class="cartoon">
                 <img class="w-100" src="images/cartoonleft.png">
             </div>
             <div id="cartoon-left" class="cartoon">
                 <img class="w-100" src="images/cartoonright.png">
-            </div> -->
+            </div>
             </div>
         </div>
 

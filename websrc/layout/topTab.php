@@ -19,7 +19,7 @@ $isLogin = (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)?true
     </div>
     <div class="top-right-info display-flex-center">
         <?php if ($isLogin){?>
-            <a onclick="top.location.href='../be/pgreq/logout.php'" class="loginBut">Sign out</a>
+            <a onclick="top.location.href='../../be/pgreq/logout.php'" class="loginBut">Sign out</a>
         <?php } else {?>
             <a onclick="top.location.href='../signin.php'" class="loginBut">SIGN IN/UP</a>
         <?php }?>
