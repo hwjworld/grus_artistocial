@@ -13,7 +13,7 @@ $eventlocation = [$artistocial->getEventLocation(1),
     $artistocial->getEventLocation(4),
     $artistocial->getEventLocation(5)];
 ?>
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
