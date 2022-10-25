@@ -76,7 +76,7 @@ body {
 
 .word_style {
     width: 160px;
-    color: rgba(255, 255, 255, 1);
+    color: rgb(0, 0, 0);
     position: absolute;
     top: 561px;
     left: 402px;
@@ -88,7 +88,7 @@ body {
 
 .email_style {
     width: 337px;
-    color: rgba(255, 255, 255, 1);
+    color: rgb(0, 0, 0);
     position: absolute;
     top: 483px;
     left: 258px;
@@ -131,7 +131,7 @@ body {
 
 .occupation_style {
     width: 212px;
-    color: rgba(255, 255, 255, 1);
+    color: rgb(0, 0, 0);
     position: absolute;
     top: 400px;
     left: 300px;
@@ -144,7 +144,7 @@ body {
 
 .lastname_style {
     width: 212px;
-    color: rgba(255, 255, 255, 1);
+    color: rgb(0, 0, 0);
     position: absolute;
     top: 321px;
     left: 300px;
@@ -172,7 +172,7 @@ body {
 
 .firstname_style {
     width: 337px;
-    color: rgba(255, 255, 255, 1);
+    color: rgb(0, 0, 0);
     position: absolute;
     top: 241px;
     left: 175px;
@@ -403,7 +403,7 @@ body {
 }
 
 .figure_nine {
-    width: 239px;
+    width: 229px;
     height: 80px;
     background: rgba(255, 48, 48, 1);
     padding: 20px 10px;
