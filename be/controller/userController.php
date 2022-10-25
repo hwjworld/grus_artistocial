@@ -97,15 +97,21 @@ class User{
             $userid, $eventid
         ]);
         if ($result) {
-            echo "insert user event to db successful";
+            echo "attend successful";
         } else {
-            echo "insert user event to db fail";
+            echo "attend fail";
         }
         return $result;
     }
 
     public function userCancelEvent($userid,$eventid){
-        $this->db->query(getDeleteUserEventSql($userid,$eventid));
+        $result = $this->db->query(getDeleteUserEventSql($userid,$eventid));
+        // if ($result) {
+        echo "cancel successful";
+        // } else {
+        //     echo "cancel fail";
+        // }
+        return $result;
     }
 
     public function getUserEventAttended($userId){

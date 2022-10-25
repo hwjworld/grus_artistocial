@@ -1,13 +1,13 @@
-// let selectTab = function (index, className) {
-//     let domList = document.getElementsByClassName(className);
-//     for (let i = 0; i < domList.length; i++) {
-//         if (i === index) {
-//             domList[i].style.display = 'block';
-//         } else {
-//             domList[i].style.display = 'none';
-//         }
-//     }
-// }
+let selectTab = function (index, className) {
+    let domList = document.getElementsByClassName(className);
+    for (let i = 0; i < domList.length; i++) {
+        if (i === index) {
+            domList[i].style.display = 'block';
+        } else {
+            domList[i].style.display = 'none';
+        }
+    }
+}
 
 let getRequest = function () {
     let url = location.search;

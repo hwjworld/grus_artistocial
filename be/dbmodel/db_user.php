@@ -35,7 +35,7 @@ function getCheckUserEventSql($userid,$eventid){
 }
 
 function getUserEventsSql($userid){
-    return "select * from userevent where userid=".$userid;
+    return "select * from event where id in (select eventid from userevent where userid=".$userid.")";
 }
 
 function getInsertUserEventSql(){

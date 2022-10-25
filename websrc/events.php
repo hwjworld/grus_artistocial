@@ -3,9 +3,23 @@
 require_once("../be/controller/artistocialController.php");
 
 session_start();
+$isLogin = (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)?true:false;
+
 
 $artistocial = new Artistocial();
-$hotevents = $artistocial->getHotEvent();
+
+
+if($isLogin){
+    $uid = $_SESSION['id'];
+    $user = new User();
+    $u = $user->getUserById($uid);
+    
+    $hotevents = $artistocial->getRecommendEvent($uid);
+}else{
+    $hotevents = $artistocial->getHotEvent();
+}
+
+
 
 $eventlocation = [];
 foreach($hotevents as $k=>$v){
@@ -47,10 +61,11 @@ foreach($hotevents as $k=>$v){
                     <div class="search-icon"><svg t="1664933889901" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2543" width="40" height="40"><path d="M966.4 924.8l-230.4-227.2c60.8-67.2 96-156.8 96-256 0-217.6-176-390.4-390.4-390.4-217.6 0-390.4 176-390.4 390.4 0 217.6 176 390.4 390.4 390.4 99.2 0 188.8-35.2 256-96l230.4 227.2c9.6 9.6 28.8 9.6 38.4 0C979.2 950.4 979.2 934.4 966.4 924.8zM102.4 441.6c0-185.6 150.4-339.2 339.2-339.2s339.2 150.4 339.2 339.2c0 89.6-35.2 172.8-92.8 233.6-3.2 0-3.2 3.2-6.4 3.2-3.2 3.2-3.2 3.2-3.2 6.4-60.8 57.6-144 92.8-233.6 92.8C256 780.8 102.4 627.2 102.4 441.6z" p-id="2544" fill="#6C6C6C"></path></svg></div>
                 </div> -->
                 <?php foreach($hotevents as $k=>$v){ ?>
+                    <a href="eventInfo.php?eid=<?php echo $v->id; ?>" target="_blank">
                 <div onclick="selectTab(1, 'events-tab-info')" class="events-item background-color-f4Cf0a flex-space-between-center">
                     <div class="events-item-text-description">
                         <div class="events-attended-item-title"><?php echo $v->title;?></div>
-                        <div class="time-info"><?php echo $v->startDateTime;?></div>
+                        <div class="time-info"><?php echo str_replace('T',' ',$v->startDateTime);?></div>
                         <div class="events-attended-item-details">
                         <?php echo $v->location;?><br/>
                             Cost $<?php echo $v->cost;?><br/>
@@ -59,9 +74,10 @@ foreach($hotevents as $k=>$v){
                         </div>
                     </div>
                     <div class="events-map">
-                        <a href="eventInfo.php" target="_blank"><img class="w-100 h-100" src="<?php echo $v->eventImage;?>"></a>
+                        <img class="w-100 h-100" src="<?php echo $v->eventImage;?>">
                     </div>
                 </div>
+                </a>
                 <?php } ?>
             </div>
 

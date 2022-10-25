@@ -1,17 +1,29 @@
 
 <?php
 require_once("../be/controller/artistocialController.php");
+require_once("../be/controller/userController.php");
 
 session_start();
-
-$eventlocation = [];
-foreach($hotevents as $k=>$v){
-    $location = $artistocial->getLocationFromEventId($v->id);
-    if(!is_null($location)){
-        array_push($eventlocation, $location);
-    }
+$isLogin = (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)?true:false;
+$eventid = isset($_GET['eid'])?$_GET['eid']:0;
+if($eventid == 0){
+    echo "<script>alert('Please enter from events list page :)');window.close();</script>";
+    die;
+}
+$artistocial = new Artistocial();
+$user = new User();
+$event = $artistocial->getEventById($eventid);
+if(is_null($event)){
+    echo "<script>alert('Event doesnt exist, Please enter from events list page');window.close();</script>";
+    die;
 }
 
+if($isLogin){
+    $uid = $_SESSION['id'];
+    $u = $user->getUserById($uid);
+    $isAttended = $user->checkUserEventAttend($uid,$event->id);
+}
+$location = $artistocial->getLocationFromEventId($event->id);
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +41,7 @@ foreach($hotevents as $k=>$v){
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn-3ZYPIeHEfnJfB9_soI5mArlM9oISag&callback=initMap"></script>
     <script type="text/javascript" src="js/selectTab.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 </head>
 
 <body>
@@ -47,11 +60,17 @@ foreach($hotevents as $k=>$v){
 
             <div class="events-item-details-top flex-space-between-center">
                 <div class="events-item-sketch">
-                    <div class="font-size-30" style="padding-bottom: 50px">Saturday Night Comedy</div>
-                    <div class="font-size-20">MULTIPLE DATES<br>by Big Fork Theatre<br>Follow<br>196 followers</div>
-
-                    <!-- <button id="btnnn">Like</button> -->
-                    <input onclick="change()" type="button" value="Attend" id="myButton1" class="select-info"></input>
+                    <div class="font-size-30" style="padding-bottom: 50px"><?php echo $event->title;?></div>
+                    <div class="font-size-20"><?php echo $event->locationType;?><br><?php echo $event->location;?><br>
+                    <?php echo $event->dateTimeFormatted;?><br>
+                    Age: <?php echo $event->age;?></div>
+                    <?php if($isLogin){ if($isAttended){?>
+                    <input onclick="cancelattend('<?php echo $event->id;?>')" type="button" value="Cancel Attend" id="myButton1" class="select-info"></input>
+                    <?php }else{ ?>
+                    <input onclick="attend('<?php echo $event->id;?>')" type="button" value="Attend" id="myButton1" class="select-info"></input>
+                    <?php }}else{ ?>
+                    <input onclick="top.location.href='signin.php'" type="button" value="Login to attend" id="myButton1" class="select-info"></input>
+                    <?php }?>
                     <!-- <select class="select-info">
                         <option>Like</option>
                         <option>Dislike</option>
@@ -86,7 +105,7 @@ foreach($hotevents as $k=>$v){
                 <script type="text/javascript" src="js/carousel.js"></script>
                 <script language="javascript">
                 function initMap() {
-                    const myLatLng = { lat: -27.54443, lng: 153.088797 };
+                    const myLatLng = { lat: <?php echo $location->latitude; ?>, lng: <?php echo $location->longitude;?> };
                     const map = new google.maps.Map(document.getElementById("map"), {
                     zoom: 14,
                     center: myLatLng,
@@ -117,11 +136,36 @@ foreach($hotevents as $k=>$v){
 <script lang="javascript">
 
 
-function change() 
+function attend(id) 
 {
-    var elem = document.getElementById("myButton1");
-    if (elem.value=="Attend") elem.value = "Attend Cancel";
-
+    $.ajax({
+        type: "GET",
+        url: '../be/pgreq/user_event_action.php?attendEvent=true&eventId='+id,
+        success: function(data)
+        {
+            if(data.indexOf("successful")>=0){
+                alert("Enjoy the event ^_^");
+                location.reload();
+            }else{
+                alert(data); // show response from the php script. 
+            }
+        }
+    });
+}
+function cancelattend(id){
+    $.ajax({
+        type: "GET",
+        url: '../be/pgreq/user_event_action.php?cancelEvent=true&eventId='+id,
+        success: function(data)
+        {
+            if(data.indexOf("successful")>=0){
+                alert("Hope you find your interested event ^_^");
+                location.reload();
+            }else{
+                alert(data); // show response from the php script. 
+            }
+        }
+    });
 }
 </script>
 </body>
