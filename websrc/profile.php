@@ -164,7 +164,7 @@ $userportofolios = $user->getUserPortofolio($uid);
         <div class="background-color-FF3131">
         <?php if(count($hotevents)>0){ foreach($hotevents as $k=>$v){ ?>
             <div class="w-1240 events-attended-info">
-            
+            <a href="eventInfo.php?eid=<?php echo $v->id; ?>" target="_blank">
                 <div class="events-attended-item flex-space-between background-color-ffffff">
                
                     <div class="events-attended-item-text-description">
@@ -187,7 +187,7 @@ $userportofolios = $user->getUserPortofolio($uid);
                     </div>
                     <div class="ticket">TICKET</div>
                 </div>
-                
+            </a>
             </div>
             <?php }} else { ?>
                 <div class="w-1240 events-attended-info" style="color:white">
