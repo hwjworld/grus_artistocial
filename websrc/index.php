@@ -57,7 +57,7 @@ $artcollections = [$artistocial->getArtCollection(1),
                 <div class="wrapper">
                     <div class="contain">
                         <?php foreach ($hotevents as $k => $v) { ?>
-                            <img onclick="location.href='events.html'" src="<?php echo $v->eventImage; ?>" />
+                            <img onclick="location.href='events.php'" src="<?php echo $v->eventImage; ?>" />
                         <?php } ?>
                         <!--last one-->
 
