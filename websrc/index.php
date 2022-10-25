@@ -1,12 +1,22 @@
 <?php
 require_once("../be/controller/artistocialController.php");
+require_once("../be/controller/userController.php");
 
 session_start();
+$isLogin = (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)?true:false;
 
 $artistocial = new Artistocial();
-$hotevents = $artistocial->getHotEvent();
-$artcollections = $artistocial->getAllArtcollection();
-$hotlibrary = $artistocial->getAllLibrarys();
+if($isLogin){
+    $uid = $_SESSION['id'];
+    $user = new User();
+    $u = $user->getUserById($uid);
+    
+    $hotevents = $artistocial->getRecommendEvent($uid);
+    $artcollections = $artistocial->getRecommendArtCollection($uid);
+}else{
+    $hotevents = $artistocial->getHotEvent();
+    $artcollections = $artistocial->getAllArtcollection();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
