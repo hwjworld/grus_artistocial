@@ -14,8 +14,9 @@ $user = new User();
 $u = $user->getUserById($uid);
 
 $artistocial = new Artistocial();
-$hotevents = $artistocial->getHotEvent();
+// $hotevents = $artistocial->getHotEvent();
 $user = new User();
+$hotevents = $user->getUserEventAttended($uid);
 $userportofolios = $user->getUserPortofolio($uid);
 ?>
 <!DOCTYPE html>
@@ -161,7 +162,7 @@ $userportofolios = $user->getUserPortofolio($uid);
         <div class="spacer-bar background-color-FF3131"></div>
         <div class="description-bar background-color-f4Cf0a">Attended Events</div>
         <div class="background-color-FF3131">
-        <?php foreach($hotevents as $k=>$v){ ?>
+        <?php if(count($hotevents)>0){ foreach($hotevents as $k=>$v){ ?>
             <div class="w-1240 events-attended-info">
             
                 <div class="events-attended-item flex-space-between background-color-ffffff">
@@ -187,47 +188,12 @@ $userportofolios = $user->getUserPortofolio($uid);
                     <div class="ticket">TICKET</div>
                 </div>
                 
-                <!-- <div class="events-attended-item flex-space-between background-color-ffffff">
-                    <div class="events-attended-item-text-description">
-                        <div class="events-attended-item-title">Saturday Night Comedy</div>
-                        <div class="time-info">Sat, Sep 24, 7:00 PM + more events</div>
-                        <div class="events-attended-item-details">
-                            Big Fork Theatre Fortitude Valley, QLD<br/>
-                            Starts at A$20.00<br/>
-                            Big Fork Theatre<br/>
-                            195 Followers
-                        </div>
-                    </div>
-                    <div class="publicity-map">
-                        <img class="h-100" src="images/1664892662815.jpg">
-                    </div>
-                    <div class="wavy-line">
-                        <img class="h-100" src="images/wavy-line.jpg">
-                    </div>
-                    <div class="ticket">TICKET</div>
-                </div>
-
-                <div class="events-attended-item flex-space-between background-color-ffffff">
-                    <div class="events-attended-item-text-description">
-                        <div class="events-attended-item-title">Saturday Night Comedy</div>
-                        <div class="time-info">Sat, Sep 24, 7:00 PM + more events</div>
-                        <div class="events-attended-item-details">
-                            Big Fork Theatre Fortitude Valley, QLD<br/>
-                            Starts at A$20.00<br/>
-                            Big Fork Theatre<br/>
-                            195 Followers
-                        </div>
-                    </div>
-                    <div class="publicity-map">
-                        <img class="h-100" src="images/1664892662815.jpg">
-                    </div>
-                    <div class="wavy-line">
-                        <img class="h-100" src="images/wavy-line.jpg">
-                    </div>
-                    <div class="ticket">TICKET</div>
-                </div> -->
             </div>
-            <?php } ?>
+            <?php }} else { ?>
+                <div class="w-1240 events-attended-info" style="color:white">
+                    You haven't attend any Event yet, please browse<a href="events.php">events</a>!
+                </div>
+            <?php }?>
         </div>
     </div>
 
