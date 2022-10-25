@@ -32,6 +32,7 @@ $eventlocation = [$artistocial->getEventLocation(1),
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn-3ZYPIeHEfnJfB9_soI5mArlM9oISag&callback=initMap"></script>
+    <script type="text/javascript" src="js/selectTab.js"></script>
 </head>
 
 <body>
@@ -199,11 +200,13 @@ $eventlocation = [$artistocial->getEventLocation(1),
                 <div class="events-item-sketch">
                     <div style="padding-bottom: 50px">Saturday Night Comedy</div>
                     <div>MULTIPLE DATES<br>by Big Fork Theatre<br>Follow<br>196 followers</div>
-                    <select class="select-info">
-                        <option>Will Attend</option>
-                        <option>Wish to Attend</option>
-                        <option>No Interest</option>
-                    </select>
+
+                    <!-- <button id="btnnn">Like</button> -->
+                    <input onclick="change()" type="button" value="Attend" id="myButton1" class="select-info"></input>
+                    <!-- <select class="select-info">
+                        <option>Like</option>
+                        <option>Dislike</option>
+                    </select> -->
                 </div>
                 <div style="width: 615px;height: 314px;"><img class="w-100 h-100" src="images/1664892662815.jpg"></div>
             </div>
@@ -249,6 +252,13 @@ $( document ).ready(function() {
         });
     });
 });
+
+function change() 
+{
+    var elem = document.getElementById("myButton1");
+    if (elem.value=="Attend") elem.value = "Attend Cancel";
+
+}
 </script>
 </body>
 <script type="text/javascript" src="js/selectTab.js"></script>
