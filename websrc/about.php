@@ -58,6 +58,7 @@
         Contact us:<br/>
         Email: Artistocial@uqconnect.edu.au<br/>
         Address: Artanywhere, St. Lucia QLD 4072
+        <a href="reference.html">Reference list</a>
     </div>
     <div class="footer-right-info-about">
         <div class="footer-face-about">
