@@ -4,6 +4,14 @@ require_once("../be/controller/artistocialController.php");
 
 session_start();
 
+$eventlocation = [];
+foreach($hotevents as $k=>$v){
+    $location = $artistocial->getLocationFromEventId($v->id);
+    if(!is_null($location)){
+        array_push($eventlocation, $location);
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +78,33 @@ session_start();
                 </p>
                 <p>Location</p>
 
-                <img class="w-100" src="images/events-img2.png">
+                <div class="events-right-info">
+                <div class="map-distribution">
+                    <div id="map" style="width: 1160px;; height: 500px;"></div>
+                </div>
+            </div>
+                <script type="text/javascript" src="js/carousel.js"></script>
+                <script language="javascript">
+                function initMap() {
+                    const myLatLng = { lat: -27.54443, lng: 153.088797 };
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 14,
+                    center: myLatLng,
+                });
+                 var beachMarker = new google.maps.Marker({
+                    position: myLatLng,
+                    map,
+                });
+                const infoWindow = new google.maps.InfoWindow();
+
+                // beachMarker.addListener("click", () => {
+                //     infoWindow.close();
+                //     infoWindow.setContent(beachMarker.getTitle());
+                //     infoWindow.open(beachMarker.getMap(), beachMarker);
+                // });
+            }
+            window.onload = initMap;
+            </script>
             </div>
         </div>
     </div>

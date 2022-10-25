@@ -114,7 +114,7 @@ foreach($hotevents as $k=>$v){
 
     <div class="events-content-details events-tab-info background-color-f4Cf0a" style="display: none">
         <div class="events-item-details w-1270 background-color-ffffff">
-            <a href="evetInfo"><div onclick="selectTab(0, 'events-tab-info')" class="close-events-item-details"><img class="w-100" src="images/close.png"></div></a>
+            <div onclick="selectTab(0, 'events-tab-info')" class="close-events-item-details"><img class="w-100" src="images/close.png"></div>
 
             <div class="events-item-details-top flex-space-between-center">
                 <div class="events-item-sketch">
