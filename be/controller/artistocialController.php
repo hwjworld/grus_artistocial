@@ -180,4 +180,12 @@ class Artistocial
         }
         return $result;
     }
+
+    public function getRecommendEvent($userid){
+        
+    }
+
+    public function getRecommendArtCollection($userid){
+
+    }
 }
