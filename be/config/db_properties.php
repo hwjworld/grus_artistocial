@@ -7,5 +7,5 @@ $secret = '3c713b90bdf573aee7be27c86f0abe96';
 
 
 $db_username = 'root';
-$db_password = 'root';
+$db_password = '';
 ?>

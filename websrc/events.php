@@ -198,8 +198,8 @@ $eventlocation = [$artistocial->getEventLocation(1),
 
             <div class="events-item-details-top flex-space-between-center">
                 <div class="events-item-sketch">
-                    <div style="padding-bottom: 50px">Saturday Night Comedy</div>
-                    <div>MULTIPLE DATES<br>by Big Fork Theatre<br>Follow<br>196 followers</div>
+                    <div class="font-size-30" style="padding-bottom: 50px">Saturday Night Comedy</div>
+                    <div class="font-size-20">MULTIPLE DATES<br>by Big Fork Theatre<br>Follow<br>196 followers</div>
 
                     <!-- <button id="btnnn">Like</button> -->
                     <input onclick="change()" type="button" value="Attend" id="myButton1" class="select-info"></input>
