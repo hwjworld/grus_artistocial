@@ -28,8 +28,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
             <img src="images/artistocial.png" width="230" height="100">
         </div>
         <div class="yellow-background"></div>
-        <input class="blank-a" type="email" name="email" required=""/>
-        <input class="blank-b" type="password" name="password" required=""/>
+        <input class="blank-a" type="email" name="email" id="f_name" required=""/>
+        <input class="blank-b" type="password" name="password" id="f_password" required=""/>
         <span class="top-signin">SIGN IN</span>
         <form action="../be/pgreq/signin.php" method="POST" id="login-form">
         <span class="email-style">Email Address:</span>
@@ -56,10 +56,16 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
             $.ajax({
                 type: "POST",
                 url: actionUrl,
-                data: form.serialize(), // serializes the form's elements.
+                // dataType: "text",
+                data: {email:$("#f_name").val(),password:$("#f_password").val()}, // serializes the form's elements.
                 success: function(data)
                 {
-                    alert(data); // show response from the php script.
+                    if(data.indexOf("login successful")>=0){
+                        alert("login successful");
+                        top.location.href="../websrc/";
+                    }else{
+                        alert(data); // show response from the php script. 
+                    }
                 }
             });
 

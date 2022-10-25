@@ -41,16 +41,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $user = new User();
         // $u = $user->getUserByValidEmailAndPwd($username, $password);
         $u = $user->getUserByEmail($username);
-        var_dump($u);
         if(password_verify($password, $u->password)){
             echo "login successful";
             // Store data in session variables
             $_SESSION["loggedin"] = true;
             $_SESSION["id"] = $u->id;
-            $_SESSION["email"] = $u->email;                            
-            
+            $_SESSION["email"] = $u->email;
             // Redirect user to welcome page
-            header("location: ".$website_base_home_url);
+            // header("location: ".$website_base_home_url);
         } else{
             // Password is not valid, display a generic error message
             $login_err = "Invalid username or password.";
