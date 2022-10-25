@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 </head>
 
 <body>
@@ -60,17 +61,18 @@
         </div>
         <div class="yellow-background"></div>
         <span class="top-signin">SIGN UP</span>
-        <form action="../be/pgreq/signin.php" method="POST" id="login-form">
-        <input type="email" class="email"></div>
-        <input type="password" class="password"></div>
+
+        <form action="../be/pgreq/signup.php" method="POST" id="reg-form">
+        <input type="text" class="email" id="f_occupation" ></div>
+        <input type="text" class="password" id="f_bio"></div>
         <div class="button_style"></div><span class="word_style">Bio:</span>
         <span class="email_style">Occupation:</span>
-        <input type="text" class="lastname"></div>
-        <input type="text" class="occupation"></div><span class="occupation_style">Name:</span>
+        <input type="password" class="lastname" id="f_password"></div>
+        <input type="text" class="occupation" id="f_name"></div><span class="occupation_style">Name:</span>
         <span class="lastname_style">Password:</span>
-        <input type="text" class="firstName"></div><span class="firstname_style">Email Address(ID):</span>
-        <span class="sign_up">SIGN UP</span><a href="loginComplete.html" class="continue">Continue</a>
-
+        <input type="text" class="firstName" id="f_email"></div><span class="firstname_style">Email Address(ID):</span>
+        <span class="sign_up">SIGN UP</span><a href="#" class="continue" id="submit_button">Continue</a>
+        </form>
         <div class="figure_one">
             <div class="figure_two"></div>
             <div class="figure_three"></div>
@@ -89,6 +91,38 @@
             </div>
         </div>
     </div>
+
+   
+    <script language="javascript">
+        $("#submit_button").click(function(){$("#reg-form").submit();});
+        $("#reg-form").submit(function(e) {
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+            var form = $(this);
+            var actionUrl = form.attr('action');
+            $.ajax({
+                type: "POST",
+                url: actionUrl,
+                // dataType: "text",
+                data: {email:$("#f_email").val(),
+                    password:$("#f_password").val(),
+                    name: $("#f_name").val(),
+                    occupation:$("#f_occupation").val(),
+                    bio:$("#f_bio").val()
+                }, // serializes the form's elements.
+                success: function(data)
+                {
+                    if(data.indexOf("Signup successful")>=0){
+                        alert("Signup successful");
+                        top.location.href="loginComplete.html";
+                    }else{
+                        alert(data); // show response from the php script. 
+                    }
+                }
+            });
+
+            });
+
+    </script>
 </body>
 
 </html>
