@@ -712,12 +712,12 @@
 }
 
 .index-map img{
-    height: 1500px;
     width: 1500px;
+    height: 1000px;
 }
 .index-last-map img{
-    height: 1500px;
     width: 1500px;
+    height:530px;
 }
 .sort-text {
     line-height: 70px;
