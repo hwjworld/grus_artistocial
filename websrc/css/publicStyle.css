@@ -808,7 +808,7 @@
 
 .carousel .wrapper {
     width: 1400px;
-    height: 300px;
+    height: 250px;
     overflow: hidden;
     margin: 0 auto;
     position: relative;
@@ -816,7 +816,7 @@
 
 .carousel .contain img {
     width: 380px;
-    height: 300px;
+    height: 250px;
     margin: 0 20px;
 }
 
