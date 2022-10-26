@@ -98,7 +98,7 @@ foreach($hotevents as $k=>$v){
 
             const tourStops = [
                 <?php foreach($eventlocation as $k=>$v){
-                    echo '[{ lat: '.$v->latitude.', lng: '.$v->longitude.' }, "ab"],';
+                    echo '[{ lat: '.$v->latitude.', lng: '.$v->longitude.' }],';
             }?>
             ];
             const infoWindow = new google.maps.InfoWindow();
@@ -107,17 +107,17 @@ foreach($hotevents as $k=>$v){
                 const marker = new google.maps.Marker({
                     position,
                     map,
-                    title: `${i + 1}. ${title}`,
+                    // title: `${position}`,
                     label: `${i + 1}`,
                     optimized: false,
                 });
 
                 // Add a click listener for each marker, and set up the info window.
-                marker.addListener("click", () => {
-                    infoWindow.close();
-                    infoWindow.setContent(marker.getTitle());
-                    infoWindow.open(marker.getMap(), marker);
-                });
+                // marker.addListener("click", () => {
+                //     infoWindow.close();
+                //     infoWindow.setContent(marker.getTitle());
+                //     infoWindow.open(marker.getMap(), marker);
+                // });
             });
         }
         window.onload = initMap;
