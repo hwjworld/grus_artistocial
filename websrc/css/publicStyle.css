@@ -450,10 +450,11 @@
 .item-portfolio-img-d {
     width: 290px;
     height: 290px;
+    display: flex;
     border-radius: 40px;
     background-color: #D9D9D9;
     overflow: hidden;
-    margin-bottom: 30px;
+    align-items: center;
 }
 .profile-last-img-d {
     width: 87px;
