@@ -74,7 +74,7 @@ $userportofolios = $user->getUserPortofolio($uid);
             <?php foreach($userportofolios as $k=>$v){ if($k>=0 && $k<4){ ?>
             <a class="item-portfolio">
                 <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="<?php echo $v->thumbnail; ?>"/>
+                    <img class="w-h-100" src="<?php echo $v->thumbnail; ?>" onclick="window.open('<?php echo $v->permalink;?>')"/>
                 </div>
                 <span><?php echo $v->title.'('.$v->date.')'; ?></span>
             </a>
@@ -84,7 +84,7 @@ $userportofolios = $user->getUserPortofolio($uid);
             <?php foreach($userportofolios as $k=>$v){ if($k>=4 && $k<8){ ?>
             <a class="item-portfolio">
                 <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="<?php echo $v->thumbnail; ?>"/>
+                    <img class="w-h-100" src="<?php echo $v->thumbnail; ?>" onclick="window.open('<?php echo $v->permalink;?>')"/>
                 </div>
                 <span><?php echo $v->title.'('.$v->date.')'; ?></span>
             </a>
@@ -94,7 +94,7 @@ $userportofolios = $user->getUserPortofolio($uid);
             <?php foreach($userportofolios as $k=>$v){ if($k>=8 && $k<12){ ?>
             <a class="item-portfolio">
                 <div class="item-portfolio-img-d">
-                    <img class="w-h-100" src="<?php echo $v->thumbnail; ?>"/>
+                    <img class="w-h-100" src="<?php echo $v->thumbnail; ?>" onclick="window.open('<?php echo $v->permalink;?>')"/>
                 </div>
                 <span><?php echo $v->title.'('.$v->date.')'; ?></span>
             </a>
