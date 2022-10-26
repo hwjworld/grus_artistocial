@@ -552,6 +552,7 @@
 }
 
 .library-last-right-item {
+    margin: 50px;
     font-size: 20px;
     color: black;
     line-height: 40px;
@@ -567,10 +568,12 @@
     text-align: center;
 }
 .library-info {
+    margin: 0px 30px;
     padding: 10px 20px;
 }
+
 .search-map-d {
-    width: 100%;
+    width: 1400px;
     height: 66px;
     margin: 20px auto;
     position: relative;
@@ -590,7 +593,7 @@
     left: 1em;
 }
 .library-last-d {
-    margin: 30px;
+    margin: 30px 50px;
     min-width: 1240px;
 }
 .library-last-left-info {
@@ -602,7 +605,7 @@
 }
 .library-last-left-item {
     line-height: 50px;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     position: relative;
     margin-top: 10px;

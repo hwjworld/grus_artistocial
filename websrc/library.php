@@ -35,7 +35,7 @@ $hotlibrary = $artistocial->getAllLibrarys();
             <div class="index-last-d">
             <!-- <button class="art-collection font-size-24 background-color-f4Cf0a">Art Collection</button> -->
             
-                    <div id="map" style="width:1470px; height: 500px;"></div>
+                    <div id="map" style="width:1400px; height: 500px;"></div>
 
                 <!-- <div id="map" style="width:1330px; height: 500px;"></div> -->
 
