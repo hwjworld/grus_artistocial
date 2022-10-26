@@ -65,7 +65,7 @@ if($isLogin){
                 <div class="wrapper">
                     <div class="contain">
                         <?php foreach ($hotevents as $k => $v) { ?>
-                            <img onclick="location.href='events.php'" src="<?php echo $v->eventImage; ?>" />
+                            <img onclick="location.href='eventInfo.php?eid=<?php echo $v->id; ?>'" src="<?php echo $v->eventImage; ?>" />
                         <?php } ?>
                         <!--last one-->
 
