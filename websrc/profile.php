@@ -46,7 +46,7 @@ $userportofolios = $user->getUserPortofolio($uid);
         <div class="right-d-info">
             <div class="introduction-board background-color-ffffff">
                 Name: <?php  echo $u->name;?><br/>
-                Occupation: <?php echo $u->name;?><br/>
+                Occupation: <?php echo $u->occupation;?><br/>
                 Email: <?php echo $u->email;?><br/>
                 About me: <?php echo $u->bio;?><br />
                 Preference: <?php echo $u->arttype;?>
