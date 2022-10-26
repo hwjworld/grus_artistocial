@@ -104,7 +104,7 @@ if($isLogin){
         </div>
 
 
-        <div class="color-000000 display-flex-center font-weight-600 library-title background-color-f4Cf0a">ART COLLECTION</div>
+        <div class="color-000000 display-flex-center font-weight-600 library-title background-color-f4Cf0a">ART COLLECTIONS</div>
         <div class="library-last-d flex-space-between-center">
             <div class="library-last-left-info background-color-000000">
                 <?php foreach($artcollections as $k=>$v){ ?>
