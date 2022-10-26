@@ -766,6 +766,9 @@
     border-radius: 15px;
     margin-bottom: 20px;
 }
+.events-item-text-description {
+    width: 500px
+}
 .events-map {
     width: 400px;
     height: 285px;
