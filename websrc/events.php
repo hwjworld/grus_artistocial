@@ -74,7 +74,7 @@ foreach($hotevents as $k=>$v){
                         </div>
                     </div>
                     <div class="events-map">
-                        <img class="w-100 h-100" src="<?php echo $v->eventImage;?>">
+                        <img class=" h-100" src="<?php echo $v->eventImage;?>">
                     </div>
                 </div>
                 </a>
@@ -83,7 +83,7 @@ foreach($hotevents as $k=>$v){
 
             <div class="events-right-info">
                 <div class="map-distribution">
-                    <div id="map" style="width: 412px;; height: 1000px;"></div>
+                    <div id="map" style="width: 380px; height: 1000px;"></div>
                 </div>
             </div>
 
