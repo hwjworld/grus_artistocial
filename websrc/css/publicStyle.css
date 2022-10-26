@@ -711,8 +711,8 @@
 .index-last-map {
     /* padding: 40px 20px; */
     width: 100%;
-
 }
+
 .index-map {
     padding: 0px 20px;
     width: 100%;
@@ -725,8 +725,7 @@
 .index-last-map #map{
     display: flex;
     align-items: center;
-    margin-left: 30px;
-    margin-top: 50px;
+    margin: 50px 16px ;
 }
 .sort-text {
     line-height: 70px;
