@@ -24,7 +24,7 @@ $hotlibrary = $artistocial->getAllLibrarys();
 
     <iframe frameborder="no" scrolling="no" class="w-100-iframe top-iframe" src="layout/topTab.php"></iframe>
 
-    <div style="padding-left: 4em" class="library-title background-color-139E06">LIBRARIES IN BRISBANE</div>
+    <div style="padding-left: 1em" class="library-title background-color-139E06">LIBRARIES IN BRISBANE</div>
 
     <div class="library-info">
         <!-- <div>THE LIBRARY MAP</div> -->

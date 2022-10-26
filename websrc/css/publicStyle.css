@@ -548,7 +548,7 @@
 .library-title {
     line-height: 70px;
     color: #ffffff;
-    text-align: center;
+    text-align: left;
 }
 
 .library-last-right-item {
@@ -772,6 +772,14 @@
     border-radius: 30px;
     overflow: hidden;
 }
+.events-map img{
+    width: 400px;
+    height: 285px;
+}
+.events-content {
+    margin-top: 30px;
+}
+
 .events-content-details {
     width: 100%;
     padding-top: 60px;
