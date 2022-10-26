@@ -7,7 +7,7 @@ require_once(__DIR__."/../controller/artistocialController.php");
 session_start();
 
 $_SESSION["loggedin"] = true;
-$_SESSION['id'] = 1;
+$userid = 1;
 
 if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)){
     header("location: login.html");
@@ -23,9 +23,9 @@ if(isset($_GET['purchaseArtwork'])){
     return $user->setArttypePreference($userid, $artworkId);
 }else if(isset($_GET['attendEvent'])){
     $eventid = $_GET['eventId'];
-    return $user->userAttendEvent($userid, $eventid);
+    $user->userAttendEvent($userid, $eventid);
 }else if(isset($_GET['cancelEvent'])){
     $eventid = $_GET['eventId'];
-    return $user->userCancelEvent($userid, $eventid);
+    $user->userCancelEvent($userid, $eventid);
 }
 ?>
