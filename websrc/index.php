@@ -118,7 +118,7 @@ if($isLogin){
 
             <div class="index-last-map background-color-f4Cf0a">
                 <p class="map">
-                <div id="map" style="width:1000px; height: 600px;"></div>
+                <div id="map" style="width:900px; height: 600px; display:flex; fl"></div>
                 </p>
                 
             </div>
