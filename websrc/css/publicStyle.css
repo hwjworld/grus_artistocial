@@ -523,6 +523,13 @@
 .publicity-map {
     padding: 20px 0;
 }
+.events-attended-item-text-description{
+    width: 500px;
+}
+.publicity-map img{
+    width: 500px;
+    height: 300px;
+}
 .events-attended-item-title {
     font-weight: 600;
 }
