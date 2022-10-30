@@ -1,8 +1,9 @@
 <?php
-
 require_once(__DIR__."/../controller/userController.php");
 require_once(__DIR__."/../model/busUser.php");
 require_once(__DIR__."/../tools/constants.php");
+
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
@@ -47,6 +48,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $user->saveUser($u);
 
     if ($result) {
+        // Store data in session variables
+        $_SESSION["loggedin"] = true;
+        $_SESSION["id"] = $u->id;
+        $_SESSION["email"] = $u->email;
         echo "Signup successful";
     }
 }else{
