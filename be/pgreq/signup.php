@@ -50,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result) {
         // Store data in session variables
         $_SESSION["loggedin"] = true;
+        $u = $user->getUserByEmail($u->email);
         $_SESSION["id"] = $u->id;
         $_SESSION["email"] = $u->email;
         echo "Signup successful";
