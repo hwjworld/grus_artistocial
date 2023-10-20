@@ -1,4 +1,3 @@
-
 <?php
 require_once(__DIR__."/../../be/controller/artsyController.php");
 require_once(__DIR__."/../../be/controller/userController.php");
