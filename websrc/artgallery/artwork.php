@@ -5,7 +5,7 @@ session_start();
 
 $isLogin = (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)?true:false;
 $uid = 0;
-if(!$isLogin){
+if($isLogin){
     $uid = $_SESSION['id'];
     $user = new User();
     $u = $user->getUserById($uid);
