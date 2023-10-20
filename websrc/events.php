@@ -1,4 +1,3 @@
-
 <?php
 require_once("../be/controller/artistocialController.php");
 
